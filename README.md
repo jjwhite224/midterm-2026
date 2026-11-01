@@ -7,10 +7,17 @@ Fall 2026 AI-Assisted Programming class at the CUNY Graduate Center**.
 and date filters, editable recency weighting, SVG visualization, full poll table,
 unit tests, data validation, and a GitHub Pages deployment workflow.
 
-> **Data warning:** This repository does **not** ship with a real polling
-> snapshot. Until `scripts/fetch_polls.py` successfully retrieves authentic
-> VoteHub survey records, the app uses an explicitly marked *synthetic demo*.
-> Demo numbers and pollster names are invented and are NOT election evidence.
+> **Data coverage:** `data/polls.json` contains 307 national generic-ballot
+> records retrieved from VoteHub on November 1, 2026 (19:24:40 UTC), with
+> fieldwork ending January 3–October 4, 2026. The API returned no newer records;
+> the retrieval date is not the latest fieldwork date. Fourteen records have
+> unreported sample sizes, retained as null rather than estimated. Original
+> release links and CC BY 4.0 attribution are preserved. This is a current
+> retrieval, not the separately frozen pre-election archive.
+>
+> If authentic data are unavailable, the app uses an explicitly marked
+> *synthetic demo*. Demo numbers and pollster names are invented and are NOT
+> election evidence.
 
 ## Local quick start
 

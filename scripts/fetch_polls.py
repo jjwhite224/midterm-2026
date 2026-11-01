@@ -104,9 +104,11 @@ def fetch(cutoff):
             raise RuntimeError(f'API returned HTTP {response.status}')
         body = response.read(15_000_000)
     payload = json.loads(body)
-    if not isinstance(payload, dict) or not isinstance(payload.get('polls'), list):
-        raise RuntimeError('Unexpected VoteHub response: expected JSON with polls list')
-    return payload['polls']
+    # The live endpoint returns a list; documentation also shows a polls envelope.
+    polls = payload.get('polls') if isinstance(payload, dict) else payload
+    if not isinstance(polls, list) or any(not isinstance(row, dict) for row in polls):
+        raise RuntimeError('Unexpected VoteHub response: expected a poll list or JSON with polls list')
+    return polls
 
 
 def main(argv=None):

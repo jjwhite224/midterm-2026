@@ -1,9 +1,11 @@
 import sys
 import unittest
+import json
+from unittest.mock import patch, MagicMock
 from datetime import date
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from fetch_polls import normalize, build_dataset
+from fetch_polls import normalize, build_dataset, fetch
 
 GOOD = {
     'id': 'gen202demorv', 'poll_type': 'generic-ballot', 'subject': '2026',
@@ -13,6 +15,25 @@ GOOD = {
     'url': 'https://example.org/poll', 'internal': False
 }
 class TestDataIngestion(unittest.TestCase):
+    def test_api_response_shapes(self):
+        for payload in ([GOOD], {'polls': [GOOD]}):
+            with self.subTest(payload=type(payload).__name__):
+                response = MagicMock()
+                response.__enter__.return_value = response
+                response.status = 200
+                response.read.return_value = json.dumps(payload).encode()
+                with patch('fetch_polls.urlopen', return_value=response):
+                    self.assertEqual(fetch(date(2026, 11, 1)), [GOOD])
+    def test_invalid_api_response_rejected(self):
+        for payload in ({'error': 'unavailable'}, {'polls': None}, [42]):
+            with self.subTest(payload=payload):
+                response = MagicMock()
+                response.__enter__.return_value = response
+                response.status = 200
+                response.read.return_value = json.dumps(payload).encode()
+                with patch('fetch_polls.urlopen', return_value=response):
+                    with self.assertRaises(RuntimeError):
+                        fetch(date(2026, 11, 1))
     def test_valid_poll(self):
         row = normalize(GOOD, date(2026, 11, 1))
         self.assertEqual(row['sample_size'],1000)
