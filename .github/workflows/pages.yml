@@ -1,0 +1,68 @@
+name: Deploy Midterm 2026 to GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      refresh_data:
+        description: 'Fetch current 2026 generic-ballot polls from VoteHub before deployment'
+        type: boolean
+        required: true
+        default: false
+      freeze_snapshot:
+        description: 'Freeze a pre-election snapshot (only allowed before Nov 3, 2026 ET)'
+        type: boolean
+        required: true
+        default: false
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: 'github-pages'
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test ingestion and descriptive analysis
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          node --test tests/*.test.mjs
+      - name: Fetch public polling data
+        if: github.event_name == 'workflow_dispatch' && inputs.refresh_data
+        run: python scripts/fetch_polls.py
+      - name: Freeze pre-election archive
+        if: github.event_name == 'workflow_dispatch' && inputs.freeze_snapshot
+        run: python scripts/freeze_snapshot.py
+      - name: Commit archived data and provenance
+        if: github.event_name == 'workflow_dispatch' && (inputs.refresh_data || inputs.freeze_snapshot)
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/polls.json data/pre_election_snapshot.json 2>/dev/null || git add data/polls.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: refresh 2026 polling archive'
+            git push
+          fi
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Stage site files only
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp -r assets src data _site/
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

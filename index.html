@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1420" />
+    <meta name="description" content="A transparent, open-source interactive explorer of US 2026 midterm polling. Poll measurements are not predictions." />
+    <title>Midterm / 2026 — Reading the Polls</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <script type="module" src="./src/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="#top" aria-label="Midterm 2026 home"><span class="brand-symbol" aria-hidden="true">▦</span> MIDTERM<span class="slash">/</span>2026</a>
+        <nav aria-label="Primary navigation"><a href="#explorer">Explore polls</a><a href="#method">Method</a><a href="#sources">Sources</a></nav>
+        <span class="header-pill">OPEN DATA PROJECT <span class="spark" aria-hidden="true"></span></span>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero wrap" id="top">
+        <div class="eyebrow"><span class="eyebrow-line"></span> THE 2026 U.S. MIDTERM ELECTIONS <span class="eyebrow-number">01 / 04</span></div>
+        <div class="hero-grid">
+          <div><h1>READING<br/>THE <em>POLLS.</em></h1><p class="hero-subhead">What the public surveys measure. What they leave out. And how different analytical choices change the picture.</p><a href="#explorer" class="primary-link">Explore the data <span aria-hidden="true">↗</span></a></div>
+          <div class="hero-aside"><div class="aside-index">2026 / U.S.</div><div class="orbit" aria-hidden="true"><span class="orbit-ring one"></span><span class="orbit-ring two"></span><span class="orbit-dot"></span><span class="orbit-center">NOV<br/>03</span></div><div class="aside-caption">Election Day<br/><strong>November 3, 2026</strong></div></div>
+        </div>
+        <div class="hero-bottom"><span>AN OPEN-SOURCE, INTERACTIVE DATA EXPLORER</span><span>SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span></div>
+      </section>
+      <section class="explorer-section" id="explorer">
+        <div class="wrap">
+          <div class="section-head"><div><p class="section-kicker">01 — THE DATA</p><h2>National generic ballot</h2><p class="section-copy">Published surveys asking about preferences for a generic Democratic or Republican House candidate. These are national measures, <strong>not estimates for individual districts.</strong></p></div><div id="status" class="dataset-status" aria-live="polite">CHECKING DATA…</div></div>
+          <div id="demo-warning" class="demo-warning" hidden role="status"><strong>DEMONSTRATION MODE</strong><span>The live dataset has not been downloaded yet. Every displayed number and pollster in this preview is invented for UI testing—not 2026 polling evidence.</span></div>
+          <div class="dashboard">
+            <aside class="filters" aria-label="Polling filters"><div class="filter-heading"><h3>Filter & inspect</h3><span>TOOLS / 01</span></div>
+              <label class="form-label" for="search">Pollster</label><input id="search" type="search" placeholder="Find a pollster…" autocomplete="off" />
+              <label class="form-label" for="population">Surveyed population</label><select id="population"><option value="all">All populations</option><option value="lv">Likely voters</option><option value="rv">Registered voters</option><option value="a">All adults / other</option></select>
+              <label class="form-label" for="start-date">Fieldwork ending on or after</label><input id="start-date" type="date" value="2026-08-01" min="2026-01-01" max="2026-11-03" />
+              <div class="filter-divide"></div>
+              <label class="form-label" for="weighting">Summary calculation</label><select id="weighting"><option value="simple">Equal poll weights</option><option value="recency">Recency-weighted</option></select>
+              <div id="half-life-control" hidden><label class="form-label flex-label" for="half-life">Recency half-life <output id="half-life-value">14 days</output></label><input id="half-life" type="range" min="3" max="45" step="1" value="14" /></div>
+              <p class="filter-footnote">Weighting affects only the descriptive summary below. This dashboard does not generate a forecast.</p>
+              <button id="reset" class="reset-btn" type="button">Reset filters <span aria-hidden="true">↻</span></button>
+            </aside>
+            <div class="data-panel">
+              <div class="metrics"><div class="metric"><span>POLLS DISPLAYED</span><strong id="count">—</strong><small id="period">After filtering</small></div><div class="metric"><span>AVERAGE DEM %</span><strong id="dem-mean">—</strong><small>Among included polls</small></div><div class="metric"><span>AVERAGE REP %</span><strong id="rep-mean">—</strong><small>Among included polls</small></div><div class="metric"><span>AVERAGE GAP</span><strong id="gap-mean">—</strong><small>Dem – Rep, points</small></div></div>
+              <div class="chart-top"><div><p class="chart-eyebrow">POLLING OBSERVATIONS / 2026</p><h3>Two series, one timeline.</h3></div><div class="chart-legend"><span><i class="dot dem"></i>Democrat</span><span><i class="dot rep"></i>Republican</span></div></div>
+              <div id="chart" class="chart" role="img" aria-label="Time series chart of poll percentages. Use the data table below for exact values."></div>
+              <div class="chart-footer"><span>Each circle is an individual published poll</span><span>Y-axis: percent responding</span></div>
+              <div class="insight"><span class="insight-mark">↳</span><p id="insight-text" aria-live="polite">Loading survey information…</p></div>
+            </div>
+          </div>
+          <div class="table-section"><div class="table-header"><div><p class="chart-eyebrow">THE UNDERLYING RECORDS</p><h3>Poll by poll</h3></div><span id="table-count" class="table-count">— records</span></div><div class="table-scroll"><table><thead><tr><th scope="col">Fieldwork end</th><th scope="col">Pollster</th><th scope="col">Population</th><th scope="col">Sample</th><th scope="col">Dem</th><th scope="col">Rep</th><th scope="col">Original source</th></tr></thead><tbody id="poll-rows"></tbody></table></div></div>
+        </div>
+      </section>
+      <section class="method-section" id="method"><div class="wrap method-grid"><div><p class="section-kicker">02 — THE METHOD</p><h2>Transparent<br/><em>by design.</em></h2><p>Polling data are samples, not election results. A transparent explorer should expose its assumptions and its limits instead of suggesting false precision.</p></div><div class="method-list"><article><span>01</span><div><h3>Check the underlying source</h3><p>Every real poll links back to its release. The data pipeline checks dates, values, duplicates, and response choices.</p></div></article><article><span>02</span><div><h3>Choose a descriptive average</h3><p>Compare equal weights to recency weighting. Neither approach corrects for house effects, selection bias, or correlated error.</p></div></article><article><span>03</span><div><h3>Preserve a dated snapshot</h3><p>To avoid hindsight, any authentic pre-election archive must be collected and committed before voting. No pre-election snapshot has been generated in this starter.</p></div></article><article><span>04</span><div><h3>Audit afterward</h3><p>Future releases can compare frozen inputs and models against results, explicitly distinguishing provisional counts from certified returns.</p></div></article></div></div></section>
+      <section class="sources-section" id="sources"><div class="wrap"><p class="section-kicker">03 — THE SOURCES</p><div class="sources-row"><h2>Show your work.</h2><p>Data provenance and attribution are part of the journalism, not a footnote.</p></div><div class="source-cards"><a href="https://votehub.com/polls/api/" target="_blank" rel="noopener noreferrer"><span>PRIMARY DATA FEED</span><strong>VoteHub Polling API</strong><small>CC BY 4.0 • poll-level survey data</small><b aria-hidden="true">↗</b></a><a href="https://www.pollingforecast.com/us/data" target="_blank" rel="noopener noreferrer"><span>ADDITIONAL REFERENCE</span><strong>Polling Forecast</strong><small>Check row-level reuse terms before importing</small><b aria-hidden="true">↗</b></a><a href="https://electionlab.mit.edu/data" target="_blank" rel="noopener noreferrer"><span>HISTORICAL VALIDATION</span><strong>MIT Election Lab</strong><small>Historical election results and data</small><b aria-hidden="true">↗</b></a></div><div class="provenance"><span id="source-status">DATA SOURCE: NOT LOADED</span><span id="retrieved">RETRIEVED: —</span><span id="snapshot">PRE-ELECTION SNAPSHOT: NOT CAPTURED</span></div></div></section>
+    </main>
+    <footer class="site-footer"><div class="wrap footer-inner"><span>MIDTERM/2026</span><p>Independent, nonpartisan data-literacy project. Not affiliated with a campaign or polling organization.</p><a href="#top">BACK TO TOP ↑</a></div></footer>
+  </body>
+</html>

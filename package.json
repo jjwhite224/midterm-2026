@@ -1,0 +1,13 @@
+{
+  "name": "midterm-2026-polling-explorer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Public polling literacy project — static GitHub Pages site",
+  "scripts": {
+    "dev": "python -m http.server 5173",
+    "test": "node --test tests/*.test.mjs",
+    "refresh": "python scripts/fetch_polls.py",
+    "test:python": "python -m unittest discover -s tests -p 'test_*.py'"
+  }
+}
