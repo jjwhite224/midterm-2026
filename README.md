@@ -18,6 +18,42 @@ unit tests, data validation, and a GitHub Pages deployment workflow.
 > *synthetic demo*. Demo numbers and pollster names are invented and are NOT
 > election evidence.
 
+## House and Senate polling histories on the main page
+
+The **Race polls** explorer lists every 2026 November 3 House district and
+Senate election (435 + 35). Its separate `data/race-polls.json` snapshot contains
+1,354 question records across 146 races as collected November 1. Unpolled races
+remain selectable and show an explicit coverage gap. Charts use actual published
+candidate percentages, including independents and third parties; no model
+estimates fill polling gaps. Question variants are counted separately from surveys.
+
+Choose chamber, state and race, then the candidate matchup/RCV round. Population,
+fieldwork dates and pollster filters control the timeline and full-answer table.
+Different candidate sets and ranked-choice rounds are never joined. The latest
+available matchup is selected by default; earlier candidate matchups remain
+available. Hover or keyboard-focus a dot for exact survey details. Every row
+retains original source, fieldwork, sample (including explicit nulls), population,
+question/survey IDs, sponsors and partisan flags. Collection time and CC BY 4.0
+terms apply to every question via the snapshot envelope, and appear in row details.
+
+The licensed compilation is [The New York Times via PollResults.org](https://pollresults.org/api/).
+Race names/identifiers alone come from Polling Forecast under CC BY 4.0; forecast
+values do not enter the polling explorer. NYT's district 1 is explicitly mapped
+to the atlas's district 00 only in verified single-member states. National generic
+ballot records, other elections, primary/subpopulation questions and ambiguous
+records are excluded. The snapshot records exclusion counts, and a local
+`race-import-audit.tmp` lists IDs/reasons for review. No ambiguous value is corrected.
+
+```bash
+python scripts/fetch_race_polls.py
+```
+
+Refresh can also be run through GitHub Actions using `refresh_race_polls`.
+Downloads validate the license on each page, detect cursor loops and conflicting
+question IDs, and finish both chambers before replacing the snapshot. The
+`--from-cache` option reprocesses `race-download.tmp` while retaining its original
+collection time. National polls and the protected pre-election archive are untouched.
+
 ## Separate election atlas
 
 Open `elections.html` for a keyboard-accessible 50-state tile map with House

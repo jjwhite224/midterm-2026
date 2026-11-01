@@ -14,6 +14,11 @@ on:
         type: boolean
         required: true
         default: false
+      refresh_race_polls:
+        description: 'Refresh licensed House and Senate polling histories'
+        type: boolean
+        required: true
+        default: false
 permissions:
   contents: write
   pages: write
@@ -42,12 +47,21 @@ jobs:
       - name: Freeze pre-election archive
         if: github.event_name == 'workflow_dispatch' && inputs.freeze_snapshot
         run: python scripts/freeze_snapshot.py
+      - name: Fetch House and Senate polling histories
+        if: github.event_name == 'workflow_dispatch' && inputs.refresh_race_polls
+        run: python scripts/fetch_race_polls.py
+      - name: Validate refreshed polling histories
+        if: github.event_name == 'workflow_dispatch' && inputs.refresh_race_polls
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          node --test tests/*.test.mjs
       - name: Commit archived data and provenance
-        if: github.event_name == 'workflow_dispatch' && (inputs.refresh_data || inputs.freeze_snapshot)
+        if: github.event_name == 'workflow_dispatch' && (inputs.refresh_data || inputs.freeze_snapshot || inputs.refresh_race_polls)
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/polls.json data/pre_election_snapshot.json 2>/dev/null || git add data/polls.json
+          git add data/race-polls.json
           if ! git diff --cached --quiet; then
             git commit -m 'data: refresh 2026 polling archive'
             git push

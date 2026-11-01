@@ -58,7 +58,8 @@ function render() {
     const tr=document.createElement('tr'), party=favorite(race);
     const values=[race.name,`${label[party]}${party==='U'?'':' favored'} · ${race.rating}`,`${(race.chance_left*100).toFixed(1)}% (${race.left_party})`,`${race.left_party}−R ${margin(race.best_bet_margin)} pts [${margin(race.range80_low)}, ${margin(race.range80_high)}]`,race.polls_used?String(race.polls_used):'0 · model only'];
     for(const value of values){const td=document.createElement('td');td.textContent=value;tr.append(td);}
-    const td=document.createElement('td'),a=document.createElement('a');a.href='https://www.pollingforecast.com'+race.page;a.textContent='Race model ↗';a.setAttribute('aria-label',`Source model for ${race.name}`);td.append(a);tr.append(td);body.append(tr);
+    const td=document.createElement('td'),a=document.createElement('a');a.href='https://www.pollingforecast.com'+race.page;a.textContent='Race model ↗';a.setAttribute('aria-label',`Source model for ${race.name}`);td.append(a);
+    const history=document.createElement('a');history.href='./index.html?race='+encodeURIComponent(chamber+':'+race.key)+'#race-trends';history.textContent='Polling history ↗';history.setAttribute('aria-label',`Polling history for ${race.name}`);td.append(document.createElement('br'),history);tr.append(td);body.append(tr);
   }
 }
 async function start(){
