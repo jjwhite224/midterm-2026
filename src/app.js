@@ -18,8 +18,8 @@ async function load() {
       if (allPolls.length) {
         $('#status').textContent = 'PUBLIC POLLS · DATA LOADED';
         $('#source-status').textContent = `SOURCE: ${json.source || 'VoteHub'}`;
-        $('#retrieved').textContent = `RETRIEVED: ${json.retrieved_at || 'UNKNOWN'}`;
-        $('#snapshot').textContent = 'PRE-ELECTION SNAPSHOT: SEE REPOSITORY';
+        $('#retrieved').textContent = `DATA ASSEMBLED: ${json.assembled_at || json.retrieved_at || 'UNKNOWN'}`;
+        $('#snapshot').textContent = `LATEST FIELDWORK: ${[...allPolls].map(p=>p.end_date).sort().at(-1)} · COLLECTION TIMES: SEE ROW DETAILS`;
         return;
       }
     }
@@ -59,6 +59,17 @@ function tableRow(p) {
   for(const value of cells){const td=document.createElement('td');td.textContent=value;tr.append(td);}
   const td=document.createElement('td');
   if(!demo && /^https?:\/\//.test(p.url||'')){const a=document.createElement('a');a.href=p.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='View release ↗';td.append(a);}else{td.textContent=demo?'Illustrative only':'Not available';}
+  if(!demo && p.source){
+    const details=document.createElement('details'),summary=document.createElement('summary'),info=document.createElement('p');
+    details.className='source-details';
+    summary.textContent='Source & reuse';
+    info.textContent=`${p.attribution || p.source}. Fieldwork: ${p.start_date || 'Not reported'} to ${p.end_date}. Collected: ${p.retrieved_at || 'Unknown'}. Reuse: ${p.license || 'Unknown'}.`;
+    details.append(summary,info);
+    for(const [label,url] of [['Reuse terms',p.license_url],['Verified evidence',p.evidence_url],['Source compilation',p.source_url]]){
+      if(/^https:\/\//.test(url||'')){const link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=label;details.append(link,document.createElement('br'));}
+    }
+    td.append(details);
+  }
   tr.append(td);return tr;
 }
 function render() {
@@ -71,7 +82,7 @@ function render() {
   $('#dem-mean').textContent=summary?formatPercent(summary.demMean):'—';
   $('#rep-mean').textContent=summary?formatPercent(summary.repMean):'—';
   $('#gap-mean').textContent=summary?formatGap(summary.gap):'—';
-  $('#period').textContent=polls.length?`${fmtDate(polls[0].end_date)} onward`:'No matching polls';
+  $('#period').textContent=polls.length?`${fmtDate(polls[0].end_date)} – ${fmtDate(polls.at(-1).end_date)}`:'No matching polls';
   $('#insight-text').textContent=summary?`Among these ${polls.length} ${demo?'illustrative':'reported'} surveys, the ${fields.weighting.value==='recency'?'recency-weighted':'equal-weight'} descriptive average is ${formatPercent(summary.demMean)} Democratic and ${formatPercent(summary.repMean)} Republican. This is not a seat forecast, election probability, or probability sample of polls.`:'No surveys match your selections. Try a broader date range, pollster query, or population filter.';
   $('#table-count').textContent=`${polls.length} RECORDS`;
   const tbody=$('#poll-rows');tbody.replaceChildren();

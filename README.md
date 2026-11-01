@@ -7,13 +7,12 @@ Fall 2026 AI-Assisted Programming class at the CUNY Graduate Center**.
 and date filters, editable recency weighting, SVG visualization, full poll table,
 unit tests, data validation, and a GitHub Pages deployment workflow.
 
-> **Data coverage:** `data/polls.json` contains 307 national generic-ballot
-> records retrieved from VoteHub on November 1, 2026 (19:24:40 UTC), with
-> fieldwork ending January 3–October 4, 2026. The API returned no newer records;
-> the retrieval date is not the latest fieldwork date. Fourteen records have
-> unreported sample sizes, retained as null rather than estimated. Original
-> release links and CC BY 4.0 attribution are preserved. This is a current
-> retrieval, not the separately frozen pre-election archive.
+> **Data coverage:** `data/polls.json` contains 311 national generic-ballot
+> records: 307 VoteHub records and four reviewed supplemental surveys.
+> Fieldwork ends January 3–October 30, 2026. Collection times and reuse terms
+> are recorded separately for every row; assembly time is not fieldwork time.
+> Fourteen source records have unreported sample sizes, retained as null.
+> This dataset is not the separately frozen pre-election archive.
 >
 > If authentic data are unavailable, the app uses an explicitly marked
 > *synthetic demo*. Demo numbers and pollster names are invented and are NOT
@@ -39,6 +38,35 @@ python -m unittest discover -s tests -p 'test_*.py'
 ```
 
 ## Load authentic public polling data
+
+`data/reviewed-polls.json` contains verified supplemental records. The importer
+merges them on every refresh, so VoteHub updates do not remove them. To merge
+reviewed additions without downloading or redating the existing VoteHub rows:
+
+```bash
+python scripts/fetch_polls.py --merge-existing --as-of 2026-11-01
+```
+
+New supplemental releases require manual verification of original figures,
+national scope, dates, population, sample size and reuse terms. The current
+allowlist admits Marist sources under its attribution-based redistribution
+permission. September 14–15 (1,280 RV) and October 19–20 (1,289 RV) were checked
+against original releases; October results were checked in the original PDF,
+page 52. Only the registered-voter version of each survey is added, avoiding
+counting October's likely-voter reweighting as a second survey. The original
+VoteHub records can still include multiple population versions; averages remain
+descriptive record averages, not averages of independent samples.
+
+Matching Marist pollster aliases, end date and population are checked across
+sources; conflicting values stop the write for manual review. New licenses
+require a code review of the allowlist. Future releases are not auto-approved.
+The October 22–30 ActiVote (2,000 LV) and October 27–30 Big Data Poll
+(3,214 LV) records come from Call the Map's CC BY 4.0 polling compilation,
+cross-checked against original releases. Each row retains the compilation URL,
+original release, license evidence and attribution to the pollster, Call the Map,
+VoteHub and The New York Times. This license covers the compiled polling data,
+not the pollsters' article text. ActiVote reports a two-way result; its percentages
+are retained as published. Emerson remains excluded pending reuse review.
 
 The ingestion script uses only stdlib modules and the [documented VoteHub API](https://votehub.com/polls/api/):
 
@@ -105,6 +133,12 @@ any party or candidate. See [METHODOLOGY.md](METHODOLOGY.md).
 Polling records sourced from VoteHub's API are CC BY 4.0 and should be credited
 to VoteHub **and original pollsters**, with original release URLs retained.
 Other source licensing must be reviewed independently before adding data.
+
+Supplemental records credit the Marist Institute for Public Opinion, in
+partnership with NPR and PBS News. Marist permits redistribution with attribution
+under [section 3 of its terms](https://maristpoll.marist.edu/terms-of-use/).
+These records are not relabeled CC BY 4.0 or MIT. Each table row exposes its
+source, collection time, evidence and reuse terms under **Source & reuse**.
 
 Code in this starter is MIT licensed; see LICENSE. Synthetic data in
 `data/demo-polls.json` are solely for demonstration, not research.

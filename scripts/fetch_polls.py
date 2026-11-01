@@ -18,6 +18,7 @@ API = 'https://api.votehub.com/polls'
 LICENSE = 'CC BY 4.0'
 END_OF_PRE_ELECTION = date(2026, 11, 2)
 DEFAULT_OUT = Path(__file__).resolve().parents[1] / 'data' / 'polls.json'
+REVIEWED = DEFAULT_OUT.with_name('reviewed-polls.json')
 
 
 def parse_ymd(value):
@@ -115,6 +116,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--as-of', default=date.today().isoformat(), help='YYYY-MM-DD cutoff')
     parser.add_argument('--output', type=Path, default=DEFAULT_OUT)
+    parser.add_argument('--merge-existing', action='store_true', help='Merge reviewed additions into the current output without fetching or redating existing polls')
     parser.add_argument('--min-polls', type=int, default=1, help='Refuse to overwrite with fewer than this many polls')
     args = parser.parse_args(argv)
     cutoff = parse_ymd(args.as_of)
@@ -122,16 +124,25 @@ def main(argv=None):
         parser.error('--as-of must be a date in 2026 or later')
     retrieved = datetime.now(timezone.utc).isoformat(timespec='seconds')
     try:
-        raw = fetch(cutoff)
-        dataset = build_dataset(raw, cutoff, retrieved)
+        if args.output.resolve() == DEFAULT_OUT.with_name('pre_election_snapshot.json').resolve():
+            raise RuntimeError('Use freeze_snapshot.py to create the protected archive')
+        if args.merge_existing:
+            dataset = json.loads(args.output.read_text(encoding='utf-8'))
+            if any(row['end_date'] > cutoff.isoformat() for row in dataset['polls']):
+                raise RuntimeError('Existing data extend beyond requested cutoff')
+        else:
+            raw = fetch(cutoff)
+            dataset = build_dataset(raw, cutoff, retrieved)
         if len(dataset['polls']) < args.min_polls:
             raise RuntimeError(f'Only {len(dataset["polls"])} usable 2026 generic-ballot polls returned; refusing to overwrite existing data.')
+        from supplemental_polls import merge_reviewed
+        dataset = merge_reviewed(dataset, json.loads(REVIEWED.read_text(encoding='utf-8')), cutoff, retrieved)
         args.output.parent.mkdir(parents=True, exist_ok=True)
         tmp = args.output.with_suffix(args.output.suffix + '.tmp')
         tmp.write_text(json.dumps(dataset, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
         tmp.replace(args.output)
-        print(f'Wrote {len(dataset["polls"])} validated polls to {args.output}; retrieved {retrieved}')
-    except (HTTPError, URLError, RuntimeError, json.JSONDecodeError, TimeoutError) as e:
+        print(f'Wrote {len(dataset["polls"])} validated records to {args.output}; assembled {retrieved}')
+    except (OSError, HTTPError, URLError, RuntimeError, json.JSONDecodeError, TimeoutError) as e:
         print(f'ERROR: {e}', file=sys.stderr)
         return 1
     return 0

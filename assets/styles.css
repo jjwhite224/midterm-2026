@@ -3,3 +3,7 @@
 
 /* Respect HTML visibility for the demo warning and optional controls. */
 [hidden] { display: none !important; }
+
+.source-details { white-space: normal; min-width: 180px; max-width: 260px; }
+.source-details summary { cursor: pointer; }
+.source-details p { line-height: 1.5; }
