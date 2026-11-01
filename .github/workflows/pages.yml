@@ -57,7 +57,7 @@ jobs:
       - name: Stage site files only
         run: |
           mkdir -p _site
-          cp index.html _site/
+          cp index.html elections.html _site/
           cp -r assets src data _site/
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3

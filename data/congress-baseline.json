@@ -1,0 +1,18 @@
+{
+  "reviewed_at": "2026-11-01",
+  "house": {
+    "D": 214, "R": 218, "I": 1, "V": 2,
+    "source_date": "2026-09-02",
+    "url": "https://radiotv.house.gov/house-data/party-breakdown"
+  },
+  "senate": {
+    "D": 45, "R": 53, "I": 2, "V": 0,
+    "source_date": "119th Congress, second session",
+    "url": "https://www.senate.gov/about/parties-leadership/party-division.shtml"
+  },
+  "senate_holdovers": {"D": 32, "R": 31, "I": 2},
+  "holdover_note": "65 seats are not on the 2026 ballot: current 45 D, 53 R, 2 I less 13 D and 22 R contested seats (33 Class II plus Florida and Ohio specials). The two existing independents caucus with Democrats; no such assumption is made about independent challengers.",
+  "class_source": "https://www.senate.gov/senators/Class_II.htm",
+  "specials_source": "https://www.pollingforecast.com/us/data",
+  "license": "Official U.S. government membership facts; forecast coverage checked against publisher documentation."
+}

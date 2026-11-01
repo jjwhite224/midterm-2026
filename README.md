@@ -18,6 +18,35 @@ unit tests, data validation, and a GitHub Pages deployment workflow.
 > *synthetic demo*. Demo numbers and pollster names are invented and are NOT
 > election evidence.
 
+## Separate election atlas
+
+Open `elections.html` for a keyboard-accessible 50-state tile map with House
+and Senate views, official membership, and a clearly labeled race-favorite
+scenario. It uses a separate `data/forecasts.json` snapshot from
+[Polling Forecast](https://www.pollingforecast.com/us/data), CC BY 4.0,
+dated October 31, 2026. This is one publisher's model, not a consensus or raw
+poll dataset. Every race links to its model page and shows polling coverage,
+probability and an 80% margin interval. No-poll estimates are identified.
+
+The scenario counts each race's model favorite, adds 65 Senate holdovers,
+and keeps independent challengers separate. It is not the publisher's
+simulated median or a chamber win probability. The baseline and its dated
+official sources are in `data/congress-baseline.json`; the House source was
+last updated September 2. Model incumbent labels differ from that official
+baseline, so the atlas does not claim individual district flips. All 435
+House voting seats and the 35 Senate races (including FL/OH specials) are covered.
+
+Refresh forecast outputs separately with Python stdlib:
+
+```bash
+python scripts/fetch_forecasts.py
+```
+
+The importer validates licenses, dates, coverage, unique races, probabilities
+and intervals before replacing the snapshot. A failed download or validation
+leaves the existing file untouched. Membership requires separate source review.
+Neither polling data nor the frozen pre-election archive is modified.
+
 ## Local quick start
 
 Requires Python 3.9+ and a recent browser. Node 18+ is used only for JS tests.
