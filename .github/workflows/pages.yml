@@ -19,6 +19,11 @@ on:
         type: boolean
         required: true
         default: false
+      refresh_results:
+        description: 'Refresh unofficial 2026 returns from civicAPI (never certifies results)'
+        type: boolean
+        required: true
+        default: false
 permissions:
   contents: write
   pages: write
@@ -55,13 +60,19 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_*.py'
           node --test tests/*.test.mjs
+      - name: Refresh and validate unofficial election returns
+        if: github.event_name == 'workflow_dispatch' && inputs.refresh_results
+        run: |
+          python scripts/fetch_results.py
+          python -m unittest discover -s tests -p 'test_*.py'
+          node --test tests/*.test.mjs
       - name: Commit archived data and provenance
-        if: github.event_name == 'workflow_dispatch' && (inputs.refresh_data || inputs.freeze_snapshot || inputs.refresh_race_polls)
+        if: github.event_name == 'workflow_dispatch' && (inputs.refresh_data || inputs.freeze_snapshot || inputs.refresh_race_polls || inputs.refresh_results)
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/polls.json data/pre_election_snapshot.json 2>/dev/null || git add data/polls.json
-          git add data/race-polls.json
+          git add data/race-polls.json data/results.json
           if ! git diff --cached --quiet; then
             git commit -m 'data: refresh 2026 polling archive'
             git push

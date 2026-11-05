@@ -1,0 +1,171 @@
+{
+  "title": "National House vote: voter-poll estimates",
+  "election_date": "2026-11-03",
+  "scope": "national_house",
+  "pollster": "SSRS",
+  "population": "2026 U.S. voters, national House vote",
+  "start_date": null,
+  "end_date": null,
+  "fieldwork_note": "Exact fieldwork dates and sample sizes are not supplied by the licensed compilation; not inferred from another publisher’s sample.",
+  "sample_size": null,
+  "collected_at": "2026-11-05T22:51:40.990985+00:00",
+  "source": "Wikipedia contributors, citing NBC News / SSRS",
+  "source_url": "https://en.wikipedia.org/w/index.php?title=2026_United_States_elections&oldid=1383972331",
+  "original_source_url": "https://www.nbcnews.com/politics/2026-elections/exit-polls",
+  "method_url": "https://ssrs.com/ssrs-solutions/voter-poll/",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "adaptation": "Selected age, race and education tables; shortened education labels; D/R shares only. All displayed shares checked against NBC’s All Voters national table on November 5. Age 45–64 is withheld due to conflicting sources. Remaining responses are not inferred by subtraction.",
+  "rows": [
+    {
+      "group": "Age",
+      "label": "18–29",
+      "electorate_share": 11,
+      "dem": 73,
+      "rep": 25,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    },
+    {
+      "group": "Age",
+      "label": "30–44",
+      "electorate_share": 20,
+      "dem": 62,
+      "rep": 36,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    },
+    {
+      "group": "Age",
+      "label": "45–64",
+      "electorate_share": 34,
+      "dem": null,
+      "rep": null,
+      "sample_size": null,
+      "status": "withheld: source disagreement",
+      "note": "Wikipedia reports R 46%; NBC reports R 47%. Vote shares withheld pending resolution."
+    },
+    {
+      "group": "Age",
+      "label": "65 or over",
+      "electorate_share": 36,
+      "dem": 50,
+      "rep": 50,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    },
+    {
+      "group": "Race",
+      "label": "White",
+      "electorate_share": 73,
+      "dem": 49,
+      "rep": 49,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    },
+    {
+      "group": "Race",
+      "label": "Latino",
+      "electorate_share": 10,
+      "dem": 64,
+      "rep": 34,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    },
+    {
+      "group": "Race",
+      "label": "Black",
+      "electorate_share": 9,
+      "dem": 90,
+      "rep": 9,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    },
+    {
+      "group": "Race",
+      "label": "Asian",
+      "electorate_share": 4,
+      "dem": 71,
+      "rep": 28,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    },
+    {
+      "group": "Race",
+      "label": "Other",
+      "electorate_share": 5,
+      "dem": 54,
+      "rep": 43,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    },
+    {
+      "group": "Education",
+      "label": "No high school diploma",
+      "electorate_share": 2,
+      "dem": 50,
+      "rep": 49,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    },
+    {
+      "group": "Education",
+      "label": "High school graduate",
+      "electorate_share": 21,
+      "dem": 44,
+      "rep": 54,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    },
+    {
+      "group": "Education",
+      "label": "Some college, no degree",
+      "electorate_share": 19,
+      "dem": 50,
+      "rep": 48,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    },
+    {
+      "group": "Education",
+      "label": "Associate degree",
+      "electorate_share": 11,
+      "dem": 49,
+      "rep": 49,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    },
+    {
+      "group": "Education",
+      "label": "Bachelor’s degree",
+      "electorate_share": 27,
+      "dem": 60,
+      "rep": 38,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    },
+    {
+      "group": "Education",
+      "label": "Advanced degree",
+      "electorate_share": 20,
+      "dem": 68,
+      "rep": 31,
+      "sample_size": null,
+      "status": "reviewed",
+      "note": ""
+    }
+  ]
+}

@@ -207,3 +207,22 @@ source, collection time, evidence and reuse terms under **Source & reuse**.
 
 Code in this starter is MIT licensed; see LICENSE. Synthetic data in
 `data/demo-polls.json` are solely for demonstration, not research.
+
+
+## Reported returns and voter demographics
+
+Both pages now include a separate November 5 results snapshot for all 470
+House/Senate races, candidate vote tables, publisher seat-call tallies, and
+national House voter-poll charts by age, race and education. Results are
+unofficial and certification is unverified. Demographic estimates cannot be
+applied to individual races. One conflicting age row is withheld.
+
+See [source and licensing notes](data/RESULTS-SOURCES.md). Update only returns
+with `python scripts/fetch_results.py` or the manual Pages `refresh_results`
+input. Survey tables require manual review. Polling and forecast archives stay
+unchanged. The demographic adaptation is CC BY-SA 4.0, separately from site code.
+
+Validation for this change: 14 JavaScript tests (the `npm test` command's Node
+runner) and 25 Python tests passed. Browser checks covered both pages, desktop
+and 390px mobile layouts, keyboard focus, race/special-election filters, an
+empty Senate/California selection, and all three demographic chart categories.

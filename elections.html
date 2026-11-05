@@ -7,15 +7,19 @@
   <link rel="stylesheet" href="./assets/styles.css?v=20261101-map">
   <link rel="stylesheet" href="./assets/elections.css">
   <script type="module" src="./src/elections.js"></script>
+  <link rel="stylesheet" href="./assets/results.css">
+  <script type="module" src="./src/results.js"></script>
 </head>
 <body class="election-page">
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header"><div class="wrap header-inner"><a class="brand" href="./index.html">MIDTERM<span class="slash">/</span>2026</a><a class="back-link" href="./index.html#explorer">← Poll explorer</a></div></header>
   <main id="main">
-    <section class="map-intro wrap"><p class="eyebrow">2026 ELECTION ATLAS / NOVEMBER 3</p><h1>THE BALANCE<br>OF <em>POWER.</em></h1><p class="intro-copy">One country. Two chambers. Explore the seats on the ballot and what one published model suggests could change.</p><p id="snapshot" class="snapshot" role="status">Loading the dated forecast…</p></section>
+    <section class="map-intro wrap"><p class="eyebrow">2026 ELECTION ATLAS / NOVEMBER 3</p><h1>THE BALANCE<br>OF <em>POWER.</em></h1><p class="intro-copy">One country. Two chambers. Explore reported returns, voter surveys and the dated pre-election forecast.</p><p id="snapshot" class="snapshot" role="status">Loading the dated forecast…</p></section>
+<section id="election-results" class="results-section" aria-label="Reported election returns and voter demographics"><noscript>Enable JavaScript to explore results, or download <a href="./data/results.json">reported returns</a> and <a href="./data/exit-polls.json">national voter-poll estimates</a>. Returns are unofficial; certification has not been verified.</noscript></section>
+
     <section class="atlas"><div class="wrap">
-      <div class="atlas-heading"><div><p class="section-kicker">01 / CHOOSE A CHAMBER</p><h2>Where control could shift</h2></div><div class="chamber-toggle" role="group" aria-label="Chamber"><button id="senate" aria-pressed="true">Senate <span>100 seats</span></button><button id="house" aria-pressed="false">House <span>435 seats</span></button></div></div>
-      <p class="model-notice"><strong>FORECAST SCENARIO · NOT ELECTION RESULTS.</strong> This view uses Polling Forecast’s model, which combines polls and other assumptions. It is not a consensus forecast or a conversion of our generic-ballot average into seats.</p>
+      <div class="atlas-heading"><div><p class="section-kicker">01 / CHOOSE A CHAMBER</p><h2>The pre-election outlook</h2></div><div class="chamber-toggle" role="group" aria-label="Chamber"><button id="senate" aria-pressed="true">Senate <span>100 seats</span></button><button id="house" aria-pressed="false">House <span>435 seats</span></button></div></div>
+      <p class="model-notice"><strong>OCTOBER 31 PRE-ELECTION FORECAST · NOT RESULTS.</strong> This view uses Polling Forecast’s model, which combines polls and other assumptions. It is not a consensus forecast or a conversion of our generic-ballot average into seats.</p>
       <div id="loaded" hidden>
         <div class="balance-grid"><article class="balance-card"><p class="section-kicker">OFFICIAL MEMBERSHIP BASELINE</p><h3 id="current-title"></h3><div id="current-bar" class="seat-bar"></div><p id="current-counts" class="count-labels"></p><p id="baseline-note" class="fine"></p></article><article class="balance-card projected"><p class="section-kicker">IF EVERY MODEL FAVORITE TAKES ITS SEAT</p><h3 id="projected-title"></h3><div id="projected-bar" class="seat-bar"></div><p id="projected-counts" class="count-labels"></p><p id="swing" class="fine"></p></article></div>
         <p id="majority-note" class="majority-note"></p>

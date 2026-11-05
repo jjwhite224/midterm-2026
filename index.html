@@ -10,13 +10,15 @@
     <script type="module" src="./src/app.js?v=20261101-sources"></script>
     <link rel="stylesheet" href="./assets/race-explorer.css">
     <script type="module" src="./src/race-explorer.js"></script>
-  </head>
+    <link rel="stylesheet" href="./assets/results.css">
+  <script type="module" src="./src/results.js"></script>
+</head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <header class="site-header">
       <div class="wrap header-inner">
         <a class="brand" href="#top" aria-label="Midterm 2026 home"><span class="brand-symbol" aria-hidden="true">▦</span> MIDTERM<span class="slash">/</span>2026</a>
-        <nav aria-label="Primary navigation"><a href="#race-trends">Race polls</a><a href="#explorer">National polls</a><a href="./elections.html">Election map</a><a href="#sources">Sources</a></nav>
+        <nav aria-label="Primary navigation"><a href="#election-results">Results</a><a href="#race-trends">Race polls</a><a href="#explorer">National polls</a><a href="./elections.html">Election map</a><a href="#sources">Sources</a></nav>
         <span class="header-pill">OPEN DATA PROJECT <span class="spark" aria-hidden="true"></span></span>
       </div>
     </header>
@@ -29,6 +31,8 @@
         </div>
         <div class="hero-bottom"><span>AN OPEN-SOURCE, INTERACTIVE DATA EXPLORER</span><span>SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span></div>
       </section>
+<section id="election-results" class="results-section" aria-label="Reported election returns and voter demographics"><noscript>Enable JavaScript to explore results, or download <a href="./data/results.json">reported returns</a> and <a href="./data/exit-polls.json">national voter-poll estimates</a>. Returns are unofficial; certification has not been verified.</noscript></section>
+
       <section class="race-history-section" id="race-trends" aria-labelledby="history-heading">
         <div class="wrap">
           <div class="section-head"><div><p class="section-kicker">RACE BY RACE / HOUSE &amp; SENATE</p><h2 id="history-heading">The polls over time.</h2><p class="section-copy">Explore any 2026 House district or Senate election. Compare published candidate preferences across fieldwork dates, with different matchups and ranked-choice rounds kept separate.</p></div><a class="race-map-link" href="./elections.html">View election map ↗</a></div>
