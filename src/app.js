@@ -35,22 +35,28 @@ async function load() {
 }
 function drawChart(polls) {
   const container = $('#chart'); container.replaceChildren();
-  const svg = el('svg', {viewBox:'0 0 820 310',preserveAspectRatio:'none','aria-hidden':'true'});container.append(svg);
-  const left=49,right=795,top=17,bottom=270,low=30,high=65;
+  const svg = el('svg', {viewBox:'0 0 820 310',preserveAspectRatio:'none','role':'group','aria-label':'Individual polling observations'});container.append(svg);
+  const left=49,right=795,top=17,bottom=270;
+  const values = polls.flatMap(p => [p.dem, p.rep]);
+  const low = Math.max(0, Math.floor(Math.min(30, ...values) / 5) * 5);
+  const high = Math.min(100, Math.ceil(Math.max(65, ...values) / 5) * 5);
+  $('#national-point').textContent = 'Hover or focus a dot for poll details.';
   const dates = polls.map(p=>Date.parse(`${p.end_date}T00:00:00Z`));
   const min = dates.length ? Math.min(...dates) : Date.parse('2026-08-01T00:00:00Z');
   const max = dates.length ? Math.max(...dates) : Date.parse('2026-11-01T00:00:00Z');
   const span = Math.max(max - min, 24*3600*1000);
   const x = d => left+(Date.parse(`${d}T00:00:00Z`)-min)/span*(right-left);
   const y = v => bottom-(v-low)/(high-low)*(bottom-top);
-  for (const val of [30,35,40,45,50,55,60,65]) { el('line',{x1:left,y1:y(val),x2:right,y2:y(val),class:'grid-line'},svg); const t=el('text',{x:5,y:y(val)+4},svg);t.textContent=`${val}%`; }
+  for (let val = low; val <= high; val += 5) { el('line',{x1:left,y1:y(val),x2:right,y2:y(val),class:'grid-line'},svg); const t=el('text',{x:5,y:y(val)+4},svg);t.textContent=`${val}%`; }
   const xTicks=4; for(let i=0;i<=xTicks;i++){const stamp=min+span*(i/xTicks);const label=new Date(stamp).toLocaleDateString('en-US',{timeZone:'UTC',month:'short',day:'numeric'});const t=el('text',{x:left+(right-left)*(i/xTicks),y:299,'text-anchor':i===0?'start':i===xTicks?'end':'middle'},svg);t.textContent=label;}
   if(!polls.length){const label=el('text',{x:420,y:147,'text-anchor':'middle'},svg);label.textContent='No polls match these filters';return;}
   for(const [key,color] of [['dem','#2f768a'],['rep','#d56f55']]){
     // Lines connect observations by date as a visual guide only; overlapping same-day observations are not interpolated trends.
     const path=polls.map((p,i)=>`${i?'L':'M'} ${x(p.end_date).toFixed(2)} ${y(p[key]).toFixed(2)}`).join(' ');
     el('path',{d:path,class:'plot-line',stroke:color,opacity:.77},svg);
-    for(const p of polls){const dot=el('circle',{cx:x(p.end_date),cy:y(p[key]),r:4.7,fill:color,class:'poll-point'},svg);const title=el('title',{},dot);title.textContent=`${p.pollster}, ${fmtDate(p.end_date)}: ${key==='dem'?'Dem':'Rep'} ${p[key].toFixed(1)}%${demo?' (synthetic demo)':''}`;}
+    for(const p of polls){const dot=el('circle',{cx:x(p.end_date),cy:y(p[key]),r:4.7,fill:color,class:'poll-point',tabindex:0,role:'img'},svg);const title=el('title',{},dot);title.textContent=`${p.pollster}, ${fmtDate(p.end_date)}: ${key==='dem'?'Dem':'Rep'} ${p[key].toFixed(1)}%${demo?' (synthetic demo)':''}`;dot.setAttribute('aria-label',title.textContent);
+      const show = () => { $('#national-point').textContent = title.textContent; };
+      dot.addEventListener('focus',show);dot.addEventListener('mouseenter',show);dot.addEventListener('click',show);}
   }
 }
 function tableRow(p) {

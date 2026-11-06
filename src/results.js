@@ -30,7 +30,13 @@ async function returnsView() {
       card.append(el('h3', chamber === 'house' ? 'House · 435 seats' : 'Senate · 100 seats'));
       const bar = el('div', undefined, 'results-seatbar'); bar.setAttribute('aria-hidden', 'true');
       for (const [party, count] of Object.entries(counts)) { const part = el('span', undefined, `result-${party}`); part.style.flexGrow = count; bar.append(part); }
-      card.append(bar, el('p', `D ${counts.D} · R ${counts.R} · I ${counts.I}${counts.other ? ' · Other ' + counts.other : ''} · Uncalled ${counts.pending}`, 'results-tally'),
+      const track = el('div', undefined, 'results-seat-track');
+      const majority = chamber === 'house' ? 218 : 51;
+      const total = chamber === 'house' ? 435 : 100;
+      const marker = el('span', `${majority} for majority`, 'majority-marker');
+      marker.style.left = `${majority / total * 100}%`;
+      track.append(bar, marker);
+      card.append(track, el('p', `D ${counts.D} · R ${counts.R} · I ${counts.I}${counts.other ? ' · Other ' + counts.other : ''} · Uncalled ${counts.pending}`, 'results-tally'),
         el('p', chamber === 'senate' ? 'Publisher calls plus 65 holdover seats (32 D, 31 R, 2 I). Independents are shown separately; the two holdovers caucus with Democrats. Majority: 51 seats.' : 'Publisher calls, not certified seat awards. Majority: 218 seats.', 'results-small'));
       cards.append(card);
     }
@@ -58,7 +64,12 @@ async function returnsView() {
       const table = el('table'); table.append(el('caption', 'Reported votes · unofficial. Percentages use the publisher’s denominator.'));
       const head = el('thead'); const hr = el('tr'); for (const text of ['Candidate', 'Party', 'Votes', 'Vote share']) { const th = el('th', text); th.scope = 'col'; hr.append(th); } head.append(hr); table.append(head);
       const body = el('tbody');
-      for (const c of [...selected.candidates].sort((a, b) => b.votes - a.votes)) { const row = el('tr'); const th = el('th', c.name); th.scope = 'row'; row.append(th, el('td', c.party), el('td', fmt(c.votes)), el('td', `${c.percent}%`)); body.append(row); }
+      for (const c of [...selected.candidates].sort((a, b) => b.votes - a.votes)) { const row = el('tr'); const th = el('th', c.name); th.scope = 'row'; const share = el('td');
+        const shareValue = el('span', `${c.percent}%`, 'vote-share-value');
+        const track = el('div', undefined, 'vote-share-track'); track.setAttribute('aria-hidden', 'true');
+        const fill = el('span', undefined, c.party === 'Democratic' ? 'result-D' : c.party === 'Republican' ? 'result-R' : 'result-other');
+        fill.style.width = `${Math.max(0, Math.min(100, c.percent))}%`; track.append(fill); share.append(shareValue, track);
+        row.append(th, el('td', c.party), el('td', fmt(c.votes)), share); body.append(row); }
       table.append(body); scroll.append(table);
       detail.append(scroll, link('View source race record', selected.source_url), document.createTextNode(' · '), link('View pre-election polling history', `./index.html?race=${encodeURIComponent(selected.id)}#race-trends`));
     }
