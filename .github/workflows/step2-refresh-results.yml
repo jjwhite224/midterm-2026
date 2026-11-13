@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/step2-refresh-results.yml'
+      - 'analysis/audit_results_refresh.py'
   workflow_dispatch:
 permissions:
   contents: write
