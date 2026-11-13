@@ -135,8 +135,6 @@ def main():
                      {'name':lp['candidate_r'],'party':'REP','pct':float(lp['rep_percent'])}],
           'round':['','FALSE','FALSE'],'curated':True,'late_release':True,
           'published_at':lp['published_at'],'note':lp['note']})
-    original_polled_races=len({p['race'] for p in original['polls']})
-    master_polled_races=len(by_race)
     issues=Counter()
     audit=[]
     outcomes=[]
@@ -187,7 +185,7 @@ def main():
         # Cross-provider and question aliases: same pollster and fieldwork end date.
         good=[p for p in collection if p['reason']=='candidate']
         seen_cross=set()
-        for p in sorted(good,key=lambda x:(not str(x['record_id']).startswith('late:'),not str(x['record_id']).startswith('supp:'),x['record_id'] or ''),reverse=True):
+        for p in sorted(good,key=lambda x:(not str(x['record_id']).startswith('late:'),not str(x['record_id']).startswith('supp:'),x['record_id'] or '')):
             key=(canonical_pollster(p['pollster']),p['end_date'])
             if key in seen_cross:p['reason']='same_pollster_same_end_date_review'
             else:seen_cross.add(key)
@@ -222,11 +220,11 @@ def main():
            'notes':'Results not certified; conditional on 30-day window and valid D/R matchup'}
         outcomes.append(line)
         for p in selected:chosen_all.append(p)
-    with (OUT/'2026_race_polling_averages.csv').open('w',encoding='utf-8',newline='') as f:
+    with (OUT/'2026_race_polling_averages_v2.csv').open('w',encoding='utf-8',newline='') as f:
         w=csv.DictWriter(f,fieldnames=FIELDS);w.writeheader();w.writerows(outcomes)
-    with (OUT/'2026_polling_errors_provisional.csv').open('w',encoding='utf-8',newline='') as f:
+    with (OUT/'2026_polling_errors_provisional_v2.csv').open('w',encoding='utf-8',newline='') as f:
         w=csv.DictWriter(f,fieldnames=FIELDS);w.writeheader();w.writerows(outcomes)
-    with (OUT/'2026_poll_selection_audit.csv').open('w',encoding='utf-8',newline='') as f:
+    with (OUT/'2026_poll_selection_audit_v2.csv').open('w',encoding='utf-8',newline='') as f:
         fields=['race_id','record_id','poll_id','pollster','end_date','population','source_url','reason','margin']
         w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(audit)
     compared=[x for x in outcomes if x['status']=='provisional_comparison']
@@ -268,6 +266,6 @@ def main():
         'Self-selected polled districts are not representative of all House districts.',
         'No causal claim about polling weighting is supported by these observational errors.',
         'Do not present these numbers as final election-polling accuracy.']}
-    (OUT/'2026_polling_accuracy_summary.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')
+    (OUT/'2026_polling_accuracy_summary_v2.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(summary,indent=2))
 if __name__=='__main__': main()
