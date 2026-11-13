@@ -18,7 +18,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Build attributed poll master and audit
-        run: |\n          python analysis/build_poll_master.py\n          python analysis/enrich_poll_candidates.py
+        run: |
+          python analysis/build_poll_master.py
+          python analysis/enrich_poll_candidates.py
       - name: Save generated dataset
         run: |
           git config user.name 'github-actions[bot]'
