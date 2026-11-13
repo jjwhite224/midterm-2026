@@ -1,0 +1,16 @@
+{
+  "source": "https://www.pollingforecast.com/api/us/polls",
+  "feed_as_of": "2026-11-02",
+  "feed_license": "CC BY 4.0",
+  "feed_license_note": "Poll figures: the pollster's; rows from Wikipedia CC BY-SA 4.0",
+  "candidate_records": 555,
+  "covered_races_in_base": 146,
+  "candidate_races_not_in_base": 3,
+  "candidate_race_ids_not_in_base": [
+    "house:CT-02",
+    "house:NV-03",
+    "senate:CO"
+  ],
+  "potential_duplicate_records": 317,
+  "review_warning": "Source discovery only. Do not merge Wikipedia-derived CC BY-SA 4.0 records into the CC BY 4.0 base without respecting license and validating originals; adjusted_margin is a model adjustment, NOT the original poll margin."
+}
