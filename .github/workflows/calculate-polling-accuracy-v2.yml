@@ -1,0 +1,55 @@
+name: Recalculate 2026 polling accuracy with Nov 1-2 releases
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'analysis/calculate_polling_accuracy_v2.py'
+      - 'analysis/2026_final_poll_releases_nov1_2.csv'
+      - '.github/workflows/calculate-polling-accuracy-v2.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  calculate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run unit tests
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          node --test tests/*.test.mjs
+      - name: Recompute Nov 1–2-enriched polling averages and errors
+        run: python analysis/calculate_polling_accuracy_v2.py
+      - name: Validate comparison tiers and reproducibility
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          base=Path('analysis')
+          rows=list(csv.DictReader((base/'2026_polling_errors_provisional_v2.csv').open()))
+          a=list(csv.DictReader((base/'2026_poll_selection_audit_v2.csv').open()))
+          s=json.loads((base/'2026_polling_accuracy_summary_v2.json').read_text())
+          assert len(rows)==470 and len({r['race_id'] for r in rows})==470
+          assert sum(s['statuses'].values())==470
+          assert s['late_release_questions_added_to_input']>=1
+          assert any(r['record_id'].startswith('late:') for r in a)
+          for r in rows:
+              if r['status'] not in ('provisional_comparison','single_pollster_comparison'):
+                  assert r['signed_error_pp']==''
+              if r['signed_error_pp']!='':
+                  assert abs(float(r['signed_error_pp']))<=200
+          print('validated 470 race rows, tiered comparisons, and late source audit')
+          PY
+      - name: Commit versioned results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add analysis/2026_race_polling_averages_v2.csv analysis/2026_polling_errors_provisional_v2.csv analysis/2026_poll_selection_audit_v2.csv analysis/2026_polling_accuracy_summary_v2.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'analysis: update Nov 1-2 final polling and error sensitivities'
+            git push
+          fi
