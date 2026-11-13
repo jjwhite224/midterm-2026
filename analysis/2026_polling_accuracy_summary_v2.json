@@ -1,0 +1,80 @@
+{
+  "as_of_results": "2026-11-13T01:15:41.366889+00:00",
+  "source_status": "unofficial",
+  "poll_window_start": "2026-10-04",
+  "poll_window_end": "2026-11-02",
+  "final_release_candidates_reviewed": 16,
+  "late_release_questions_added_to_input": 16,
+  "late_release_question_selections": 15,
+  "assumption": "equal weight per unique poll; LV preferred else RV else adults; two-party-normalized margins",
+  "minimum_distinct_pollsters": 2,
+  "races_total": 470,
+  "polled_races_in_original_archive": 146,
+  "races_with_original_or_curated_polls": 148,
+  "statuses": {
+    "result_not_comparable": 45,
+    "no_eligible_polls": 376,
+    "single_pollster_comparison": 27,
+    "provisional_comparison": 22
+  },
+  "selected_questions": 174,
+  "selection_reasons": {
+    "outside_final_30_day_window": 1031,
+    "ranked_choice_variant": 10,
+    "candidate": 174,
+    "candidate_matchup_mismatch": 14,
+    "partisan_or_internal_flag": 102,
+    "result_missing_unique_major_party_candidates": 10,
+    "population_not_preferred": 20,
+    "result_significant_other_or_nonpartisan_vote": 3,
+    "same_pollster_same_end_date_review": 2,
+    "same_survey_question_variant": 5,
+    "missing_unique_D_R_answers": 2
+  },
+  "national": {
+    "all": {
+      "eligible_races": 22,
+      "mean_signed_error_pp": 6.27626999822692,
+      "median_signed_error_pp": 6.4500154212644,
+      "mean_absolute_error_pp": 6.27626999822692,
+      "races_understating_democrats": 22,
+      "races_understating_republicans": 0,
+      "ties": 0
+    },
+    "house": {
+      "eligible_races": 6,
+      "mean_signed_error_pp": 8.18466476412486,
+      "median_signed_error_pp": 8.75171801012203,
+      "mean_absolute_error_pp": 8.18466476412486,
+      "races_understating_democrats": 6,
+      "races_understating_republicans": 0,
+      "ties": 0
+    },
+    "senate": {
+      "eligible_races": 16,
+      "mean_signed_error_pp": 5.560621961015191,
+      "median_signed_error_pp": 5.508993930956908,
+      "mean_absolute_error_pp": 5.560621961015191,
+      "races_understating_democrats": 16,
+      "races_understating_republicans": 0,
+      "ties": 0
+    },
+    "exploratory_including_single_pollster": {
+      "eligible_races": 49,
+      "mean_signed_error_pp": 5.10970859048664,
+      "median_signed_error_pp": 4.866295502837772,
+      "mean_absolute_error_pp": 6.182991121893054,
+      "races_understating_democrats": 41,
+      "races_understating_republicans": 8,
+      "caution": "Sensitivity analysis only. Single-pollster races are not robust multi-poll estimates."
+    }
+  },
+  "limitations": [
+    "Results are provisional and not certified.",
+    "The Nov 1 archived collection is supplemented by Nov 1\u20132 pollster releases, with cross-source deduplication by pollster and date.",
+    "Candidate name aliases and unusual matchups are excluded conservatively.",
+    "Self-selected polled districts are not representative of all House districts.",
+    "No causal claim about polling weighting is supported by these observational errors.",
+    "Do not present these numbers as final election-polling accuracy."
+  ]
+}
