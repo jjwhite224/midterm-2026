@@ -1,0 +1,3230 @@
+{
+  "previous_collection": "2026-11-05T22:46:52.225938+00:00",
+  "current_collection": "2026-11-13T01:15:41.366889+00:00",
+  "previous_source_updated": {
+    "house": "2026-11-05T22:46:30.355Z",
+    "senate": "2026-11-05T22:46:31.672Z"
+  },
+  "current_source_updated": {
+    "house": "2026-11-13T01:15:23.325Z",
+    "senate": "2026-11-13T01:15:26.137Z"
+  },
+  "previous": {
+    "races": 470,
+    "called_races": 437,
+    "uncalled_races": 33,
+    "reporting_under_95_percent": 133,
+    "reported_candidate_votes": 186415961
+  },
+  "current": {
+    "races": 470,
+    "called_races": 460,
+    "uncalled_races": 10,
+    "reporting_under_95_percent": 305,
+    "reported_candidate_votes": 194535463
+  },
+  "changed_race_count": 457,
+  "changed_races": [
+    {
+      "race": "house:AK-00",
+      "old_reporting_percent": 73.3,
+      "new_reporting_percent": 85.06,
+      "prior_votes": 213522,
+      "new_votes": 247789
+    },
+    {
+      "race": "house:AL-01",
+      "old_reporting_percent": 94.41,
+      "new_reporting_percent": 95.47,
+      "prior_votes": 231965,
+      "new_votes": 231965
+    },
+    {
+      "race": "house:AL-02",
+      "old_reporting_percent": 93.53,
+      "new_reporting_percent": 98.39,
+      "prior_votes": 231471,
+      "new_votes": 231471
+    },
+    {
+      "race": "house:AL-03",
+      "old_reporting_percent": 90.58,
+      "new_reporting_percent": 95.36,
+      "prior_votes": 221726,
+      "new_votes": 221726
+    },
+    {
+      "race": "house:AL-04",
+      "old_reporting_percent": 88.1,
+      "new_reporting_percent": 92.15,
+      "prior_votes": 213641,
+      "new_votes": 213641
+    },
+    {
+      "race": "house:AL-07",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 98.31,
+      "prior_votes": 251908,
+      "new_votes": 251908
+    },
+    {
+      "race": "house:AR-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 85.67,
+      "prior_votes": 194161,
+      "new_votes": 194298
+    },
+    {
+      "race": "house:AR-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.93,
+      "prior_votes": 250542,
+      "new_votes": 250548
+    },
+    {
+      "race": "house:AR-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.35,
+      "prior_votes": 231928,
+      "new_votes": 231938
+    },
+    {
+      "race": "house:AR-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 85.23,
+      "prior_votes": 200478,
+      "new_votes": 200566
+    },
+    {
+      "race": "house:AZ-01",
+      "old_reporting_percent": 91.46,
+      "new_reporting_percent": 80.06,
+      "prior_votes": 323625,
+      "new_votes": 354903
+    },
+    {
+      "race": "house:AZ-02",
+      "old_reporting_percent": 84.53,
+      "new_reporting_percent": 80.9,
+      "prior_votes": 297459,
+      "new_votes": 329857
+    },
+    {
+      "race": "house:AZ-03",
+      "old_reporting_percent": 34.75,
+      "new_reporting_percent": 80.49,
+      "prior_votes": 125374,
+      "new_votes": 150872
+    },
+    {
+      "race": "house:AZ-04",
+      "old_reporting_percent": 63.71,
+      "new_reporting_percent": 80.16,
+      "prior_votes": 226383,
+      "new_votes": 255611
+    },
+    {
+      "race": "house:AZ-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 80.86,
+      "prior_votes": 281044,
+      "new_votes": 325574
+    },
+    {
+      "race": "house:AZ-06",
+      "old_reporting_percent": 87.02,
+      "new_reporting_percent": 83.94,
+      "prior_votes": 308147,
+      "new_votes": 359213
+    },
+    {
+      "race": "house:AZ-07",
+      "old_reporting_percent": 45.53,
+      "new_reporting_percent": 83.15,
+      "prior_votes": 162870,
+      "new_votes": 206257
+    },
+    {
+      "race": "house:AZ-08",
+      "old_reporting_percent": 75.55,
+      "new_reporting_percent": 79.99,
+      "prior_votes": 265740,
+      "new_votes": 287827
+    },
+    {
+      "race": "house:AZ-09",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 74.36,
+      "prior_votes": 246806,
+      "new_votes": 289987
+    },
+    {
+      "race": "house:CA-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 83.53,
+      "prior_votes": 155260,
+      "new_votes": 252962
+    },
+    {
+      "race": "house:CA-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 81.76,
+      "prior_votes": 161641,
+      "new_votes": 281248
+    },
+    {
+      "race": "house:CA-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 81.53,
+      "prior_votes": 167954,
+      "new_votes": 270270
+    },
+    {
+      "race": "house:CA-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 72.17,
+      "prior_votes": 119887,
+      "new_votes": 202356
+    },
+    {
+      "race": "house:CA-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 84.14,
+      "prior_votes": 185858,
+      "new_votes": 262147
+    },
+    {
+      "race": "house:CA-06",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 80.8,
+      "prior_votes": 150875,
+      "new_votes": 241015
+    },
+    {
+      "race": "house:CA-07",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 81.32,
+      "prior_votes": 134846,
+      "new_votes": 233256
+    },
+    {
+      "race": "house:CA-08",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 95.28,
+      "prior_votes": 173798,
+      "new_votes": 255739
+    },
+    {
+      "race": "house:CA-09",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.24,
+      "prior_votes": 118891,
+      "new_votes": 209919
+    },
+    {
+      "race": "house:CA-10",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.12,
+      "prior_votes": 190983,
+      "new_votes": 302520
+    },
+    {
+      "race": "house:CA-11",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.66,
+      "prior_votes": 176470,
+      "new_votes": 300795
+    },
+    {
+      "race": "house:CA-12",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 84.34,
+      "prior_votes": 135621,
+      "new_votes": 250333
+    },
+    {
+      "race": "house:CA-13",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 89.78,
+      "prior_votes": 94941,
+      "new_votes": 155283
+    },
+    {
+      "race": "house:CA-14",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 86.49,
+      "prior_votes": 121367,
+      "new_votes": 208521
+    },
+    {
+      "race": "house:CA-15",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.47,
+      "prior_votes": 132478,
+      "new_votes": 244619
+    },
+    {
+      "race": "house:CA-16",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 89.99,
+      "prior_votes": 148251,
+      "new_votes": 277326
+    },
+    {
+      "race": "house:CA-17",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.89,
+      "prior_votes": 107592,
+      "new_votes": 208563
+    },
+    {
+      "race": "house:CA-18",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 95.01,
+      "prior_votes": 105461,
+      "new_votes": 189052
+    },
+    {
+      "race": "house:CA-19",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.76,
+      "prior_votes": 189694,
+      "new_votes": 300807
+    },
+    {
+      "race": "house:CA-20",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.57,
+      "prior_votes": 145328,
+      "new_votes": 238670
+    },
+    {
+      "race": "house:CA-21",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 83.53,
+      "prior_votes": 86606,
+      "new_votes": 139898
+    },
+    {
+      "race": "house:CA-22",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.23,
+      "prior_votes": 81817,
+      "new_votes": 141143
+    },
+    {
+      "race": "house:CA-23",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.61,
+      "prior_votes": 131773,
+      "new_votes": 209984
+    },
+    {
+      "race": "house:CA-24",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 89.69,
+      "prior_votes": 165667,
+      "new_votes": 273496
+    },
+    {
+      "race": "house:CA-25",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 75.8,
+      "prior_votes": 118534,
+      "new_votes": 186368
+    },
+    {
+      "race": "house:CA-26",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 89.69,
+      "prior_votes": 183372,
+      "new_votes": 261049
+    },
+    {
+      "race": "house:CA-27",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.96,
+      "prior_votes": 180402,
+      "new_votes": 230765
+    },
+    {
+      "race": "house:CA-28",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.46,
+      "prior_votes": 195055,
+      "new_votes": 258958
+    },
+    {
+      "race": "house:CA-29",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 95.02,
+      "prior_votes": 127317,
+      "new_votes": 173457
+    },
+    {
+      "race": "house:CA-30",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.8,
+      "prior_votes": 196370,
+      "new_votes": 257794
+    },
+    {
+      "race": "house:CA-31",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.52,
+      "prior_votes": 175946,
+      "new_votes": 236365
+    },
+    {
+      "race": "house:CA-32",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.21,
+      "prior_votes": 205968,
+      "new_votes": 269858
+    },
+    {
+      "race": "house:CA-33",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.6,
+      "prior_votes": 113650,
+      "new_votes": 199189
+    },
+    {
+      "race": "house:CA-34",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.38,
+      "prior_votes": 126164,
+      "new_votes": 172752
+    },
+    {
+      "race": "house:CA-35",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 114857,
+      "new_votes": 196550
+    },
+    {
+      "race": "house:CA-36",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.21,
+      "prior_votes": 234796,
+      "new_votes": 304160
+    },
+    {
+      "race": "house:CA-37",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.4,
+      "prior_votes": 134628,
+      "new_votes": 181518
+    },
+    {
+      "race": "house:CA-38",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.78,
+      "prior_votes": 163107,
+      "new_votes": 214384
+    },
+    {
+      "race": "house:CA-39",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 78.64,
+      "prior_votes": 82792,
+      "new_votes": 149966
+    },
+    {
+      "race": "house:CA-40",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 85.54,
+      "prior_votes": 139747,
+      "new_votes": 219403
+    },
+    {
+      "race": "house:CA-41",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.42,
+      "prior_votes": 190041,
+      "new_votes": 251547
+    },
+    {
+      "race": "house:CA-42",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.77,
+      "prior_votes": 206065,
+      "new_votes": 280709
+    },
+    {
+      "race": "house:CA-43",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.84,
+      "prior_votes": 136922,
+      "new_votes": 186571
+    },
+    {
+      "race": "house:CA-44",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.89,
+      "prior_votes": 133012,
+      "new_votes": 180571
+    },
+    {
+      "race": "house:CA-45",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.6,
+      "prior_votes": 187677,
+      "new_votes": 246376
+    },
+    {
+      "race": "house:CA-46",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 131551,
+      "new_votes": 193143
+    },
+    {
+      "race": "house:CA-47",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.53,
+      "prior_votes": 211442,
+      "new_votes": 282725
+    },
+    {
+      "race": "house:CA-48",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 80.65,
+      "prior_votes": 160570,
+      "new_votes": 245795
+    },
+    {
+      "race": "house:CA-49",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 88.43,
+      "prior_votes": 212049,
+      "new_votes": 299845
+    },
+    {
+      "race": "house:CA-50",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 88.24,
+      "prior_votes": 192876,
+      "new_votes": 283802
+    },
+    {
+      "race": "house:CA-51",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.27,
+      "prior_votes": 172878,
+      "new_votes": 264119
+    },
+    {
+      "race": "house:CA-52",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.7,
+      "prior_votes": 130688,
+      "new_votes": 200164
+    },
+    {
+      "race": "house:CO-01",
+      "old_reporting_percent": 69.35,
+      "new_reporting_percent": 90.58,
+      "prior_votes": 246036,
+      "new_votes": 303955
+    },
+    {
+      "race": "house:CO-02",
+      "old_reporting_percent": 94.08,
+      "new_reporting_percent": 93.55,
+      "prior_votes": 333774,
+      "new_votes": 366801
+    },
+    {
+      "race": "house:CO-03",
+      "old_reporting_percent": 92.28,
+      "new_reporting_percent": 91.44,
+      "prior_votes": 328026,
+      "new_votes": 332913
+    },
+    {
+      "race": "house:CO-04",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 91.26,
+      "prior_votes": 370839,
+      "new_votes": 381689
+    },
+    {
+      "race": "house:CO-05",
+      "old_reporting_percent": 78.27,
+      "new_reporting_percent": 94.75,
+      "prior_votes": 278287,
+      "new_votes": 307995
+    },
+    {
+      "race": "house:CO-06",
+      "old_reporting_percent": 71.26,
+      "new_reporting_percent": 92.43,
+      "prior_votes": 253076,
+      "new_votes": 296036
+    },
+    {
+      "race": "house:CO-07",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 95.61,
+      "prior_votes": 366341,
+      "new_votes": 376024
+    },
+    {
+      "race": "house:CO-08",
+      "old_reporting_percent": 77.38,
+      "new_reporting_percent": 97.72,
+      "prior_votes": 275046,
+      "new_votes": 286502
+    },
+    {
+      "race": "house:CT-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 79.63,
+      "prior_votes": 253106,
+      "new_votes": 253392
+    },
+    {
+      "race": "house:CT-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 82.98,
+      "prior_votes": 290048,
+      "new_votes": 292064
+    },
+    {
+      "race": "house:CT-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.61,
+      "prior_votes": 239697,
+      "new_votes": 247131
+    },
+    {
+      "race": "house:CT-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.79,
+      "prior_votes": 239984,
+      "new_votes": 240138
+    },
+    {
+      "race": "house:CT-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.89,
+      "prior_votes": 251826,
+      "new_votes": 253066
+    },
+    {
+      "race": "house:DE-00",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.54,
+      "prior_votes": 378433,
+      "new_votes": 378703
+    },
+    {
+      "race": "house:FL-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 85.72,
+      "prior_votes": 290474,
+      "new_votes": 291010
+    },
+    {
+      "race": "house:FL-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 87.23,
+      "prior_votes": 308760,
+      "new_votes": 309440
+    },
+    {
+      "race": "house:FL-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 84.5,
+      "prior_votes": 299778,
+      "new_votes": 300422
+    },
+    {
+      "race": "house:FL-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.12,
+      "prior_votes": 300932,
+      "new_votes": 301128
+    },
+    {
+      "race": "house:FL-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.39,
+      "prior_votes": 333038,
+      "new_votes": 334061
+    },
+    {
+      "race": "house:FL-06",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.88,
+      "prior_votes": 331241,
+      "new_votes": 331812
+    },
+    {
+      "race": "house:FL-07",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.18,
+      "prior_votes": 324157,
+      "new_votes": 324454
+    },
+    {
+      "race": "house:FL-08",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 79.27,
+      "prior_votes": 319449,
+      "new_votes": 319595
+    },
+    {
+      "race": "house:FL-09",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 82.76,
+      "prior_votes": 284871,
+      "new_votes": 285122
+    },
+    {
+      "race": "house:FL-11",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 69.92,
+      "prior_votes": 365581,
+      "new_votes": 365755
+    },
+    {
+      "race": "house:FL-12",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.08,
+      "prior_votes": 285838,
+      "new_votes": 286094
+    },
+    {
+      "race": "house:FL-13",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 89.82,
+      "prior_votes": 313496,
+      "new_votes": 313669
+    },
+    {
+      "race": "house:FL-14",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.16,
+      "prior_votes": 299915,
+      "new_votes": 300545
+    },
+    {
+      "race": "house:FL-15",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.55,
+      "prior_votes": 300641,
+      "new_votes": 301357
+    },
+    {
+      "race": "house:FL-16",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.64,
+      "prior_votes": 342729,
+      "new_votes": 343045
+    },
+    {
+      "race": "house:FL-17",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 95.68,
+      "prior_votes": 357633,
+      "new_votes": 357875
+    },
+    {
+      "race": "house:FL-18",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.77,
+      "prior_votes": 273264,
+      "new_votes": 273579
+    },
+    {
+      "race": "house:FL-19",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.64,
+      "prior_votes": 325015,
+      "new_votes": 325240
+    },
+    {
+      "race": "house:FL-20",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.36,
+      "prior_votes": 245505,
+      "new_votes": 245706
+    },
+    {
+      "race": "house:FL-21",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.16,
+      "prior_votes": 340657,
+      "new_votes": 342181
+    },
+    {
+      "race": "house:FL-22",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.21,
+      "prior_votes": 294933,
+      "new_votes": 295116
+    },
+    {
+      "race": "house:FL-23",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.75,
+      "prior_votes": 258707,
+      "new_votes": 258967
+    },
+    {
+      "race": "house:FL-24",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.29,
+      "prior_votes": 204353,
+      "new_votes": 204854
+    },
+    {
+      "race": "house:FL-25",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.51,
+      "prior_votes": 280416,
+      "new_votes": 280895
+    },
+    {
+      "race": "house:FL-26",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.93,
+      "prior_votes": 229670,
+      "new_votes": 229804
+    },
+    {
+      "race": "house:FL-27",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.48,
+      "prior_votes": 247832,
+      "new_votes": 247966
+    },
+    {
+      "race": "house:FL-28",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.61,
+      "prior_votes": 236260,
+      "new_votes": 236376
+    },
+    {
+      "race": "house:GA-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 84.89,
+      "prior_votes": 272681,
+      "new_votes": 272875
+    },
+    {
+      "race": "house:GA-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 83.05,
+      "prior_votes": 243459,
+      "new_votes": 244060
+    },
+    {
+      "race": "house:GA-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.28,
+      "prior_votes": 321689,
+      "new_votes": 321867
+    },
+    {
+      "race": "house:GA-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 89.37,
+      "prior_votes": 262763,
+      "new_votes": 262984
+    },
+    {
+      "race": "house:GA-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 87.66,
+      "prior_votes": 302234,
+      "new_votes": 304784
+    },
+    {
+      "race": "house:GA-06",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.61,
+      "prior_votes": 324904,
+      "new_votes": 326403
+    },
+    {
+      "race": "house:GA-07",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.06,
+      "prior_votes": 340862,
+      "new_votes": 341081
+    },
+    {
+      "race": "house:GA-08",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 86.28,
+      "prior_votes": 264982,
+      "new_votes": 265176
+    },
+    {
+      "race": "house:GA-09",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.59,
+      "prior_votes": 308412,
+      "new_votes": 308639
+    },
+    {
+      "race": "house:GA-10",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.9,
+      "prior_votes": 325175,
+      "new_votes": 325951
+    },
+    {
+      "race": "house:GA-11",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.39,
+      "prior_votes": 329021,
+      "new_votes": 329197
+    },
+    {
+      "race": "house:GA-12",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 85.07,
+      "prior_votes": 270343,
+      "new_votes": 270517
+    },
+    {
+      "race": "house:GA-13",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.95,
+      "prior_votes": 310587,
+      "new_votes": 310742
+    },
+    {
+      "race": "house:GA-14",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 88.79,
+      "prior_votes": 287088,
+      "new_votes": 287276
+    },
+    {
+      "race": "house:HI-01",
+      "old_reporting_percent": 75.18,
+      "new_reporting_percent": 80.38,
+      "prior_votes": 175575,
+      "new_votes": 176004
+    },
+    {
+      "race": "house:HI-02",
+      "old_reporting_percent": 86.95,
+      "new_reporting_percent": 87.24,
+      "prior_votes": 194717,
+      "new_votes": 195372
+    },
+    {
+      "race": "house:IA-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 346401,
+      "new_votes": 346401
+    },
+    {
+      "race": "house:IA-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 353527,
+      "new_votes": 353527
+    },
+    {
+      "race": "house:IA-04",
+      "old_reporting_percent": 88.63,
+      "new_reporting_percent": 93.41,
+      "prior_votes": 303137,
+      "new_votes": 303137
+    },
+    {
+      "race": "house:ID-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.11,
+      "prior_votes": 378967,
+      "new_votes": 381356
+    },
+    {
+      "race": "house:ID-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.31,
+      "prior_votes": 330398,
+      "new_votes": 330667
+    },
+    {
+      "race": "house:IL-01",
+      "old_reporting_percent": 83.91,
+      "new_reporting_percent": 90.22,
+      "prior_votes": 219894,
+      "new_votes": 239375
+    },
+    {
+      "race": "house:IL-02",
+      "old_reporting_percent": 80.02,
+      "new_reporting_percent": 93.94,
+      "prior_votes": 209240,
+      "new_votes": 216460
+    },
+    {
+      "race": "house:IL-03",
+      "old_reporting_percent": 68.8,
+      "new_reporting_percent": 85.3,
+      "prior_votes": 180787,
+      "new_votes": 202029
+    },
+    {
+      "race": "house:IL-04",
+      "old_reporting_percent": 57.53,
+      "new_reporting_percent": 83.9,
+      "prior_votes": 152234,
+      "new_votes": 161189
+    },
+    {
+      "race": "house:IL-05",
+      "old_reporting_percent": 93.45,
+      "new_reporting_percent": 99,
+      "prior_votes": 241897,
+      "new_votes": 275402
+    },
+    {
+      "race": "house:IL-06",
+      "old_reporting_percent": 91.15,
+      "new_reporting_percent": 85.19,
+      "prior_votes": 253686,
+      "new_votes": 267342
+    },
+    {
+      "race": "house:IL-07",
+      "old_reporting_percent": 77.36,
+      "new_reporting_percent": 87.74,
+      "prior_votes": 183079,
+      "new_votes": 205453
+    },
+    {
+      "race": "house:IL-08",
+      "old_reporting_percent": 75.33,
+      "new_reporting_percent": 83.33,
+      "prior_votes": 208816,
+      "new_votes": 215532
+    },
+    {
+      "race": "house:IL-09",
+      "old_reporting_percent": 93.72,
+      "new_reporting_percent": 99,
+      "prior_votes": 242658,
+      "new_votes": 261276
+    },
+    {
+      "race": "house:IL-10",
+      "old_reporting_percent": 85.85,
+      "new_reporting_percent": 73.35,
+      "prior_votes": 230441,
+      "new_votes": 240122
+    },
+    {
+      "race": "house:IL-11",
+      "old_reporting_percent": 95.97,
+      "new_reporting_percent": 80.35,
+      "prior_votes": 263975,
+      "new_votes": 266231
+    },
+    {
+      "race": "house:IL-12",
+      "old_reporting_percent": 90.54,
+      "new_reporting_percent": 90.11,
+      "prior_votes": 279419,
+      "new_votes": 281656
+    },
+    {
+      "race": "house:IL-13",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.94,
+      "prior_votes": 251178,
+      "new_votes": 252045
+    },
+    {
+      "race": "house:IL-14",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.67,
+      "prior_votes": 245166,
+      "new_votes": 245166
+    },
+    {
+      "race": "house:IL-15",
+      "old_reporting_percent": 93.98,
+      "new_reporting_percent": 89.15,
+      "prior_votes": 288061,
+      "new_votes": 288061
+    },
+    {
+      "race": "house:IL-16",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 91.93,
+      "prior_votes": 294511,
+      "new_votes": 294899
+    },
+    {
+      "race": "house:IL-17",
+      "old_reporting_percent": 84.52,
+      "new_reporting_percent": 91.31,
+      "prior_votes": 235467,
+      "new_votes": 236083
+    },
+    {
+      "race": "house:IN-01",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 99,
+      "prior_votes": 201396,
+      "new_votes": 223232
+    },
+    {
+      "race": "house:IN-02",
+      "old_reporting_percent": 88.42,
+      "new_reporting_percent": 99,
+      "prior_votes": 183220,
+      "new_votes": 192751
+    },
+    {
+      "race": "house:IN-03",
+      "old_reporting_percent": 96.1,
+      "new_reporting_percent": 99,
+      "prior_votes": 199985,
+      "new_votes": 200025
+    },
+    {
+      "race": "house:IN-04",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 99,
+      "prior_votes": 212221,
+      "new_votes": 212403
+    },
+    {
+      "race": "house:IN-05",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 99,
+      "prior_votes": 260318,
+      "new_votes": 260328
+    },
+    {
+      "race": "house:IN-06",
+      "old_reporting_percent": 96.8,
+      "new_reporting_percent": 99,
+      "prior_votes": 201646,
+      "new_votes": 201651
+    },
+    {
+      "race": "house:IN-08",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 99,
+      "prior_votes": 212534,
+      "new_votes": 212573
+    },
+    {
+      "race": "house:IN-09",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 99,
+      "prior_votes": 224789,
+      "new_votes": 224796
+    },
+    {
+      "race": "house:KS-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.28,
+      "prior_votes": 252934,
+      "new_votes": 253318
+    },
+    {
+      "race": "house:KS-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.3,
+      "prior_votes": 245048,
+      "new_votes": 245721
+    },
+    {
+      "race": "house:KS-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 337037,
+      "new_votes": 337509
+    },
+    {
+      "race": "house:KS-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.87,
+      "prior_votes": 259475,
+      "new_votes": 259910
+    },
+    {
+      "race": "house:KY-01",
+      "old_reporting_percent": 83.22,
+      "new_reporting_percent": 82.45,
+      "prior_votes": 227902,
+      "new_votes": 227902
+    },
+    {
+      "race": "house:KY-02",
+      "old_reporting_percent": 83.98,
+      "new_reporting_percent": 85.46,
+      "prior_votes": 231057,
+      "new_votes": 231057
+    },
+    {
+      "race": "house:KY-03",
+      "old_reporting_percent": 86.82,
+      "new_reporting_percent": 86.5,
+      "prior_votes": 248492,
+      "new_votes": 248492
+    },
+    {
+      "race": "house:KY-04",
+      "old_reporting_percent": 91.94,
+      "new_reporting_percent": 91.07,
+      "prior_votes": 253820,
+      "new_votes": 253820
+    },
+    {
+      "race": "house:KY-05",
+      "old_reporting_percent": 72.95,
+      "new_reporting_percent": 78.65,
+      "prior_votes": 196506,
+      "new_votes": 196506
+    },
+    {
+      "race": "house:KY-06",
+      "old_reporting_percent": 93.96,
+      "new_reporting_percent": 88.27,
+      "prior_votes": 263353,
+      "new_votes": 263353
+    },
+    {
+      "race": "house:LA-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.95,
+      "prior_votes": 263373,
+      "new_votes": 263391
+    },
+    {
+      "race": "house:LA-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.7,
+      "prior_votes": 240582,
+      "new_votes": 240616
+    },
+    {
+      "race": "house:LA-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.3,
+      "prior_votes": 234994,
+      "new_votes": 234995
+    },
+    {
+      "race": "house:LA-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.42,
+      "prior_votes": 230339,
+      "new_votes": 230359
+    },
+    {
+      "race": "house:LA-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.76,
+      "prior_votes": 227917,
+      "new_votes": 227923
+    },
+    {
+      "race": "house:LA-06",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.06,
+      "prior_votes": 261951,
+      "new_votes": 261963
+    },
+    {
+      "race": "house:MA-01",
+      "old_reporting_percent": 83.13,
+      "new_reporting_percent": 84.43,
+      "prior_votes": 270709,
+      "new_votes": 271347
+    },
+    {
+      "race": "house:MA-02",
+      "old_reporting_percent": 56.19,
+      "new_reporting_percent": 74.11,
+      "prior_votes": 179563,
+      "new_votes": 198782
+    },
+    {
+      "race": "house:MA-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 77.3,
+      "prior_votes": 258064,
+      "new_votes": 260190
+    },
+    {
+      "race": "house:MA-04",
+      "old_reporting_percent": 90.13,
+      "new_reporting_percent": 85.29,
+      "prior_votes": 290237,
+      "new_votes": 290389
+    },
+    {
+      "race": "house:MA-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 75.05,
+      "prior_votes": 206925,
+      "new_votes": 206925
+    },
+    {
+      "race": "house:MA-06",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 85.96,
+      "prior_votes": 325356,
+      "new_votes": 325452
+    },
+    {
+      "race": "house:MA-07",
+      "old_reporting_percent": 54.33,
+      "new_reporting_percent": 71.78,
+      "prior_votes": 158384,
+      "new_votes": 158384
+    },
+    {
+      "race": "house:MA-08",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 83.4,
+      "prior_votes": 281804,
+      "new_votes": 281804
+    },
+    {
+      "race": "house:MA-09",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 93.02,
+      "prior_votes": 350869,
+      "new_votes": 350869
+    },
+    {
+      "race": "house:MD-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 85.61,
+      "prior_votes": 283069,
+      "new_votes": 309647
+    },
+    {
+      "race": "house:MD-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 86.57,
+      "prior_votes": 235561,
+      "new_votes": 283491
+    },
+    {
+      "race": "house:MD-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 89.46,
+      "prior_votes": 265716,
+      "new_votes": 306264
+    },
+    {
+      "race": "house:MD-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 82.29,
+      "prior_votes": 167289,
+      "new_votes": 192909
+    },
+    {
+      "race": "house:MD-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 87.56,
+      "prior_votes": 277251,
+      "new_votes": 312495
+    },
+    {
+      "race": "house:MD-06",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 83.79,
+      "prior_votes": 239531,
+      "new_votes": 265202
+    },
+    {
+      "race": "house:MD-07",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 77.73,
+      "prior_votes": 168285,
+      "new_votes": 206230
+    },
+    {
+      "race": "house:MD-08",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 81.27,
+      "prior_votes": 241919,
+      "new_votes": 259936
+    },
+    {
+      "race": "house:ME-01",
+      "old_reporting_percent": 97.15,
+      "new_reporting_percent": 95.89,
+      "prior_votes": 375045,
+      "new_votes": 375045
+    },
+    {
+      "race": "house:ME-02",
+      "old_reporting_percent": 94.12,
+      "new_reporting_percent": 95.54,
+      "prior_votes": 335145,
+      "new_votes": 335380
+    },
+    {
+      "race": "house:MI-01",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 91.03,
+      "prior_votes": 403862,
+      "new_votes": 404935
+    },
+    {
+      "race": "house:MI-02",
+      "old_reporting_percent": 91.8,
+      "new_reporting_percent": 91.61,
+      "prior_votes": 357646,
+      "new_votes": 358638
+    },
+    {
+      "race": "house:MI-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 369844,
+      "new_votes": 369844
+    },
+    {
+      "race": "house:MI-04",
+      "old_reporting_percent": 96.82,
+      "new_reporting_percent": 97.89,
+      "prior_votes": 370173,
+      "new_votes": 371687
+    },
+    {
+      "race": "house:MI-05",
+      "old_reporting_percent": 86.57,
+      "new_reporting_percent": 90.75,
+      "prior_votes": 336481,
+      "new_votes": 337594
+    },
+    {
+      "race": "house:MI-06",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 98.75,
+      "prior_votes": 390217,
+      "new_votes": 390218
+    },
+    {
+      "race": "house:MI-07",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 98.36,
+      "prior_votes": 397376,
+      "new_votes": 397381
+    },
+    {
+      "race": "house:MI-08",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.29,
+      "prior_votes": 352889,
+      "new_votes": 352889
+    },
+    {
+      "race": "house:MI-09",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 94.45,
+      "prior_votes": 395795,
+      "new_votes": 395796
+    },
+    {
+      "race": "house:MI-10",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.75,
+      "prior_votes": 359167,
+      "new_votes": 359167
+    },
+    {
+      "race": "house:MI-11",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.59,
+      "prior_votes": 392301,
+      "new_votes": 392301
+    },
+    {
+      "race": "house:MI-12",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.82,
+      "prior_votes": 325927,
+      "new_votes": 325927
+    },
+    {
+      "race": "house:MI-13",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.68,
+      "prior_votes": 275192,
+      "new_votes": 275192
+    },
+    {
+      "race": "house:MN-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.26,
+      "prior_votes": 326182,
+      "new_votes": 326179
+    },
+    {
+      "race": "house:MN-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 375225,
+      "new_votes": 375241
+    },
+    {
+      "race": "house:MN-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 377997,
+      "new_votes": 377996
+    },
+    {
+      "race": "house:MN-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 336244,
+      "new_votes": 336243
+    },
+    {
+      "race": "house:MN-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 343508,
+      "new_votes": 343507
+    },
+    {
+      "race": "house:MN-06",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 367344,
+      "new_votes": 367341
+    },
+    {
+      "race": "house:MN-07",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.32,
+      "prior_votes": 330817,
+      "new_votes": 330858
+    },
+    {
+      "race": "house:MN-08",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.11,
+      "prior_votes": 359455,
+      "new_votes": 359453
+    },
+    {
+      "race": "house:MO-03",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 99,
+      "prior_votes": 282210,
+      "new_votes": 282254
+    },
+    {
+      "race": "house:MO-04",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 99,
+      "prior_votes": 247120,
+      "new_votes": 250742
+    },
+    {
+      "race": "house:MO-06",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 99,
+      "prior_votes": 257840,
+      "new_votes": 257865
+    },
+    {
+      "race": "house:MO-07",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 99,
+      "prior_votes": 253409,
+      "new_votes": 254740
+    },
+    {
+      "race": "house:MO-08",
+      "old_reporting_percent": 94.51,
+      "new_reporting_percent": 99,
+      "prior_votes": 225424,
+      "new_votes": 225436
+    },
+    {
+      "race": "house:MS-01",
+      "old_reporting_percent": 98.79,
+      "new_reporting_percent": 99,
+      "prior_votes": 239517,
+      "new_votes": 241741
+    },
+    {
+      "race": "house:MS-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.02,
+      "prior_votes": 244017,
+      "new_votes": 246136
+    },
+    {
+      "race": "house:MS-03",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 99,
+      "prior_votes": 250781,
+      "new_votes": 255517
+    },
+    {
+      "race": "house:MS-04",
+      "old_reporting_percent": 88.75,
+      "new_reporting_percent": 95.02,
+      "prior_votes": 214643,
+      "new_votes": 218764
+    },
+    {
+      "race": "house:MT-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 89.9,
+      "prior_votes": 262219,
+      "new_votes": 267562
+    },
+    {
+      "race": "house:MT-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 81.84,
+      "prior_votes": 218777,
+      "new_votes": 220611
+    },
+    {
+      "race": "house:NC-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.74,
+      "prior_votes": 312703,
+      "new_votes": 314158
+    },
+    {
+      "race": "house:NC-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 326962,
+      "new_votes": 328289
+    },
+    {
+      "race": "house:NC-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 89.4,
+      "prior_votes": 237904,
+      "new_votes": 239690
+    },
+    {
+      "race": "house:NC-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.53,
+      "prior_votes": 358015,
+      "new_votes": 359659
+    },
+    {
+      "race": "house:NC-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 87.65,
+      "prior_votes": 285498,
+      "new_votes": 286820
+    },
+    {
+      "race": "house:NC-06",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.49,
+      "prior_votes": 273738,
+      "new_votes": 274835
+    },
+    {
+      "race": "house:NC-07",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.22,
+      "prior_votes": 320680,
+      "new_votes": 322315
+    },
+    {
+      "race": "house:NC-08",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.55,
+      "prior_votes": 291899,
+      "new_votes": 293268
+    },
+    {
+      "race": "house:NC-09",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.94,
+      "prior_votes": 271399,
+      "new_votes": 272682
+    },
+    {
+      "race": "house:NC-10",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 95.08,
+      "prior_votes": 293976,
+      "new_votes": 295414
+    },
+    {
+      "race": "house:NC-11",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.75,
+      "prior_votes": 342409,
+      "new_votes": 343555
+    },
+    {
+      "race": "house:NC-12",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.64,
+      "prior_votes": 270536,
+      "new_votes": 271812
+    },
+    {
+      "race": "house:NC-13",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.64,
+      "prior_votes": 316789,
+      "new_votes": 318261
+    },
+    {
+      "race": "house:NC-14",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.51,
+      "prior_votes": 288361,
+      "new_votes": 289290
+    },
+    {
+      "race": "house:ND-00",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 234595,
+      "new_votes": 234595
+    },
+    {
+      "race": "house:NE-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 248343,
+      "new_votes": 254139
+    },
+    {
+      "race": "house:NE-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.8,
+      "prior_votes": 245938,
+      "new_votes": 253836
+    },
+    {
+      "race": "house:NE-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.5,
+      "prior_votes": 244023,
+      "new_votes": 245023
+    },
+    {
+      "race": "house:NH-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.3,
+      "prior_votes": 317232,
+      "new_votes": 317232
+    },
+    {
+      "race": "house:NH-02",
+      "old_reporting_percent": 92.37,
+      "new_reporting_percent": 90.88,
+      "prior_votes": 318014,
+      "new_votes": 318014
+    },
+    {
+      "race": "house:NJ-01",
+      "old_reporting_percent": 89.04,
+      "new_reporting_percent": 82.59,
+      "prior_votes": 256427,
+      "new_votes": 258591
+    },
+    {
+      "race": "house:NJ-02",
+      "old_reporting_percent": 85.34,
+      "new_reporting_percent": 84.96,
+      "prior_votes": 269597,
+      "new_votes": 270977
+    },
+    {
+      "race": "house:NJ-03",
+      "old_reporting_percent": 92.52,
+      "new_reporting_percent": 82.51,
+      "prior_votes": 275426,
+      "new_votes": 276997
+    },
+    {
+      "race": "house:NJ-04",
+      "old_reporting_percent": 79.88,
+      "new_reporting_percent": 83.81,
+      "prior_votes": 264750,
+      "new_votes": 267734
+    },
+    {
+      "race": "house:NJ-05",
+      "old_reporting_percent": 89.17,
+      "new_reporting_percent": 81.39,
+      "prior_votes": 270025,
+      "new_votes": 272460
+    },
+    {
+      "race": "house:NJ-06",
+      "old_reporting_percent": 69.94,
+      "new_reporting_percent": 81.62,
+      "prior_votes": 209330,
+      "new_votes": 214300
+    },
+    {
+      "race": "house:NJ-07",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 88.8,
+      "prior_votes": 328073,
+      "new_votes": 334791
+    },
+    {
+      "race": "house:NJ-08",
+      "old_reporting_percent": 43.55,
+      "new_reporting_percent": 66.88,
+      "prior_votes": 123358,
+      "new_votes": 127376
+    },
+    {
+      "race": "house:NJ-09",
+      "old_reporting_percent": 60.5,
+      "new_reporting_percent": 77.07,
+      "prior_votes": 184767,
+      "new_votes": 185651
+    },
+    {
+      "race": "house:NJ-10",
+      "old_reporting_percent": 68.88,
+      "new_reporting_percent": 75.8,
+      "prior_votes": 176473,
+      "new_votes": 182398
+    },
+    {
+      "race": "house:NJ-11",
+      "old_reporting_percent": 93.37,
+      "new_reporting_percent": 79.81,
+      "prior_votes": 277040,
+      "new_votes": 280749
+    },
+    {
+      "race": "house:NJ-12",
+      "old_reporting_percent": 81.79,
+      "new_reporting_percent": 83.32,
+      "prior_votes": 231685,
+      "new_votes": 238822
+    },
+    {
+      "race": "house:NM-01",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 90.57,
+      "prior_votes": 282002,
+      "new_votes": 282636
+    },
+    {
+      "race": "house:NM-02",
+      "old_reporting_percent": 78.79,
+      "new_reporting_percent": 88.41,
+      "prior_votes": 210524,
+      "new_votes": 210628
+    },
+    {
+      "race": "house:NM-03",
+      "old_reporting_percent": 84.3,
+      "new_reporting_percent": 86.41,
+      "prior_votes": 228948,
+      "new_votes": 229408
+    },
+    {
+      "race": "house:NV-01",
+      "old_reporting_percent": 73.53,
+      "new_reporting_percent": 89.12,
+      "prior_votes": 223575,
+      "new_votes": 238045
+    },
+    {
+      "race": "house:NV-02",
+      "old_reporting_percent": 95.81,
+      "new_reporting_percent": 91.49,
+      "prior_votes": 304506,
+      "new_votes": 321170
+    },
+    {
+      "race": "house:NV-03",
+      "old_reporting_percent": 84.74,
+      "new_reporting_percent": 89.11,
+      "prior_votes": 259868,
+      "new_votes": 270960
+    },
+    {
+      "race": "house:NV-04",
+      "old_reporting_percent": 78.74,
+      "new_reporting_percent": 81.26,
+      "prior_votes": 239373,
+      "new_votes": 252189
+    },
+    {
+      "race": "house:NY-01",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 83.94,
+      "prior_votes": 298585,
+      "new_votes": 298585
+    },
+    {
+      "race": "house:NY-02",
+      "old_reporting_percent": 80.68,
+      "new_reporting_percent": 83.67,
+      "prior_votes": 243152,
+      "new_votes": 243152
+    },
+    {
+      "race": "house:NY-03",
+      "old_reporting_percent": 88.46,
+      "new_reporting_percent": 82.04,
+      "prior_votes": 257896,
+      "new_votes": 257896
+    },
+    {
+      "race": "house:NY-04",
+      "old_reporting_percent": 90.66,
+      "new_reporting_percent": 81.71,
+      "prior_votes": 259504,
+      "new_votes": 259504
+    },
+    {
+      "race": "house:NY-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 82.58,
+      "prior_votes": 161418,
+      "new_votes": 161418
+    },
+    {
+      "race": "house:NY-06",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 82.58,
+      "prior_votes": 134749,
+      "new_votes": 134749
+    },
+    {
+      "race": "house:NY-07",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 82.15,
+      "prior_votes": 162218,
+      "new_votes": 162218
+    },
+    {
+      "race": "house:NY-08",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 81.84,
+      "prior_votes": 162404,
+      "new_votes": 162404
+    },
+    {
+      "race": "house:NY-09",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 81.84,
+      "prior_votes": 178465,
+      "new_votes": 178465
+    },
+    {
+      "race": "house:NY-10",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 82.22,
+      "prior_votes": 201120,
+      "new_votes": 201120
+    },
+    {
+      "race": "house:NY-11",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 80.18,
+      "prior_votes": 181316,
+      "new_votes": 181316
+    },
+    {
+      "race": "house:NY-12",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 82.72,
+      "prior_votes": 250781,
+      "new_votes": 250781
+    },
+    {
+      "race": "house:NY-13",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 81.94,
+      "prior_votes": 161117,
+      "new_votes": 161117
+    },
+    {
+      "race": "house:NY-14",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 80.43,
+      "prior_votes": 136956,
+      "new_votes": 136956
+    },
+    {
+      "race": "house:NY-15",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 78.32,
+      "prior_votes": 122169,
+      "new_votes": 122169
+    },
+    {
+      "race": "house:NY-16",
+      "old_reporting_percent": 42.97,
+      "new_reporting_percent": 89.42,
+      "prior_votes": 107961,
+      "new_votes": 229646
+    },
+    {
+      "race": "house:NY-17",
+      "old_reporting_percent": 93.92,
+      "new_reporting_percent": 92.49,
+      "prior_votes": 268687,
+      "new_votes": 315743
+    },
+    {
+      "race": "house:NY-18",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 87.37,
+      "prior_votes": 268816,
+      "new_votes": 268816
+    },
+    {
+      "race": "house:NY-19",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 88.7,
+      "prior_votes": 291812,
+      "new_votes": 292092
+    },
+    {
+      "race": "house:NY-20",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.39,
+      "prior_votes": 285582,
+      "new_votes": 287912
+    },
+    {
+      "race": "house:NY-21",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 88.55,
+      "prior_votes": 275177,
+      "new_votes": 277651
+    },
+    {
+      "race": "house:NY-22",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.66,
+      "prior_votes": 273507,
+      "new_votes": 275957
+    },
+    {
+      "race": "house:NY-23",
+      "old_reporting_percent": 97.17,
+      "new_reporting_percent": 88.82,
+      "prior_votes": 301707,
+      "new_votes": 302938
+    },
+    {
+      "race": "house:NY-24",
+      "old_reporting_percent": 90.77,
+      "new_reporting_percent": 88.01,
+      "prior_votes": 283863,
+      "new_votes": 283863
+    },
+    {
+      "race": "house:NY-25",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 88.49,
+      "prior_votes": 280606,
+      "new_votes": 280606
+    },
+    {
+      "race": "house:NY-26",
+      "old_reporting_percent": 90.92,
+      "new_reporting_percent": 89.91,
+      "prior_votes": 242613,
+      "new_votes": 249104
+    },
+    {
+      "race": "house:OH-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.17,
+      "prior_votes": 324471,
+      "new_votes": 324471
+    },
+    {
+      "race": "house:OH-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.57,
+      "prior_votes": 273049,
+      "new_votes": 273049
+    },
+    {
+      "race": "house:OH-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.16,
+      "prior_votes": 300332,
+      "new_votes": 300332
+    },
+    {
+      "race": "house:OH-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 95.59,
+      "prior_votes": 305586,
+      "new_votes": 305586
+    },
+    {
+      "race": "house:OH-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.5,
+      "prior_votes": 301101,
+      "new_votes": 301101
+    },
+    {
+      "race": "house:OH-06",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 89.96,
+      "prior_votes": 270985,
+      "new_votes": 270985
+    },
+    {
+      "race": "house:OH-07",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.37,
+      "prior_votes": 329033,
+      "new_votes": 329033
+    },
+    {
+      "race": "house:OH-08",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.17,
+      "prior_votes": 323517,
+      "new_votes": 323517
+    },
+    {
+      "race": "house:OH-09",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 95.74,
+      "prior_votes": 302311,
+      "new_votes": 302311
+    },
+    {
+      "race": "house:OH-10",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.72,
+      "prior_votes": 302016,
+      "new_votes": 302016
+    },
+    {
+      "race": "house:OH-11",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.1,
+      "prior_votes": 263344,
+      "new_votes": 263344
+    },
+    {
+      "race": "house:OH-12",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96,
+      "prior_votes": 323137,
+      "new_votes": 323137
+    },
+    {
+      "race": "house:OH-13",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.54,
+      "prior_votes": 317775,
+      "new_votes": 317775
+    },
+    {
+      "race": "house:OH-14",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 95.18,
+      "prior_votes": 326118,
+      "new_votes": 326118
+    },
+    {
+      "race": "house:OH-15",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.97,
+      "prior_votes": 287756,
+      "new_votes": 287756
+    },
+    {
+      "race": "house:OK-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 88,
+      "prior_votes": 231781,
+      "new_votes": 232104
+    },
+    {
+      "race": "house:OK-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 78.78,
+      "prior_votes": 211874,
+      "new_votes": 211983
+    },
+    {
+      "race": "house:OK-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 84.45,
+      "prior_votes": 190925,
+      "new_votes": 191013
+    },
+    {
+      "race": "house:OK-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 84.1,
+      "prior_votes": 218008,
+      "new_votes": 218128
+    },
+    {
+      "race": "house:OK-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.12,
+      "prior_votes": 264647,
+      "new_votes": 264784
+    },
+    {
+      "race": "house:OR-01",
+      "old_reporting_percent": 70.33,
+      "new_reporting_percent": 94.95,
+      "prior_votes": 239821,
+      "new_votes": 321905
+    },
+    {
+      "race": "house:OR-02",
+      "old_reporting_percent": 86.97,
+      "new_reporting_percent": 90,
+      "prior_votes": 301821,
+      "new_votes": 307929
+    },
+    {
+      "race": "house:OR-03",
+      "old_reporting_percent": 68.63,
+      "new_reporting_percent": 93.37,
+      "prior_votes": 233457,
+      "new_votes": 305680
+    },
+    {
+      "race": "house:OR-04",
+      "old_reporting_percent": 80.85,
+      "new_reporting_percent": 94.96,
+      "prior_votes": 277542,
+      "new_votes": 340514
+    },
+    {
+      "race": "house:OR-05",
+      "old_reporting_percent": 94.73,
+      "new_reporting_percent": 95.17,
+      "prior_votes": 325503,
+      "new_votes": 356677
+    },
+    {
+      "race": "house:OR-06",
+      "old_reporting_percent": 65.32,
+      "new_reporting_percent": 95.62,
+      "prior_votes": 224314,
+      "new_votes": 302707
+    },
+    {
+      "race": "house:PA-01",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 88.01,
+      "prior_votes": 356618,
+      "new_votes": 356632
+    },
+    {
+      "race": "house:PA-02",
+      "old_reporting_percent": 51.8,
+      "new_reporting_percent": 74.51,
+      "prior_votes": 183156,
+      "new_votes": 184401
+    },
+    {
+      "race": "house:PA-03",
+      "old_reporting_percent": 77.57,
+      "new_reporting_percent": 74.62,
+      "prior_votes": 271237,
+      "new_votes": 272529
+    },
+    {
+      "race": "house:PA-04",
+      "old_reporting_percent": 97.12,
+      "new_reporting_percent": 85.21,
+      "prior_votes": 344889,
+      "new_votes": 345205
+    },
+    {
+      "race": "house:PA-05",
+      "old_reporting_percent": 83.65,
+      "new_reporting_percent": 83.26,
+      "prior_votes": 296228,
+      "new_votes": 298215
+    },
+    {
+      "race": "house:PA-06",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 85.62,
+      "prior_votes": 309012,
+      "new_votes": 312074
+    },
+    {
+      "race": "house:PA-07",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 85.8,
+      "prior_votes": 293245,
+      "new_votes": 294489
+    },
+    {
+      "race": "house:PA-08",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 85.3,
+      "prior_votes": 280751,
+      "new_votes": 282799
+    },
+    {
+      "race": "house:PA-09",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 79.26,
+      "prior_votes": 268814,
+      "new_votes": 269525
+    },
+    {
+      "race": "house:PA-10",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 88.88,
+      "prior_votes": 315190,
+      "new_votes": 317427
+    },
+    {
+      "race": "house:PA-11",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 86.55,
+      "prior_votes": 301155,
+      "new_votes": 303116
+    },
+    {
+      "race": "house:PA-12",
+      "old_reporting_percent": 83.38,
+      "new_reporting_percent": 81.34,
+      "prior_votes": 295901,
+      "new_votes": 298366
+    },
+    {
+      "race": "house:PA-13",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 79.84,
+      "prior_votes": 280573,
+      "new_votes": 281645
+    },
+    {
+      "race": "house:PA-14",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 76.8,
+      "prior_votes": 275923,
+      "new_votes": 276917
+    },
+    {
+      "race": "house:PA-15",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 77.92,
+      "prior_votes": 267562,
+      "new_votes": 268326
+    },
+    {
+      "race": "house:PA-16",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 80.28,
+      "prior_votes": 285781,
+      "new_votes": 287378
+    },
+    {
+      "race": "house:PA-17",
+      "old_reporting_percent": 92.87,
+      "new_reporting_percent": 81.45,
+      "prior_votes": 330630,
+      "new_votes": 331659
+    },
+    {
+      "race": "house:RI-01",
+      "old_reporting_percent": 77.31,
+      "new_reporting_percent": 84.11,
+      "prior_votes": 162831,
+      "new_votes": 163448
+    },
+    {
+      "race": "house:RI-02",
+      "old_reporting_percent": 90.56,
+      "new_reporting_percent": 84.48,
+      "prior_votes": 194759,
+      "new_votes": 195436
+    },
+    {
+      "race": "house:SC-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 326012,
+      "new_votes": 326423
+    },
+    {
+      "race": "house:SC-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 296210,
+      "new_votes": 296664
+    },
+    {
+      "race": "house:SC-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.19,
+      "prior_votes": 272866,
+      "new_votes": 273192
+    },
+    {
+      "race": "house:SC-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 283866,
+      "new_votes": 284193
+    },
+    {
+      "race": "house:SC-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 286865,
+      "new_votes": 287000
+    },
+    {
+      "race": "house:SC-06",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 260374,
+      "new_votes": 261334
+    },
+    {
+      "race": "house:SC-07",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 303831,
+      "new_votes": 304088
+    },
+    {
+      "race": "house:SD-00",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 79.26,
+      "prior_votes": 305581,
+      "new_votes": 305585
+    },
+    {
+      "race": "house:TN-01",
+      "old_reporting_percent": 80.3,
+      "new_reporting_percent": 86.41,
+      "prior_votes": 209355,
+      "new_votes": 209355
+    },
+    {
+      "race": "house:TN-02",
+      "old_reporting_percent": 97.19,
+      "new_reporting_percent": 92.45,
+      "prior_votes": 250980,
+      "new_votes": 250980
+    },
+    {
+      "race": "house:TN-03",
+      "old_reporting_percent": 91.44,
+      "new_reporting_percent": 89.18,
+      "prior_votes": 236358,
+      "new_votes": 236358
+    },
+    {
+      "race": "house:TN-04",
+      "old_reporting_percent": 75.97,
+      "new_reporting_percent": 86.82,
+      "prior_votes": 195576,
+      "new_votes": 195576
+    },
+    {
+      "race": "house:TN-05",
+      "old_reporting_percent": 83.05,
+      "new_reporting_percent": 84.77,
+      "prior_votes": 213705,
+      "new_votes": 213705
+    },
+    {
+      "race": "house:TN-06",
+      "old_reporting_percent": 92.48,
+      "new_reporting_percent": 84.04,
+      "prior_votes": 238224,
+      "new_votes": 238224
+    },
+    {
+      "race": "house:TN-07",
+      "old_reporting_percent": 93.52,
+      "new_reporting_percent": 88.15,
+      "prior_votes": 240886,
+      "new_votes": 240886
+    },
+    {
+      "race": "house:TN-08",
+      "old_reporting_percent": 85.83,
+      "new_reporting_percent": 85.38,
+      "prior_votes": 220906,
+      "new_votes": 220906
+    },
+    {
+      "race": "house:TN-09",
+      "old_reporting_percent": 87.57,
+      "new_reporting_percent": 89.96,
+      "prior_votes": 225614,
+      "new_votes": 225614
+    },
+    {
+      "race": "house:TX-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 93.78,
+      "prior_votes": 263585,
+      "new_votes": 263585
+    },
+    {
+      "race": "house:TX-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 283915,
+      "new_votes": 284265
+    },
+    {
+      "race": "house:TX-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 320910,
+      "new_votes": 320965
+    },
+    {
+      "race": "house:TX-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 306215,
+      "new_votes": 306465
+    },
+    {
+      "race": "house:TX-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.07,
+      "prior_votes": 253133,
+      "new_votes": 253296
+    },
+    {
+      "race": "house:TX-06",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 268408,
+      "new_votes": 268677
+    },
+    {
+      "race": "house:TX-07",
+      "old_reporting_percent": 90.9,
+      "new_reporting_percent": 99,
+      "prior_votes": 226493,
+      "new_votes": 227388
+    },
+    {
+      "race": "house:TX-08",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 266466,
+      "new_votes": 266714
+    },
+    {
+      "race": "house:TX-09",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.1,
+      "prior_votes": 170419,
+      "new_votes": 170714
+    },
+    {
+      "race": "house:TX-10",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 95.56,
+      "prior_votes": 300257,
+      "new_votes": 300257
+    },
+    {
+      "race": "house:TX-11",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.18,
+      "prior_votes": 232980,
+      "new_votes": 232980
+    },
+    {
+      "race": "house:TX-12",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 271894,
+      "new_votes": 272542
+    },
+    {
+      "race": "house:TX-13",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 91.74,
+      "prior_votes": 242331,
+      "new_votes": 242591
+    },
+    {
+      "race": "house:TX-14",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 98.83,
+      "prior_votes": 282553,
+      "new_votes": 282945
+    },
+    {
+      "race": "house:TX-15",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 202509,
+      "new_votes": 202770
+    },
+    {
+      "race": "house:TX-16",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 95.62,
+      "prior_votes": 195790,
+      "new_votes": 197117
+    },
+    {
+      "race": "house:TX-17",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.23,
+      "prior_votes": 267957,
+      "new_votes": 267985
+    },
+    {
+      "race": "house:TX-18",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 224483,
+      "new_votes": 225206
+    },
+    {
+      "race": "house:TX-19",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.21,
+      "prior_votes": 221753,
+      "new_votes": 221753
+    },
+    {
+      "race": "house:TX-20",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 95.98,
+      "prior_votes": 192494,
+      "new_votes": 192494
+    },
+    {
+      "race": "house:TX-21",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 356390,
+      "new_votes": 356390
+    },
+    {
+      "race": "house:TX-22",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 99,
+      "prior_votes": 289777,
+      "new_votes": 290635
+    },
+    {
+      "race": "house:TX-23",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.69,
+      "prior_votes": 272437,
+      "new_votes": 272553
+    },
+    {
+      "race": "house:TX-24",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.92,
+      "prior_votes": 321448,
+      "new_votes": 322136
+    },
+    {
+      "race": "house:TX-25",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.8,
+      "prior_votes": 265575,
+      "new_votes": 265906
+    },
+    {
+      "race": "house:TX-26",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 334900,
+      "new_votes": 336134
+    },
+    {
+      "race": "house:TX-27",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 99,
+      "prior_votes": 282509,
+      "new_votes": 282560
+    },
+    {
+      "race": "house:TX-28",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.43,
+      "prior_votes": 172312,
+      "new_votes": 172498
+    },
+    {
+      "race": "house:TX-29",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98,
+      "prior_votes": 167608,
+      "new_votes": 167975
+    },
+    {
+      "race": "house:TX-30",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.68,
+      "prior_votes": 226118,
+      "new_votes": 226425
+    },
+    {
+      "race": "house:TX-31",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.8,
+      "prior_votes": 304973,
+      "new_votes": 305360
+    },
+    {
+      "race": "house:TX-32",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.82,
+      "prior_votes": 277615,
+      "new_votes": 277922
+    },
+    {
+      "race": "house:TX-33",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.74,
+      "prior_votes": 192448,
+      "new_votes": 192691
+    },
+    {
+      "race": "house:TX-34",
+      "old_reporting_percent": 77.17,
+      "new_reporting_percent": 94.4,
+      "prior_votes": 202645,
+      "new_votes": 202645
+    },
+    {
+      "race": "house:TX-35",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.88,
+      "prior_votes": 252558,
+      "new_votes": 252558
+    },
+    {
+      "race": "house:TX-36",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 95.96,
+      "prior_votes": 257689,
+      "new_votes": 257969
+    },
+    {
+      "race": "house:TX-37",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.55,
+      "prior_votes": 304426,
+      "new_votes": 304426
+    },
+    {
+      "race": "house:TX-38",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.03,
+      "prior_votes": 305101,
+      "new_votes": 305878
+    },
+    {
+      "race": "house:UT-01",
+      "old_reporting_percent": 75.79,
+      "new_reporting_percent": 99,
+      "prior_votes": 179521,
+      "new_votes": 249134
+    },
+    {
+      "race": "house:UT-02",
+      "old_reporting_percent": 91.45,
+      "new_reporting_percent": 99,
+      "prior_votes": 233617,
+      "new_votes": 256016
+    },
+    {
+      "race": "house:UT-03",
+      "old_reporting_percent": 73.56,
+      "new_reporting_percent": 95.51,
+      "prior_votes": 191536,
+      "new_votes": 257362
+    },
+    {
+      "race": "house:UT-04",
+      "old_reporting_percent": 70.04,
+      "new_reporting_percent": 99,
+      "prior_votes": 179988,
+      "new_votes": 266668
+    },
+    {
+      "race": "house:VA-01",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 407467,
+      "new_votes": 413222
+    },
+    {
+      "race": "house:VA-02",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 336997,
+      "new_votes": 342932
+    },
+    {
+      "race": "house:VA-03",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 86.81,
+      "prior_votes": 247468,
+      "new_votes": 250228
+    },
+    {
+      "race": "house:VA-04",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.89,
+      "prior_votes": 308999,
+      "new_votes": 316120
+    },
+    {
+      "race": "house:VA-05",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 361216,
+      "new_votes": 369275
+    },
+    {
+      "race": "house:VA-06",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 94.93,
+      "prior_votes": 316636,
+      "new_votes": 321828
+    },
+    {
+      "race": "house:VA-07",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 320552,
+      "new_votes": 326824
+    },
+    {
+      "race": "house:VA-08",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 312772,
+      "new_votes": 326173
+    },
+    {
+      "race": "house:VA-09",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 88.3,
+      "prior_votes": 293987,
+      "new_votes": 299005
+    },
+    {
+      "race": "house:VA-10",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 328996,
+      "new_votes": 336114
+    },
+    {
+      "race": "house:VA-11",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 333680,
+      "new_votes": 344968
+    },
+    {
+      "race": "house:VT-00",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.73,
+      "prior_votes": 304648,
+      "new_votes": 304675
+    },
+    {
+      "race": "house:WA-01",
+      "old_reporting_percent": 75.76,
+      "new_reporting_percent": 99,
+      "prior_votes": 212968,
+      "new_votes": 292593
+    },
+    {
+      "race": "house:WA-02",
+      "old_reporting_percent": 97.22,
+      "new_reporting_percent": 99,
+      "prior_votes": 272364,
+      "new_votes": 345689
+    },
+    {
+      "race": "house:WA-03",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 99,
+      "prior_votes": 290018,
+      "new_votes": 353086
+    },
+    {
+      "race": "house:WA-04",
+      "old_reporting_percent": 56.36,
+      "new_reporting_percent": 99,
+      "prior_votes": 152514,
+      "new_votes": 239595
+    },
+    {
+      "race": "house:WA-05",
+      "old_reporting_percent": 75.95,
+      "new_reporting_percent": 99,
+      "prior_votes": 207096,
+      "new_votes": 314256
+    },
+    {
+      "race": "house:WA-06",
+      "old_reporting_percent": 93.02,
+      "new_reporting_percent": 99,
+      "prior_votes": 259456,
+      "new_votes": 347787
+    },
+    {
+      "race": "house:WA-07",
+      "old_reporting_percent": 77.68,
+      "new_reporting_percent": 99,
+      "prior_votes": 229346,
+      "new_votes": 366871
+    },
+    {
+      "race": "house:WA-08",
+      "old_reporting_percent": 88.62,
+      "new_reporting_percent": 99,
+      "prior_votes": 244606,
+      "new_votes": 338280
+    },
+    {
+      "race": "house:WA-09",
+      "old_reporting_percent": 55.82,
+      "new_reporting_percent": 99,
+      "prior_votes": 158511,
+      "new_votes": 247878
+    },
+    {
+      "race": "house:WA-10",
+      "old_reporting_percent": 71.28,
+      "new_reporting_percent": 99,
+      "prior_votes": 198638,
+      "new_votes": 269260
+    },
+    {
+      "race": "house:WI-01",
+      "old_reporting_percent": 81.35,
+      "new_reporting_percent": 85.37,
+      "prior_votes": 305724,
+      "new_votes": 305724
+    },
+    {
+      "race": "house:WI-02",
+      "old_reporting_percent": 84.53,
+      "new_reporting_percent": 76.73,
+      "prior_votes": 317125,
+      "new_votes": 317125
+    },
+    {
+      "race": "house:WI-03",
+      "old_reporting_percent": 87.64,
+      "new_reporting_percent": 89.54,
+      "prior_votes": 329463,
+      "new_votes": 329464
+    },
+    {
+      "race": "house:WI-04",
+      "old_reporting_percent": 70.75,
+      "new_reporting_percent": 84.87,
+      "prior_votes": 264932,
+      "new_votes": 264932
+    },
+    {
+      "race": "house:WI-05",
+      "old_reporting_percent": 99,
+      "new_reporting_percent": 88.96,
+      "prior_votes": 374268,
+      "new_votes": 374269
+    },
+    {
+      "race": "house:WI-06",
+      "old_reporting_percent": 86.75,
+      "new_reporting_percent": 86.57,
+      "prior_votes": 326159,
+      "new_votes": 326159
+    },
+    {
+      "race": "house:WI-07",
+      "old_reporting_percent": 90.61,
+      "new_reporting_percent": 89.21,
+      "prior_votes": 340803,
+      "new_votes": 340804
+    },
+    {
+      "race": "house:WI-08",
+      "old_reporting_percent": 87.44,
+      "new_reporting_percent": 87.68,
+      "prior_votes": 328729,
+      "new_votes": 328729
+    },
+    {
+      "race": "house:WV-01",
+      "old_reporting_percent": 68.3,
+      "new_reporting_percent": 71.18,
+      "prior_votes": 207986,
+      "new_votes": 208713
+    },
+    {
+      "race": "house:WV-02",
+      "old_reporting_percent": 79.29,
+      "new_reporting_percent": 76.68,
+      "prior_votes": 241991,
+      "new_votes": 242724
+    },
+    {
+      "race": "house:WY-00",
+      "old_reporting_percent": 84.04,
+      "new_reporting_percent": 84.05,
+      "prior_votes": 183203,
+      "new_votes": 183223
+    },
+    {
+      "race": "senate:AK",
+      "old_reporting_percent": 73.87,
+      "new_reporting_percent": 85.69,
+      "prior_votes": 214246,
+      "new_votes": 248525
+    },
+    {
+      "race": "senate:AR",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.13,
+      "prior_votes": 886064,
+      "new_votes": 886309
+    },
+    {
+      "race": "senate:CO",
+      "old_reporting_percent": 87.07,
+      "new_reporting_percent": 94.26,
+      "prior_votes": 2465770,
+      "new_votes": 2669331
+    },
+    {
+      "race": "senate:DE",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 90.55,
+      "prior_votes": 378111,
+      "new_votes": 378424
+    },
+    {
+      "race": "senate:FL-S",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 92.72,
+      "prior_votes": 8271813,
+      "new_votes": 8280275
+    },
+    {
+      "race": "senate:GA",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 89.59,
+      "prior_votes": 4174798,
+      "new_votes": 4182648
+    },
+    {
+      "race": "senate:ID",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.28,
+      "prior_votes": 710641,
+      "new_votes": 713281
+    },
+    {
+      "race": "senate:IL",
+      "old_reporting_percent": 86.01,
+      "new_reporting_percent": 89.66,
+      "prior_votes": 4000161,
+      "new_votes": 4169575
+    },
+    {
+      "race": "senate:KS",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.01,
+      "prior_votes": 1097920,
+      "new_votes": 1099896
+    },
+    {
+      "race": "senate:LA",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.35,
+      "prior_votes": 1466069,
+      "new_votes": 1466231
+    },
+    {
+      "race": "senate:MA",
+      "old_reporting_percent": 91.06,
+      "new_reporting_percent": 91.23,
+      "prior_votes": 2603799,
+      "new_votes": 2608451
+    },
+    {
+      "race": "senate:ME",
+      "old_reporting_percent": 95.63,
+      "new_reporting_percent": 95.67,
+      "prior_votes": 709460,
+      "new_votes": 709755
+    },
+    {
+      "race": "senate:MI",
+      "old_reporting_percent": 96.32,
+      "new_reporting_percent": 96.45,
+      "prior_votes": 4773124,
+      "new_votes": 4779767
+    },
+    {
+      "race": "senate:MN",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 2831776,
+      "new_votes": 2831757
+    },
+    {
+      "race": "senate:MS",
+      "old_reporting_percent": 97.97,
+      "new_reporting_percent": 99,
+      "prior_votes": 951893,
+      "new_votes": 966781
+    },
+    {
+      "race": "senate:MT",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 86.52,
+      "prior_votes": 481929,
+      "new_votes": 489120
+    },
+    {
+      "race": "senate:NC",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 95.43,
+      "prior_votes": 4203181,
+      "new_votes": 4222829
+    },
+    {
+      "race": "senate:NE",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 97.55,
+      "prior_votes": 739692,
+      "new_votes": 754367
+    },
+    {
+      "race": "senate:NJ",
+      "old_reporting_percent": 81.33,
+      "new_reporting_percent": 82.51,
+      "prior_votes": 2905196,
+      "new_votes": 2947148
+    },
+    {
+      "race": "senate:NM",
+      "old_reporting_percent": 88.48,
+      "new_reporting_percent": 88.63,
+      "prior_votes": 724267,
+      "new_votes": 725470
+    },
+    {
+      "race": "senate:OH-S",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 96.59,
+      "prior_votes": 4601925,
+      "new_votes": 4601925
+    },
+    {
+      "race": "senate:OK",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 85.42,
+      "prior_votes": 1117932,
+      "new_votes": 1118730
+    },
+    {
+      "race": "senate:OR",
+      "old_reporting_percent": 78.54,
+      "new_reporting_percent": 94.92,
+      "prior_votes": 1614111,
+      "new_votes": 1950751
+    },
+    {
+      "race": "senate:RI",
+      "old_reporting_percent": 84.28,
+      "new_reporting_percent": 84.6,
+      "prior_votes": 359033,
+      "new_votes": 360406
+    },
+    {
+      "race": "senate:SC",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 99,
+      "prior_votes": 2038781,
+      "new_votes": 2041665
+    },
+    {
+      "race": "senate:SD",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 79.51,
+      "prior_votes": 305098,
+      "new_votes": 305102
+    },
+    {
+      "race": "senate:TX",
+      "old_reporting_percent": 98.95,
+      "new_reporting_percent": 99,
+      "prior_votes": 9894840,
+      "new_votes": 9907574
+    },
+    {
+      "race": "senate:VA",
+      "old_reporting_percent": 100,
+      "new_reporting_percent": 98.33,
+      "prior_votes": 3569099,
+      "new_votes": 3647617
+    },
+    {
+      "race": "senate:WV",
+      "old_reporting_percent": 74.92,
+      "new_reporting_percent": 75.16,
+      "prior_votes": 456128,
+      "new_votes": 457611
+    },
+    {
+      "race": "senate:WY",
+      "old_reporting_percent": 86.28,
+      "new_reporting_percent": 86.29,
+      "prior_votes": 187254,
+      "new_votes": 187279
+    }
+  ],
+  "status": "provisional, NOT certified",
+  "note": "This is a report of source-file changes, not an accuracy analysis. State certification and independent vote verification remain outstanding."
+}
