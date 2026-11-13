@@ -109,6 +109,8 @@ def main():
                      {'name':'curated','party':'REP','pct':float(r)}],
           'round':['','FALSE','FALSE'],'curated':True
         })
+    original_polled_races=len({p['race'] for p in original['polls']})
+    master_polled_races=len(by_race)
     issues=Counter()
     audit=[]
     outcomes=[]
@@ -212,7 +214,8 @@ def main():
       'poll_window_start':str(START),'poll_window_end':str(END),
       'assumption':'equal weight per unique poll; LV preferred else RV else adults; two-party-normalized margins',
       'minimum_distinct_pollsters':2,
-      'races_total':len(outcomes),'polled_races_in_original_archive':len(by_race),
+      'races_total':len(outcomes),'polled_races_in_original_archive':original_polled_races,
+      'races_with_original_or_curated_polls':master_polled_races,
       'statuses':dict(Counter(x['status'] for x in outcomes)),
       'selected_questions':len(chosen_all),'selection_reasons':dict(issues),
       'national':detail,
