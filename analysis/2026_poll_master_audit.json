@@ -1,0 +1,26 @@
+{
+  "original_question_records": 1354,
+  "master_rows": 1357,
+  "original_race_coverage": 146,
+  "master_race_coverage": 148,
+  "total_races": 470,
+  "new_races": [
+    "house:NV-03",
+    "senate:CO"
+  ],
+  "independently_checked_added": [
+    "supp:CO:APRL:20261020",
+    "supp:CO:RESEARCHCO:20261102",
+    "supp:NV03:REDBOX:20261023"
+  ],
+  "skipped": [],
+  "discovery_candidate_records": 555,
+  "discovery_candidate_new_races": [
+    "house:CT-02",
+    "house:NV-03",
+    "senate:CO"
+  ],
+  "unmerged_new_race": "house:CT-02 \u2014 source document not independently verified; review queue retains it",
+  "important": "Question records are not independent surveys. Additional 555 discovery candidates were not automatically merged; many are duplicates, partisan, or Wikipedia-derived CC BY-SA. Provisional election returns are not certified. Do not call this a complete all-races polling dataset.",
+  "source_archive_timestamp": "2026-11-01T21:17:38.184152+00:00"
+}
