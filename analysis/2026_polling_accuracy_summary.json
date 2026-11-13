@@ -6,7 +6,8 @@
   "assumption": "equal weight per unique poll; LV preferred else RV else adults; two-party-normalized margins",
   "minimum_distinct_pollsters": 2,
   "races_total": 470,
-  "polled_races_in_original_archive": 470,
+  "polled_races_in_original_archive": 146,
+  "races_with_original_or_curated_polls": 148,
   "statuses": {
     "result_not_comparable": 45,
     "no_eligible_polls": 376,
