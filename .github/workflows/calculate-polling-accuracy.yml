@@ -1,0 +1,52 @@
+name: Steps 3 and 4 - Calculate polling averages and errors
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'analysis/calculate_polling_accuracy.py'
+      - '.github/workflows/calculate-polling-accuracy.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  calculate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run existing repository tests
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          node --test tests/*.test.mjs
+      - name: Calculate final-period averages and provisional errors
+        run: python analysis/calculate_polling_accuracy.py
+      - name: Validate generated tables
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          d=Path('analysis')
+          a=list(csv.DictReader((d/'2026_race_polling_averages.csv').open()))
+          b=list(csv.DictReader((d/'2026_polling_errors_provisional.csv').open()))
+          s=json.loads((d/'2026_polling_accuracy_summary.json').read_text())
+          assert len(a)==len(b)==470
+          assert len({x['race_id'] for x in a})==470
+          assert sum(s['statuses'].values())==470
+          for r in b:
+              if r['status']!='provisional_comparison': assert not r['signed_error_pp']
+              if r['signed_error_pp']:
+                  assert abs(float(r['signed_error_pp'])) < 201
+          print('Validated 470 rows, 470 unique IDs and status-dependent errors')
+          PY
+      - name: Commit derived analysis
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add analysis/2026_race_polling_averages.csv analysis/2026_polling_errors_provisional.csv analysis/2026_poll_selection_audit.csv analysis/2026_polling_accuracy_summary.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'analysis: calculate 2026 race averages and provisional polling errors'
+            git push
+          fi
