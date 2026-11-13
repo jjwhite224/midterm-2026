@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'analysis/calculate_polling_accuracy.py'
+      - 'tests/test_polling_accuracy.py'
       - '.github/workflows/calculate-polling-accuracy.yml'
   workflow_dispatch:
 permissions:
