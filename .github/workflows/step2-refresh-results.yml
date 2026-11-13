@@ -1,0 +1,39 @@
+name: Step 2 - Refresh and audit 2026 election returns
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/step2-refresh-results.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh-results:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate existing data and run tests
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          node --test tests/*.test.mjs
+      - name: Fetch updated unofficial House and Senate returns
+        run: python scripts/fetch_results.py
+      - name: Summarize progress and compare with prior snapshot
+        run: python analysis/audit_results_refresh.py
+      - name: Retest and publish new data
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          node --test tests/*.test.mjs
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/results.json analysis/2026_results_refresh_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: refresh provisional 2026 congressional results with audit'
+            git push
+          fi
