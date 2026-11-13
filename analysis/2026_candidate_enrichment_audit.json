@@ -1,0 +1,13 @@
+{
+  "verified_master_rows": 1357,
+  "supplemental_discovery_rows": 555,
+  "combined_rows": 1583,
+  "coverage_races": 149,
+  "counts": {
+    "same_pollster_date_race_duplicate_held_in_review": 329,
+    "supplemental_candidate_records_added": 226,
+    "candidate_records_in_new_races": 4,
+    "supplemental_missing_unique_DR_percentages": 7
+  },
+  "warning": "Unverified discovery entries are preserved for research but explicitly excluded from polling-error calculations. No claims of validation or independent surveys. License and provenance remain row-specific."
+}
