@@ -1,0 +1,67 @@
+{
+  "as_of_results": "2026-11-13T01:15:41.366889+00:00",
+  "source_status": "unofficial",
+  "poll_window_start": "2026-10-04",
+  "poll_window_end": "2026-11-02",
+  "assumption": "equal weight per unique poll; LV preferred else RV else adults; two-party-normalized margins",
+  "minimum_distinct_pollsters": 2,
+  "races_total": 470,
+  "polled_races_in_original_archive": 470,
+  "statuses": {
+    "result_not_comparable": 45,
+    "no_eligible_polls": 376,
+    "insufficient_independent_pollsters": 29,
+    "provisional_comparison": 20
+  },
+  "selected_questions": 160,
+  "selection_reasons": {
+    "outside_final_30_day_window": 1031,
+    "ranked_choice_variant": 10,
+    "candidate": 160,
+    "candidate_matchup_mismatch": 14,
+    "partisan_or_internal_flag": 102,
+    "result_missing_unique_major_party_candidates": 9,
+    "population_not_preferred": 20,
+    "result_significant_other_or_nonpartisan_vote": 3,
+    "same_survey_question_variant": 5,
+    "missing_unique_D_R_answers": 2,
+    "same_pollster_same_end_date_review": 1
+  },
+  "national": {
+    "all": {
+      "eligible_races": 20,
+      "mean_signed_error_pp": 5.981040066126429,
+      "median_signed_error_pp": 6.2000225002092595,
+      "mean_absolute_error_pp": 5.981040066126429,
+      "races_understating_democrats": 20,
+      "races_understating_republicans": 0,
+      "ties": 0
+    },
+    "house": {
+      "eligible_races": 6,
+      "mean_signed_error_pp": 8.18466476412486,
+      "median_signed_error_pp": 8.75171801012203,
+      "mean_absolute_error_pp": 8.18466476412486,
+      "races_understating_democrats": 6,
+      "races_understating_republicans": 0,
+      "ties": 0
+    },
+    "senate": {
+      "eligible_races": 14,
+      "mean_signed_error_pp": 5.036629481269958,
+      "median_signed_error_pp": 4.600429875468249,
+      "mean_absolute_error_pp": 5.036629481269958,
+      "races_understating_democrats": 14,
+      "races_understating_republicans": 0,
+      "ties": 0
+    }
+  },
+  "limitations": [
+    "Results are provisional and not certified.",
+    "The snapshot originally retrieved Nov 1 misses some later polls; only selected separately curated additions are considered.",
+    "Candidate name aliases and unusual matchups are excluded conservatively.",
+    "Self-selected polled districts are not representative of all House districts.",
+    "No causal claim about polling weighting is supported by these observational errors.",
+    "Do not present these numbers as final election-polling accuracy."
+  ]
+}
