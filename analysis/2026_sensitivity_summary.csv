@@ -1,0 +1,6 @@
+scenario,window_days,allow_partisan_or_internal,exclude_research_co,polls_selected,multi_pollster_races,multi_mean_signed_error_pp,multi_mean_absolute_error_pp,multi_positive_error_races,multi_negative_error_races,exploratory_races,exploratory_mean_signed_error_pp,exploratory_mean_absolute_error_pp,exploratory_positive_error_races,exploratory_negative_error_races,result_collection_utc
+window21,21,False,False,134,18,5.636046101186876,5.636046101186876,18,0,42,5.35173226398032,5.8494757224299985,37,5,2026-11-19T05:19:37.932505+00:00
+window30,30,False,False,174,22,6.326772937326925,6.326772937326925,22,0,49,5.188181307365445,6.247769690387318,41,8,2026-11-19T05:19:37.932505+00:00
+window45,45,False,False,233,26,6.2726180979070865,6.2726180979070865,26,0,56,5.769704536044058,6.689276543487864,49,7,2026-11-19T05:19:37.932505+00:00
+window30_partisan,30,True,False,238,35,4.986341809949654,5.373830863485132,31,4,73,4.630046277691726,5.721042555254219,59,14,2026-11-19T05:19:37.932505+00:00
+window30_without_researchco,30,False,True,165,19,5.959257858046457,5.959257858046457,19,0,49,5.246092791428687,6.3056811744505605,41,8,2026-11-19T05:19:37.932505+00:00
