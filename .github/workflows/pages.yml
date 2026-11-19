@@ -82,7 +82,7 @@ jobs:
       - name: Stage site files only
         run: |
           mkdir -p _site
-          cp index.html elections.html accuracy.html _site/
+          cp index.html elections.html accuracy.html methods.html _site/
           cp -r assets src data _site/
           mkdir -p _site/analysis
           cp analysis/2026_sensitivity_summary.json _site/analysis/
