@@ -159,7 +159,12 @@ def main():
             'pollster':p['pollster'],'start_date':str(start),'end_date':str(end),
             'population':p['population'],'partisan':'','internal':'',
             'url':p['source_url'],
-            'answers':[{'name':p['candidate_d'],'party':'DEM','pct':d},
+            # Exact, verified alias only: UNH reports "Matt Dunlap" for
+            # candidate "Matthew Dunlap" in the ME-02 results snapshot.
+            # Preserve the published name in the source CSV.
+            'answers':[{'name':('Matthew Dunlap' if race_id=='house:ME-02'
+                          and p['candidate_d']=='Matt Dunlap' else p['candidate_d']),
+                        'party':'DEM','pct':d},
                        {'name':p['candidate_r'],'party':'REP','pct':r}],
             'round':['','FALSE','FALSE'],'curated':True,'late_release':True,
             'published_at':p['published_at'],'note':p['source_review_note']
