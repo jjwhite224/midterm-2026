@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explore provisional 2026 House and Senate polling errors, coverage, and methodology sensitivity.">
+<title>Polls vs Results | Midterm / 2026</title>
+<link rel="stylesheet" href="./assets/styles.css"><link rel="stylesheet" href="./assets/accuracy.css">
+<script type="module" src="./src/accuracy.js"></script></head>
+<body class="accuracy-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="wrap header-inner"><a class="brand" href="./index.html">MIDTERM<span class="slash">/</span>2026</a><nav aria-label="Primary"><a href="./index.html">Home</a><a href="./elections.html">Election map</a><a href="./accuracy.html" aria-current="page">Polling accuracy</a><a href="#methodology">Methodology</a></nav></div></header>
+<main id="main">
+<section class="wrap accuracy-intro" aria-labelledby="main-title">
+<p class="section-kicker">2026 MIDTERMS / READING THE EVIDENCE</p><h1 id="main-title">THE POLLS.<br><em>THE RESULTS.</em><br>THE GAP.</h1>
+<p class="accuracy-lede">What happened when public polling met the election returns? Explore the gaps race by race—and see how methodological choices change the story.</p>
+<p class="accuracy-warning"><strong>Provisional analysis.</strong> Vote totals are unofficial and uncertified. Most congressional races do not have qualifying polling, and selection choices affect which races can be compared.</p>
+<p id="accuracy-status" role="status">Loading election comparison data…</p>
+</section>
+<section class="wrap accuracy-panel" aria-labelledby="method-head">
+<div class="accuracy-heading"><div><p class="section-kicker">01 / COMPARE THE METHODS</p><h2 id="method-head">One election. Five lenses.</h2></div><a id="download-csv" href="./analysis/sensitivity/window30/2026_polling_errors_provisional_v2.csv" download>Download this dataset</a></div>
+<div class="accuracy-controls">
+<label for="scenario">Polling selection method<select id="scenario"><option value="window30">30-day window · Nonpartisan (baseline)</option><option value="window21">21-day window · Nonpartisan</option><option value="window45">45-day window · Nonpartisan</option><option value="window30_partisan">30 days · Include partisan/internal</option><option value="window30_without_researchco">30 days · Exclude Research Co.</option></select></label>
+<label for="tier">Evidence threshold<select id="tier"><option value="strict">At least two independent pollsters</option><option value="exploratory">Also include single-pollster races</option></select></label>
+</div>
+<div class="accuracy-kpis" aria-label="Polling comparison statistics">
+<article><span>RACES COMPARED</span><strong id="kpi-races">—</strong><small id="kpi-denominator">out of 470 elections</small></article>
+<article><span>AVERAGE SIGNED ERROR</span><strong id="kpi-signed">—</strong><small>Positive: Democrats understated</small></article>
+<article><span>AVERAGE ABSOLUTE ERROR</span><strong id="kpi-absolute">—</strong><small>Typical size of the miss</small></article>
+<article><span>ERROR DIRECTION (D / R)</span><strong id="kpi-directions">—</strong><small>Number of races</small></article></div>
+<p id="scenario-explain" class="accuracy-muted" aria-live="polite"></p>
+<div class="accuracy-charts">
+<article class="accuracy-card"><h3>Where did polls miss?</h3><p>Each mark represents one qualifying race. Zero means the poll and result margins match; right of zero means the Democratic margin was understated.</p><div class="chart-region" id="error-chart" role="group" aria-label="Signed polling error by qualifying race"></div><p class="accuracy-caption" id="error-chart-caption"></p></article>
+<article class="accuracy-card"><h3>Where is the evidence missing?</h3><p>The election database contains 470 contests. Not all have matching surveys, and unusual candidate lineups require separate treatment.</p><div id="coverage-chart" class="coverage-chart" role="img" aria-label="Count of races by polling evidence status"></div><p class="accuracy-caption" id="coverage-caption"></p></article>
+</div></section>
+<section class="wrap accuracy-panel" aria-labelledby="races-head">
+<div class="accuracy-heading"><div><p class="section-kicker">02 / EXPLORE EVERY RACE</p><h2 id="races-head">The race-by-race audit.</h2></div><p id="table-count" role="status"></p></div>
+<div class="accuracy-controls accuracy-filters">
+<label for="chamber">Chamber<select id="chamber"><option value="all">House and Senate</option><option value="house">House</option><option value="senate">Senate</option></select></label>
+<label for="evidence">Data available<select id="evidence"><option value="all">All 470 contests</option><option value="provisional_comparison">At least two pollsters</option><option value="single_pollster_comparison">One pollster</option><option value="no_eligible_polls">No eligible polls</option><option value="result_not_comparable">Result not comparable</option></select></label>
+<label for="state">State<select id="state"><option value="all">All states</option></select></label>
+<label for="search-race">Find race<input type="search" id="search-race" placeholder="e.g. Pennsylvania 7 or senate:MI"></label>
+<label for="sort">Order<select id="sort"><option value="state">State / race</option><option value="positive">Highest Democratic-direction error</option><option value="negative">Highest Republican-direction error</option><option value="polls">Most polls</option></select></label>
+</div>
+<div class="accuracy-table-scroll" tabindex="0" role="region" aria-label="Race-level polling errors table">
+<table><caption>Signed errors are result minus polling margin in percentage points. — means an eligible comparison cannot be made.</caption>
+<thead><tr><th scope="col">Race</th><th scope="col">Coverage</th><th scope="col">Poll margin</th><th scope="col">Election margin</th><th scope="col">Signed error</th><th scope="col">Pollsters</th><th scope="col">Sources</th></tr></thead>
+<tbody id="accuracy-rows"><tr><td colspan="7">Loading…</td></tr></tbody></table></div>
+<div class="accuracy-pagination"><button type="button" id="prev">Previous</button><span id="page-state"></span><button type="button" id="next">Next</button></div>
+</section>
+<section class="wrap accuracy-panel accuracy-story" id="methodology" aria-labelledby="methodology-head">
+<p class="section-kicker">03 / WHY THESE NUMBERS MATTER</p><h2 id="methodology-head">A warning about trust. A test of accuracy.</h2>
+<p>The 2026 polling story begins with two different questions: Were public surveys genuine, and did genuine surveys accurately measure the electorate? Reporting about fabricated polls raised concerns about the first. Pre-election discussion of weighting adjustments raised questions about the second.</p>
+<p>This interactive audit addresses a narrower, measurable question: among contests with comparable public surveys, how far did the polling margin differ from reported election results? The data alone cannot show why an error happened or establish that a particular weighting change caused it.</p>
+<div class="accuracy-method-grid">
+<div><h3>Selection</h3><p>Baseline uses questions ending October 4–November 2, 2026, excludes flagged partisan/internal surveys and known fabricated pollsters, and prefers likely-voter samples. Original survey questions are deduplicated.</p></div>
+<div><h3>Calculation</h3><p>Both polling and results margins are normalized to the major-party vote: 100 × (D−R)/(D+R). Signed error = election margin − polling margin; absolute error is the magnitude.</p></div>
+<div><h3>Two evidence tiers</h3><p>Headline summaries require two distinct pollsters in a race. Exploratory figures include single-pollster contests and are not equivalent evidence.</p></div>
+<div><h3>Limitations</h3><p>Most districts lack qualifying polls, the dataset is not a random sample, candidate lineups can be unusual, published questions may be correlated, and the election returns are not certified.</p></div>
+</div>
+<p class="accuracy-links"><a href="./analysis/STEP5_VALIDATION_AND_SENSITIVITY_REPORT.md">Full methods &amp; sensitivity report</a> · <a href="./analysis/2026_manual_10_race_verification_queue.csv">Manual verification queue</a> · <a href="./data/results.json">Reported results</a> · <a href="./index.html#race-trends">Raw survey explorer</a></p>
+</section>
+</main><footer class="site-footer"><div class="wrap">MIDTERM / 2026 · Independent, nonpartisan research · Unofficial results · <a href="./index.html">Back to homepage</a></div></footer>
+</body></html>
