@@ -1,5 +1,5 @@
 {
-  "as_of_results": "2026-11-19T15:47:27.921574+00:00",
+  "as_of_results": "2026-11-19T15:48:34.140742+00:00",
   "source_status": "unofficial",
   "poll_window_start": "2026-09-19",
   "poll_window_end": "2026-11-02",
@@ -7,7 +7,7 @@
   "late_release_questions_added_to_input": 16,
   "late_release_question_selections": 15,
   "new_verified_house_source_records": 5,
-  "new_verified_house_records_selected": 4,
+  "new_verified_house_records_selected": 5,
   "assumption": "equal weight per unique poll; LV preferred else RV else adults; two-party-normalized margins",
   "included_partisan_internal": false,
   "excluded_research_co": false,
@@ -17,20 +17,19 @@
   "races_with_original_or_curated_polls": 148,
   "statuses": {
     "result_not_comparable": 45,
-    "no_eligible_polls": 369,
-    "single_pollster_comparison": 30,
+    "no_eligible_polls": 368,
+    "single_pollster_comparison": 31,
     "provisional_comparison": 26
   },
-  "selected_questions": 237,
+  "selected_questions": 238,
   "selection_reasons": {
     "outside_final_30_day_window": 878,
     "ranked_choice_variant": 17,
-    "candidate": 237,
+    "candidate": 238,
     "candidate_matchup_mismatch": 23,
     "population_not_preferred": 37,
     "partisan_or_internal_flag": 150,
     "result_missing_unique_major_party_candidates": 17,
-    "late_release_candidate_mismatch": 1,
     "result_significant_other_or_nonpartisan_vote": 5,
     "same_pollster_same_end_date_review": 2,
     "same_survey_question_variant": 9,
@@ -65,11 +64,11 @@
       "ties": 0
     },
     "exploratory_including_single_pollster": {
-      "eligible_races": 56,
-      "mean_signed_error_pp": 5.61786721517563,
-      "median_signed_error_pp": 4.872681014381657,
-      "mean_absolute_error_pp": 6.537439222619435,
-      "races_understating_democrats": 49,
+      "eligible_races": 57,
+      "mean_signed_error_pp": 5.579102447131761,
+      "median_signed_error_pp": 4.866295502837772,
+      "mean_absolute_error_pp": 6.482541612339711,
+      "races_understating_democrats": 50,
       "races_understating_republicans": 7,
       "caution": "Sensitivity analysis only. Single-pollster races are not robust multi-poll estimates."
     }

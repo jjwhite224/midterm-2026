@@ -1,20 +1,20 @@
 {
-  "previous_collection": "2026-11-19T05:20:45.657528+00:00",
-  "current_collection": "2026-11-19T15:47:27.921574+00:00",
+  "previous_collection": "2026-11-19T15:47:27.921574+00:00",
+  "current_collection": "2026-11-19T15:48:34.140742+00:00",
   "previous_source_updated": {
-    "house": "2026-11-19T05:20:23.376Z",
-    "senate": "2026-11-19T05:20:37.629Z"
-  },
-  "current_source_updated": {
     "house": "2026-11-19T15:47:09.617Z",
     "senate": "2026-11-19T15:47:23.264Z"
+  },
+  "current_source_updated": {
+    "house": "2026-11-19T15:48:12.435Z",
+    "senate": "2026-11-19T15:48:26.415Z"
   },
   "previous": {
     "races": 470,
     "called_races": 465,
     "uncalled_races": 5,
     "reporting_under_95_percent": 280,
-    "reported_candidate_votes": 195768264
+    "reported_candidate_votes": 195769266
   },
   "current": {
     "races": 470,
@@ -23,23 +23,8 @@
     "reporting_under_95_percent": 280,
     "reported_candidate_votes": 195769266
   },
-  "changed_race_count": 2,
-  "changed_races": [
-    {
-      "race": "house:NY-20",
-      "old_reporting_percent": 90.86,
-      "new_reporting_percent": 91.17,
-      "prior_votes": 289360,
-      "new_votes": 290356
-    },
-    {
-      "race": "house:PA-06",
-      "old_reporting_percent": 85.59,
-      "new_reporting_percent": 85.6,
-      "prior_votes": 312081,
-      "new_votes": 312087
-    }
-  ],
+  "changed_race_count": 0,
+  "changed_races": [],
   "status": "provisional, NOT certified",
   "note": "This is a report of source-file changes, not an accuracy analysis. State certification and independent vote verification remain outstanding."
 }
