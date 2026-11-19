@@ -5,6 +5,7 @@ on:
     paths:
       - 'analysis/run_sensitivity.py'
       - 'analysis/2026_verified_new_race_polls.csv'
+      - 'analysis/validate_new_source_coverage.py'
       - 'analysis/create_manual_verification_queue.py'
       - 'analysis/calculate_polling_accuracy_sensitivity.py'
       - '.github/workflows/step5-sensitivity.yml'
@@ -32,6 +33,8 @@ jobs:
         run: python analysis/audit_results_refresh.py
       - name: Run 21 30 45-day polling sensitivity analyses
         run: python analysis/run_sensitivity.py
+      - name: Validate newly verified House survey coverage
+        run: python analysis/validate_new_source_coverage.py
       - name: Build ten-race source verification queue
         run: python analysis/create_manual_verification_queue.py
       - name: Validate scenarios and missing-data constraints
