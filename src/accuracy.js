@@ -9,7 +9,7 @@ const SCENARIOS={
   window30_partisan:'30-day polls including partisan and internal records',
   window30_without_researchco:'30-day polls excluding Research Co.'
 };
-const state={scenario:'window30',tier:'strict',chamber:'all',evidence:'all',state:'all',query:'',sort:'state',page:0,rows:[],summary:[]};
+const state={scenario:'window30',tier:'strict',chamber:'all',evidence:'all',state:'all',query:'',sort:'state',page:0,rows:[],audit:[],summary:[]};
 const PAGE=35, fmt=(n,d=1)=>Number.isFinite(n)?n.toFixed(d):'—';
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function parseCSV(text){
@@ -120,6 +120,32 @@ function filtered(){
   }else result.sort((a,b)=>a.state.localeCompare(b.state)||a.race_id.localeCompare(b.race_id));
   return result;
 }
+function showRaceSources(row){
+  const panel=$('race-sources');
+  if(!panel)return;
+  const heading=$('race-sources-heading'),body=$('race-sources-list');
+  heading.textContent=(row.race_name||row.race_id)+' — polling evidence';
+  body.replaceChildren();
+  const selected=state.audit.filter(a=>a.race_id===row.race_id&&a.reason==='candidate');
+  if(!selected.length){
+    appendText('p','No qualifying survey observations are available for this race under the selected methodology.',body);
+  }else{
+    appendText('p',selected.length+' selected survey questions. A survey can have multiple question variants; see the original sources and exclusion audit before interpreting independence.',body);
+    const ul=document.createElement('ul');
+    for(const obs of selected){
+      const li=document.createElement('li');
+      appendText('strong',obs.pollster+' · '+obs.end_date,li);
+      appendText('span',' · D–R two-party margin: '+signedText(obs.margin),li);
+      if(/^https:\/\//.test(obs.source_url||'')){
+        const a=appendText('a','Original release',li);a.href=obs.source_url;a.target='_blank';a.rel='noopener noreferrer';
+      }
+      ul.append(li);
+    }
+    body.append(ul);
+  }
+  panel.hidden=false;
+  panel.scrollIntoView({behavior:'auto',block:'nearest'});
+}
 function renderTable(){
   const data=filtered(),pages=Math.max(1,Math.ceil(data.length/PAGE));
   state.page=Math.min(state.page,pages-1);
@@ -140,6 +166,8 @@ function renderTable(){
     const raw=r.election_source_url;
     if(/^https:\/\//.test(raw||'')){const x=appendText('a','Result',a);x.href=raw;x.target='_blank';x.rel='noopener noreferrer';}
     if(r.source_poll_ids){
+      const btn=document.createElement('button');
+      btn.type='button';btn.className='accuracy-source-button';btn.textContent='Review polls';btn.addEventListener('click',()=>showRaceSources(r));a.append(btn);
       const ids=r.source_poll_ids.split(';').filter(Boolean).length;
       appendText('small',ids+' survey IDs',a,'accuracy-small');
       const deep=appendText('a','Polling history',a);deep.href='./index.html?race='+encodeURIComponent(r.race_id)+'#race-trends';
@@ -152,10 +180,13 @@ function render(){
 }
 async function selectScenario(){
   $('scenario').disabled=true;setText('accuracy-status','Loading selected comparison…');
+  $('race-sources').hidden=true;
   try{
     const response=await fetch(ROOT+state.scenario+'/'+RESULT_FILE);
     if(!response.ok)throw Error('HTTP '+response.status);
     const rows=parseCSV(await response.text());
+    const auditResponse=await fetch(ROOT+state.scenario+'/2026_poll_selection_audit_v2.csv');
+    state.audit=auditResponse.ok?parseCSV(await auditResponse.text()):[];
     if(rows.length!==470||new Set(rows.map(r=>r.race_id)).size!==470)throw Error('Invalid race coverage');
     state.rows=rows;state.page=0;
     $('download-csv').href=ROOT+state.scenario+'/'+RESULT_FILE;
