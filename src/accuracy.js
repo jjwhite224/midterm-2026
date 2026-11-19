@@ -43,7 +43,7 @@ function renderKpis(){
   const average=xs=>xs.length?xs.reduce((a,b)=>a+b,0)/xs.length:null;
   const positive=errors.filter(x=>x>0).length,negative=errors.filter(x=>x<0).length;
   setText('kpi-races',String(errors.length));
-  setText('kpi-denominator','out of 470 congressional elections');
+  setText('kpi-denominator','of 470 contests (not a representative sample)');
   setText('kpi-signed',signedText(average(errors)));
   setText('kpi-absolute',average(errors)!==null?fmt(average(errors.map(Math.abs)),2)+' pp':'—');
   setText('kpi-directions',positive+' / '+negative);
@@ -83,6 +83,81 @@ function drawErrorChart(){
   node('text',{x:W-right,y:H-4,'text-anchor':'end',fill:'currentColor','font-size':10},'Democratic margin understated');
   root.append(svg);
   setText('error-chart-caption',errors.length+' qualifying races. Bins are 4 percentage points wide. Bars represent counts, not vote totals.');
+}
+function drawScenarioComparison(){
+  const root=$('sensitivity-chart');if(!root)return;
+  root.replaceChildren();
+  if(!state.summary.length){appendText('p','Scenario summary unavailable. Consult the downloadable datasets.',root);return;}
+  const max=Math.max(1,...state.summary.map(d=>Math.abs(Number(d.multi_mean_signed_error_pp)||0)));
+  for(const d of state.summary){
+    const label=SCENARIOS[d.scenario]||d.scenario;
+    const line=document.createElement('div');line.className='sensitivity-line';
+    if(d.scenario===state.scenario)line.classList.add('is-selected');
+    const btn=document.createElement('button');btn.type='button';btn.className='sensitivity-choose';
+    btn.textContent=label;btn.setAttribute('aria-label','Use '+label);
+    btn.setAttribute('aria-pressed',d.scenario===state.scenario?'true':'false');
+    btn.addEventListener('click',()=>{$('scenario').value=d.scenario;state.scenario=d.scenario;selectScenario();});
+    const bar=document.createElement('span');bar.className='sensitivity-track';
+    const fill=document.createElement('i');fill.className='sensitivity-fill';
+    fill.style.width=((Math.abs(d.multi_mean_signed_error_pp)/max)*100)+'%';
+    bar.append(fill);
+    const value=appendText('strong',signedText(d.multi_mean_signed_error_pp),line,'sensitivity-value');
+    const count=appendText('small',d.multi_pollster_races+' races',line,'sensitivity-count');
+    line.prepend(btn,bar);root.append(line);
+  }
+  appendText('p','These averages have different denominators. Select a method to inspect its race-level records.',root,'accuracy-caption');
+}
+function drawChambers(){
+  const root=$('chamber-chart');if(!root)return;
+  root.replaceChildren();
+  const rows=selectedRows().filter(r=>num(r.signed_error_pp)!==null);
+  for(const [chamber,label] of [['house','House'],['senate','Senate']]){
+    const errors=rows.filter(r=>r.chamber===chamber).map(r=>Number(r.signed_error_pp));
+    const mean=errors.length?errors.reduce((a,b)=>a+b,0)/errors.length:null;
+    const block=document.createElement('div');block.className='chamber-line';
+    appendText('span',label,block);
+    appendText('strong',signedText(mean),block,'chamber-value');
+    appendText('small',errors.length+' comparable '+(errors.length===1?'race':'races'),block);
+    const track=document.createElement('div');track.className='chamber-track';
+    const baseline=document.createElement('i');baseline.className='chamber-zero';track.append(baseline);
+    if(mean!==null){
+      const filled=document.createElement('i');filled.className='chamber-bar';
+      const width=Math.min(50,Math.abs(mean)/20*50);
+      filled.style.width=width+'%';
+      filled.style.left=mean<0?(50-width)+'%':'50%';
+      filled.style.background=mean<0?'#b57465':'#34799a';
+      track.append(filled);
+    }
+    block.append(track);root.append(block);
+  }
+  appendText('p','Equal-weight race averages by chamber. The horizontal guide represents −20 to +20 percentage points, with zero at the center.',root,'accuracy-caption');
+}
+function drawRaceComparison(row){
+  const root=$('race-compare-chart');if(!root)return;
+  root.replaceChildren();
+  const poll=num(row.poll_average_d_minus_r_2party_pp);
+  const result=num(row.result_d_minus_r_2party_pp);
+  if(poll===null||result===null){appendText('p','This race has no directly comparable polling and election margins.',root);return;}
+  const domain=Math.max(10,Math.ceil(Math.max(Math.abs(poll),Math.abs(result))/10)*10);
+  const W=700,H=154,left=56,right=45,lo=left,hi=W-right;
+  const x=v=>lo+(v+domain)/(2*domain)*(hi-lo);
+  const ns='http://www.w3.org/2000/svg';
+  const svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.setAttribute('role','img');svg.setAttribute('aria-label',`Polling margin ${signedText(poll)}, reported election margin ${signedText(result)}, difference ${signedText(result-poll)}`);
+  const node=(tag,attrs,content)=>{const el=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,String(v));if(content!=null)el.textContent=content;svg.append(el);return el;};
+  for(const v of [-domain,0,domain]){
+    const pos=x(v);
+    node('line',{x1:pos,x2:pos,y1:20,y2:113,stroke:v===0?'#172c35':'#b8c8bf','stroke-dasharray':v===0?'4 3':'2 4'},null);
+    node('text',{x:pos,y:143,fill:'currentColor','text-anchor':'middle','font-size':11},(v>0?'+':'')+v);
+  }
+  node('line',{x1:x(poll),x2:x(result),y1:68,y2:68,stroke:'#778f98','stroke-width':4},null);
+  for(const [v,color,label,y] of [[poll,'#315f77','POLL',48],[result,'#ba7352','RESULT',92]]){
+    const dot=node('circle',{cx:x(v),cy:68,r:9,fill:color,stroke:'#fff','stroke-width':2},null);
+    const t=document.createElementNS(ns,'title');t.textContent=label+': '+signedText(v);dot.append(t);
+    node('text',{x:x(v),y:y,'text-anchor':'middle','font-size':11,fill:'currentColor'},label+' '+(v>0?'+':'')+fmt(v));
+  }
+  root.append(svg);
+  appendText('p','Two-party Democratic-minus-Republican margin. Difference: '+signedText(result-poll)+'. Results are unofficial and may change.',root,'accuracy-caption');
 }
 function drawCoverage(){
   const root=$('coverage-chart');root.replaceChildren();
@@ -125,6 +200,7 @@ function showRaceSources(row){
   if(!panel)return;
   const heading=$('race-sources-heading'),body=$('race-sources-list');
   heading.textContent=(row.race_name||row.race_id)+' — polling evidence';
+  drawRaceComparison(row);
   body.replaceChildren();
   const selected=state.audit.filter(a=>a.race_id===row.race_id&&a.reason==='candidate');
   if(!selected.length){
@@ -176,7 +252,7 @@ function renderTable(){
   }
 }
 function render(){
-  renderKpis();drawErrorChart();drawCoverage();renderTable();
+  renderKpis();drawErrorChart();drawCoverage();drawScenarioComparison();drawChambers();renderTable();
 }
 async function selectScenario(){
   $('scenario').disabled=true;setText('accuracy-status','Loading selected comparison…');
