@@ -8,10 +8,10 @@
   },
   "license": "Reuse permitted with attribution under civicAPI FAQ",
   "license_url": "https://civicapi.org/faq",
-  "collected_at": "2026-11-19T05:20:45.657528+00:00",
+  "collected_at": "2026-11-19T15:47:27.921574+00:00",
   "source_updated_at": {
-    "house": "2026-11-19T05:20:23.376Z",
-    "senate": "2026-11-19T05:20:37.629Z"
+    "house": "2026-11-19T15:47:09.617Z",
+    "senate": "2026-11-19T15:47:23.264Z"
   },
   "races": [
     {
@@ -10157,21 +10157,21 @@
       "chamber": "house",
       "state": "NY",
       "name": "New York's 20th Congressional District",
-      "reporting_percent": 90.86,
+      "reporting_percent": 91.17,
       "certification": "unverified",
       "candidates": [
         {
           "name": "Paul Tonko",
           "party": "Democratic",
-          "votes": 184356,
-          "percent": 63.71,
+          "votes": 185185,
+          "percent": 63.78,
           "source_called": true
         },
         {
           "name": "Ralph Ambrosio",
           "party": "Republican",
-          "votes": 104749,
-          "percent": 36.2,
+          "votes": 104916,
+          "percent": 36.13,
           "source_called": false
         },
         {
@@ -11317,20 +11317,20 @@
       "chamber": "house",
       "state": "PA",
       "name": "Pennsylvania's 6th Congressional District",
-      "reporting_percent": 85.59,
+      "reporting_percent": 85.6,
       "certification": "unverified",
       "candidates": [
         {
           "name": "Chrissy Houlahan",
           "party": "Democratic",
-          "votes": 201240,
+          "votes": 201244,
           "percent": 64.48,
           "source_called": true
         },
         {
           "name": "Marty Young",
           "party": "Republican",
-          "votes": 110841,
+          "votes": 110843,
           "percent": 35.52,
           "source_called": false
         }
