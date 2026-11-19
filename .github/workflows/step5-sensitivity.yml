@@ -57,5 +57,14 @@ jobs:
           git add data/results.json analysis/2026_results_refresh_audit.json analysis/2026_sensitivity_summary.csv analysis/2026_sensitivity_summary.json analysis/sensitivity/ analysis/2026_manual_10_race_verification_queue.csv
           if ! git diff --cached --quiet; then
             git commit -m 'analysis: updated returns and polling sensitivity comparisons'
-            git push
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then
+                exit 0
+              fi
+              sleep 2
+            done
+            echo "Could not push derived results after retries" >&2
+            exit 1
           fi
