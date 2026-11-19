@@ -11,7 +11,8 @@ for(const width of [1440,768,375]){
   assert.equal(res?.status(),200);
   await page.waitForFunction(()=>document.querySelector('#kpi-races')?.textContent==='22',{timeout:20000});
   assert.equal(await page.locator('#kpi-signed').textContent(),'+6.33 pp');
-  assert.equal(await page.locator('#coverage-chart').locator('.coverage-row').count(),4);
+  await page.locator('#coverage-chart .coverage-row').first().waitFor({state:'visible',timeout:20000});
+  assert.equal(await page.locator('#coverage-chart .coverage-row').count(),4);
   const main=await page.locator('#main').count();assert.equal(main,1);
   if(width===1440){
     await page.locator('#scenario').selectOption('window30_partisan');
