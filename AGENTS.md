@@ -52,3 +52,11 @@ Zweibel's Fall 2026 AI-Assisted Programming class.
 A good follow-up assignment is a reusable 'poll data auditor' skill that flags
 invalid answers, duplicates, implausible dates, missing citations, and
 missing/unclear licenses. Never auto-correct ambiguous source records.
+
+## Design and visualization skills for next iterations
+- Read `.agents/skills/ui-ux/SKILL.md` before any page, navigation, interaction, or responsive CSS work.
+- Read `.agents/skills/data-visualization/SKILL.md` before adding or revising a chart, legend, tooltip, or statistical summary.
+- Current polling-versus-results page: `accuracy.html`, `src/accuracy.js`, `assets/accuracy.css`. Main published scenario: `analysis/sensitivity/window30/`. There are five alternative scenario datasets.
+- Keep the evidence tiers separate: >=2 independent pollsters for the main comparison; single-pollster results only in a labeled exploratory view.
+- No scenario is a representative estimate for all 470 contests. The results are unofficial until confirmed by state certifications.
+- Run the UI smoke test workflow `.github/workflows/qa-accuracy.yml`, plus the repository Python and Node tests, before publishing. Browser-based visual QA remains a separate requirement.
