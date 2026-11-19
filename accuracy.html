@@ -40,6 +40,18 @@
 <label for="search-race">Find race<input type="search" id="search-race" placeholder="e.g. Pennsylvania 7 or senate:MI"></label>
 <label for="sort">Order<select id="sort"><option value="state">State / race</option><option value="positive">Highest Democratic-direction error</option><option value="negative">Highest Republican-direction error</option><option value="polls">Most polls</option></select></label>
 </div>
+<div class="race-explorer" id="race-explorer" aria-labelledby="race-explorer-heading">
+<div class="race-explorer-top"><div><p class="section-kicker">EXPLORE / OPEN A RACE</p><h3 id="race-explorer-heading">Every contest has a story.</h3><p>Choose a district to compare its polls, see the reported result, and inspect every survey used. Start with a featured race or search above.</p></div><div class="race-explorer-count" id="race-card-count" role="status"></div></div>
+<div class="race-explorer-toolbar" role="group" aria-label="Choose races to browse">
+<button type="button" class="race-chip is-active" data-race-preset="polled" aria-pressed="true">Races with polls</button>
+<button type="button" class="race-chip" data-race-preset="largest">Biggest gaps</button>
+<button type="button" class="race-chip" data-race-preset="closest">Closest results</button>
+<button type="button" class="race-chip" data-race-preset="all">All 470 races</button>
+</div>
+<div class="race-card-grid" id="race-card-grid" aria-live="polite"><p>Loading race explorer…</p></div>
+<div class="race-explorer-footer"><button type="button" id="show-more-races" class="race-more">Show more races <span aria-hidden="true">↓</span></button><p>Click a card for the interactive poll-by-poll breakdown. <a href="#race-table-heading">Prefer a table?</a></p></div>
+</div>
+<h3 class="race-table-heading" id="race-table-heading">All races · Detailed table</h3>
 <div class="accuracy-table-scroll" tabindex="0" role="region" aria-label="Race-level polling errors table">
 <table><caption>Signed errors are result minus polling margin in percentage points. — means an eligible comparison cannot be made.</caption>
 <thead><tr><th scope="col">Race</th><th scope="col">Coverage</th><th scope="col">Poll margin</th><th scope="col">Election margin</th><th scope="col">Signed error</th><th scope="col">Pollsters</th><th scope="col">Sources</th></tr></thead>
@@ -59,5 +71,15 @@
 </div>
 <div class="accuracy-conclusion"><h3>The finding is conditional on the sample.</h3><p>In the strict 30-day dataset, the qualifying polls tend to understate Democratic margins, but the count of qualifying races is small. The same data explorer reveals a broader and less uniform set when a single-pollster comparison is permitted or when partisan surveys are included. Neither finding represents the full universe of House and Senate races.</p><p>More complete vote certification, late House survey releases, and manual source reconciliation are still needed before a final causal or industry-wide conclusion. These are limitations of the evidence, not reasons to hide the measurements.</p></div><p class="accuracy-links"><a href="./methods.html">Full methods &amp; sources</a> · <a href="./analysis/2026_manual_10_race_verification_queue.csv">Manual verification queue</a> · <a href="./data/results.json">Reported results</a> · <a href="./index.html#race-trends">Raw survey explorer</a></p>
 </section>
-</main><footer class="site-footer"><div class="wrap">MIDTERM / 2026 · Independent, nonpartisan research · Unofficial results · <a href="./index.html">Back to homepage</a></div></footer>
+</main><dialog id="race-detail-dialog" class="race-detail-dialog" aria-labelledby="detail-title">
+<div class="race-detail-shell">
+<header class="race-detail-header"><div><p class="detail-eyebrow" id="detail-eyebrow">2026 / HOUSE</p><h2 id="detail-title">Race detail</h2><p id="detail-subtitle">Polling evidence and provisional election results</p></div><button type="button" class="detail-close" id="detail-close" aria-label="Close race details">×</button></header>
+<div class="detail-navigation"><button type="button" id="detail-previous" aria-label="Previous race">← Previous race</button><span id="detail-position" aria-live="polite">Race 1 of 1</span><button type="button" id="detail-next" aria-label="Next race">Next race →</button></div>
+<div class="detail-body">
+<div class="detail-summary" id="detail-summary" aria-label="Race polling comparison"></div>
+<section class="detail-visual-section" aria-labelledby="detail-visual-heading"><div class="detail-section-title"><div><p class="detail-eyebrow">THE COMPARISON</p><h3 id="detail-visual-heading">How close were the polls?</h3></div><span class="detail-tag" id="detail-confidence">Provisional</span></div><div class="detail-main-chart" id="detail-main-chart"></div><p class="detail-note" id="detail-visual-note"></p></section>
+<section class="detail-polls-section" aria-labelledby="detail-polls-heading"><div class="detail-section-title"><div><p class="detail-eyebrow">THE EVIDENCE</p><h3 id="detail-polls-heading">Explore the individual polls</h3></div><span id="detail-poll-count"></span></div><p class="detail-note">Select a survey to inspect its date, margin, inclusion decision and original source. Each dot is a question-level observation; polls from the same survey may not be independent.</p><div class="detail-poll-toolbar"><button type="button" id="detail-only-used" class="detail-pill is-active" aria-pressed="true">Used in average</button><button type="button" id="detail-all-polls" class="detail-pill" aria-pressed="false">All archived questions</button></div><div id="detail-poll-list" class="detail-poll-list"></div><div id="detail-poll-inspector" class="detail-inspector" aria-live="polite"></div></section>
+<section class="detail-source-note"><h3>What should I take from this race?</h3><p id="detail-takeaway"></p><div id="detail-source-links" class="detail-links"></div></section>
+</div>
+</div></dialog><footer class="site-footer"><div class="wrap">MIDTERM / 2026 · Independent, nonpartisan research · Unofficial results · <a href="./index.html">Back to homepage</a></div></footer>
 </body></html>
