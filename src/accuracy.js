@@ -73,7 +73,9 @@ function drawErrorChart(){
   bins.forEach((b,i)=>{
     const h=plotH*b.count/maxCount;const x=left+i*bw,y=top+plotH-h;
     const bar=node('rect',{x:x+2,y,width:Math.max(1,bw-4),height:h,rx:2,fill:b.start>=0?'#34799a':'#b57465'});
-    bar.append(document.createElementNS('http://www.w3.org/2000/svg','title')).textContent=`${b.start} to ${b.start+4} pp: ${b.count} races`;
+    const tooltip=document.createElementNS('http://www.w3.org/2000/svg','title');
+    tooltip.textContent=`${b.start} to ${b.start+4} pp: ${b.count} races`;
+    bar.append(tooltip);
   });
   const zeroX=left+plotW/2;
   node('line',{x1:zeroX,y1:top,x2:zeroX,y2:top+plotH,stroke:'#213440','stroke-width':2,'stroke-dasharray':'4 3'});
