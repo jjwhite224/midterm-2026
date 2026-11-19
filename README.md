@@ -8,7 +8,7 @@
 - [Election map](https://jjwhite224.github.io/midterm-2026/elections.html)
 
 ### Key finding and its limit
-The baseline 30-day nonpartisan selection yields **22 comparable races with at least two independent polling organizations**. All 22 showed Democratic-direction signed error using the November 19 provisional returns, with a race-equal-weight mean of about **+6.33 percentage points**. When single-pollster races are included, 49 races are comparable and 41 have positive Democratic-direction error. These are **nonrandom descriptive subsets**, not estimates for all 470 races. See `analysis/STEP5_VALIDATION_AND_SENSITIVITY_REPORT.md`.
+The baseline 30-day nonpartisan selection yields **24 comparable races with at least two independent polling organizations**. All 24 showed Democratic-direction signed error using the November 19 provisional returns, with a race-equal-weight mean of about **+6.21 percentage points**. When single-pollster races are included, 52 races are comparable (the direction of errors can be inspected in the scenario summary). These are **nonrandom descriptive subsets**, not estimates for all 470 races. See `analysis/STEP5_VALIDATION_AND_SENSITIVITY_REPORT.md`.
 
 ### Verification and status
 The main site is deployed and automated code/data tests run on changes. The browser workflow checks desktop/tablet/mobile filtering and source interactions. This is not an independently certified election result or final peer-reviewed polling analysis; manual source reconciliation, late House original release review and state certification follow-up remain open.
