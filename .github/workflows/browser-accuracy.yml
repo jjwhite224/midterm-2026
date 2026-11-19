@@ -1,0 +1,52 @@
+name: Browser smoke test for polling accuracy site
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'accuracy.html'
+      - 'assets/accuracy.css'
+      - 'src/accuracy.js'
+      - 'index.html'
+      - 'tests/browser-accuracy.mjs'
+      - '.github/workflows/browser-accuracy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install isolated browser test dependencies
+        run: |
+          npm install --no-save --ignore-scripts playwright
+          npx playwright install --with-deps chromium
+      - name: Start local website
+        run: |
+          nohup python -m http.server 5173 --bind 127.0.0.1 >/tmp/midterm-http.log 2>&1 &
+          python - <<'PY'
+          import time,urllib.request
+          for i in range(30):
+              try:
+                  urllib.request.urlopen('http://127.0.0.1:5173/accuracy.html',timeout=1)
+                  break
+              except Exception:
+                  time.sleep(.3)
+          else:raise RuntimeError('HTTP server did not start')
+          PY
+      - name: Browser layout and interaction smoke test
+        run: node tests/browser-accuracy.mjs
+      - name: Attach browser screenshots for visual review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: accuracy-responsive-screenshots
+          path: /tmp/accuracy-*.png
+          if-no-files-found: ignore
