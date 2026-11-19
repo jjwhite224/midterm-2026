@@ -138,6 +138,32 @@ def main():
                      {'name':lp['candidate_r'],'party':'REP','pct':float(lp['rep_percent'])}],
           'round':['','FALSE','FALSE'],'curated':True,'late_release':True,
           'published_at':lp['published_at'],'note':lp['note']})
+    # Verified original pollster releases with reconstructed fieldwork and
+    # published candidate shares; deliberately separate from the 2026-11-01
+    # historical archive and unverified discovery candidates.
+    new_races=list(csv.DictReader((INPUT_DIR/'2026_verified_new_race_polls.csv').open(encoding='utf-8',newline='')))
+    added_new_keys=set()
+    for p in new_races:
+        race_id=p['race_id']
+        if race_id not in results: raise ValueError('Unknown new poll race '+race_id)
+        start,end=dte(p['fieldwork_start']),dte(p['fieldwork_end'])
+        if not start or not end or start>end or end>=date(2026,11,3):
+            raise ValueError('Invalid final poll fieldwork dates for '+p['source_id'])
+        d,r=float(p['dem_percent']),float(p['rep_percent'])
+        if min(d,r)<0 or d+r>101:raise ValueError('Invalid candidate figures '+p['source_id'])
+        key=(race_id,canonical_pollster(p['pollster']),str(end))
+        if key in added_new_keys:continue
+        added_new_keys.add(key)
+        by_race[race_id].append({
+            'id':p['source_id'],'race':race_id,'poll_id':p['source_id'],
+            'pollster':p['pollster'],'start_date':str(start),'end_date':str(end),
+            'population':p['population'],'partisan':'','internal':'',
+            'url':p['source_url'],
+            'answers':[{'name':p['candidate_d'],'party':'DEM','pct':d},
+                       {'name':p['candidate_r'],'party':'REP','pct':r}],
+            'round':['','FALSE','FALSE'],'curated':True,'late_release':True,
+            'published_at':p['published_at'],'note':p['source_review_note']
+        })
     issues=Counter()
     audit=[]
     outcomes=[]
@@ -258,6 +284,8 @@ def main():
       'final_release_candidates_reviewed':len(late),
       'late_release_questions_added_to_input':len(final_source_keys),
       'late_release_question_selections':sum(x.get('record_id','').startswith('late:') and x.get('reason')=='candidate' for x in audit),
+      'new_verified_house_source_records':len(added_new_keys),
+      'new_verified_house_records_selected':sum(x.get('record_id','').startswith('new:UNH:') and x.get('reason')=='candidate' for x in audit),
       'assumption':'equal weight per unique poll; LV preferred else RV else adults; two-party-normalized margins',
       'included_partisan_internal':INCLUDE_PARTISAN,
       'excluded_research_co':EXCLUDE_RESEARCH_CO,
