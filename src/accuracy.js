@@ -213,6 +213,7 @@ async function boot(){
     });
   }
   $('search-race').addEventListener('input',()=>{state.query=$('search-race').value;state.page=0;renderTable();});
+  $('close-race-sources').addEventListener('click',()=>{$('race-sources').hidden=true;$('races-head').focus?.();});
   $('prev').addEventListener('click',()=>{state.page=Math.max(0,state.page-1);renderTable();});
   $('next').addEventListener('click',()=>{state.page+=1;renderTable();});
   $('scenario').addEventListener('change',()=>{state.scenario=$('scenario').value;selectScenario();});
