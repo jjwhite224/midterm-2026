@@ -332,6 +332,23 @@ function renderPollInspector(row,entry){
   const fields=[['FIELDWORK END',entry.end_date||'Not reported'],['QUESTION POPULATION',(entry.population||'Unspecified').toUpperCase()],['TWO-PARTY MARGIN',signedText(entry.margin)],['INCLUSION',included?'Included':'Excluded']];
   for(const [key,value] of fields){const x=document.createElement('div');appendText('small',key,x);appendText('strong',value,x);grid.append(x);}
   host.append(grid);
+  const sequence=raceSurveyList(row);
+  const index=sequence.findIndex(x=>x.record_id===entry.record_id);
+  const nav=document.createElement('div');nav.className='detail-poll-navigation';
+  const previous=appendText('button','← Earlier poll',nav);previous.type='button';previous.disabled=index>=sequence.length-1||index<0;
+  const pos=appendText('span',(index+1)+' / '+sequence.length,nav);pos.setAttribute('aria-label','Survey '+(index+1)+' of '+sequence.length);
+  const next=appendText('button','Later poll →',nav);next.type='button';next.disabled=index<=0;
+  const browse=delta=>{
+    if(index+delta<0||index+delta>=sequence.length)return;
+    activePollId=sequence[index+delta].record_id;
+    renderPollList(row);
+    const newlySelected=$('detail-poll-list').querySelector('[aria-pressed="true"]');
+    newlySelected?.focus({preventScroll:true});
+    newlySelected?.scrollIntoView({block:'nearest',behavior:'auto'});
+  };
+  previous.addEventListener('click',()=>browse(1));
+  next.addEventListener('click',()=>browse(-1));
+  host.append(nav);
   const foot=document.createElement('p');foot.className='detail-note';foot.textContent='A poll question is not necessarily an independent survey. The source may use different fieldwork dates, weighting or candidate-choice conventions.';host.append(foot);
   if(safeSrc(entry.source_url)){const link=appendText('a','Open original polling source ↗',host,'detail-original-link');link.href=entry.source_url;link.target='_blank';link.rel='noopener noreferrer';}
 }
@@ -357,7 +374,7 @@ function renderPollList(row){
     appendText('strong',entry.pollster||'Unknown pollster',button,'detail-pollster');
     appendText('span',entry.reason==='candidate'?signedText(entry.margin):'Not used',button,entry.reason==='candidate'?'detail-margin':'detail-margin muted');
     const icon=appendText('span','→',button,'detail-arrow');icon.setAttribute('aria-hidden','true');
-    button.addEventListener('click',()=>{activePollId=entry.record_id;renderPollList(row);});
+    button.addEventListener('click',()=>{activePollId=entry.record_id;renderPollList(row);$('detail-poll-list').querySelector('[aria-pressed="true"]')?.focus({preventScroll:true});});
     root.append(button);
   }
   renderPollInspector(row,entries.find(x=>x.record_id===activePollId)||entries[0]);
@@ -387,6 +404,9 @@ function renderRaceDialog(){
   setText('detail-eyebrow','2026 / '+(row.chamber==='house'?'U.S. HOUSE':'U.S. SENATE')+' / '+row.state);
   setText('detail-title',row.race_name);
   setText('detail-subtitle','Pre-election surveys vs. provisional reported election results');
+  const url=new URL(location.href);url.searchParams.set('race',row.race_id);url.searchParams.set('scenario',state.scenario);
+  $('detail-permalink').href=url.pathname+url.search+url.hash;
+  setText('detail-share-status','');
   setText('detail-confidence',labelStatus(row.status));
   const list=eligibleRaceRoute(),at=list.findIndex(x=>x.race_id===activeRaceId);
   setText('detail-position',at<0?'Selected race':(at+1)+' of '+list.length+' races');
@@ -493,6 +513,12 @@ async function boot(){
   }
   $('show-more-races').addEventListener('click',()=>{raceVisible+=9;renderRaceCards();});
   $('detail-close').addEventListener('click',closeRace);
+  $('detail-copy-link').addEventListener('click',async()=>{
+    if(!activeRaceId)return;
+    const url=new URL(location.href);url.searchParams.set('race',activeRaceId);url.searchParams.set('scenario',state.scenario);
+    try{await navigator.clipboard.writeText(url.href);setText('detail-share-status','Link copied');}
+    catch(_){setText('detail-share-status','Use Open a direct link to this race to copy its address.');}
+  });
   $('detail-previous').addEventListener('click',()=>navigateRace(-1));
   $('detail-next').addEventListener('click',()=>navigateRace(1));
   $('detail-only-used').addEventListener('click',()=>{detailShowAll=false;activePollId=null;renderPollList(state.rows.find(r=>r.race_id===activeRaceId));});
