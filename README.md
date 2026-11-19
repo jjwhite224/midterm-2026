@@ -10,6 +10,10 @@
 ### Key finding and its limit
 The baseline 30-day nonpartisan selection yields **24 comparable races with at least two independent polling organizations**. All 24 showed Democratic-direction signed error using the November 19 provisional returns, with a race-equal-weight mean of about **+6.21 percentage points**. When single-pollster races are included, 52 races are comparable (the direction of errors can be inspected in the scenario summary). These are **nonrandom descriptive subsets**, not estimates for all 470 races. See `analysis/STEP5_VALIDATION_AND_SENSITIVITY_REPORT.md`.
 
+### Explore an individual race
+
+The interactive investigation now offers a **race-card gallery** with polling-only, biggest-gap, closest-result, and all-races views. Clicking any race opens an accessible full-screen-on-mobile investigation with the poll average versus reported result, evidence strength, every included or excluded poll question, original release URLs, and **earlier/later poll navigation**. Readers can also move to the next or previous race without returning to the table. Races can be shared via URLs such as `accuracy.html?scenario=window30&race=house:NH-01`. Missing polls remain visibly missing.
+
 ### Verification and status
 The main site is deployed and automated code/data tests run on changes. The browser workflow checks desktop/tablet/mobile filtering and source interactions. This is not an independently certified election result or final peer-reviewed polling analysis; manual source reconciliation, late House original release review and state certification follow-up remain open.
 
