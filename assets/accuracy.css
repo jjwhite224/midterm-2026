@@ -105,3 +105,6 @@
 .accuracy-conclusion p{line-height:1.65;margin:.6rem 0}
 @media(max-width:950px){.accuracy-timeline{grid-template-columns:1fr}.accuracy-scenario-grid{grid-template-columns:1fr}}
 @media(max-width:580px){.sensitivity-line{grid-template-columns:minmax(95px,1fr) 65px 50px;gap:.35rem}.sensitivity-track{grid-column:1 / -1;grid-row:2}.sensitivity-value{text-align:right;font-size:.8rem}.sensitivity-count{font-size:.73rem}.accuracy-timeline article{padding:.95rem}}
+
+.method-equation{background:#eef4f1;border:1px solid #cdded4;padding:1.2rem 1.5rem;border-radius:12px;margin:1.3rem 0;max-width:1000px}
+.method-equation p{line-height:1.65;margin:.65rem 0;font-variant-numeric:tabular-nums}
