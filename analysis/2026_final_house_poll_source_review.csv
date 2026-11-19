@@ -1,0 +1,5 @@
+race_id,release_date,source,original_url,verified_publication,verified_candidate_percentages,ingest_status,reason
+house:NH-01,2026-11-01,University of New Hampshire Survey Center,https://scholars.unh.edu/survey_center_polls/1011/,yes,no,hold,University primary abstract confirms poll but PDF topline access denied; do not import secondary-source shares without original check
+house:NH-02,2026-11-01,University of New Hampshire Survey Center,https://scholars.unh.edu/survey_center_polls/1011/,yes,no,hold,University primary abstract confirms poll but PDF topline access denied; do not import secondary-source shares without original check
+house:ME-02,2026-11-01,University of New Hampshire Survey Center,https://scholars.unh.edu/survey_center_polls/1013/,yes,no,hold,University primary abstract confirms poll but PDF topline access denied; do not import secondary-source shares without original check
+senate:ME,2026-11-01,University of New Hampshire Survey Center,https://scholars.unh.edu/survey_center_polls/1013/,yes,no,hold,Poll exists but quantitative original tables unavailable here; candidate breakdown must be checked
