@@ -37,6 +37,9 @@ for(const width of [1440,768,375]){
     assert.equal(await page.locator('#race-detail-dialog').isVisible(),true);
     assert.ok((await page.locator('#detail-title').textContent()).length>4);
     assert.ok(await page.locator('#detail-poll-list .detail-poll-row').count()>0);
+    assert.ok(await page.locator('#detail-poll-timeline svg circle[role="button"]').count()>0);
+    await page.locator('#detail-poll-timeline svg circle[role="button"]').first().click();
+    assert.ok(await page.locator('#detail-poll-inspector').isVisible());
     const firstRace=await page.locator('#detail-title').textContent();
     const firstPoll=page.locator('.detail-poll-row').first();
     await firstPoll.click();
