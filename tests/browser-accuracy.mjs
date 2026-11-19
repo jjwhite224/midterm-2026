@@ -49,6 +49,7 @@ for(const width of [1440,768,375]){
     assert.match(page.url(),/race=/);
     await page.keyboard.press('Escape');
     assert.equal(await page.locator('#race-detail-dialog').isVisible(),false);
+    await page.waitForFunction(()=>!new URL(location.href).searchParams.has('race'));
     assert.ok(!new URL(page.url()).searchParams.has('race'));
     await page.locator('[data-race-preset="largest"]').click();
     assert.equal(await page.locator('[data-race-preset="largest"]').getAttribute('aria-pressed'),'true');
