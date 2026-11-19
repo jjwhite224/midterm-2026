@@ -1,4 +1,7 @@
-# Methodology — Early prototype
+# Methodology — early generic-ballot explorer
+
+> **For the published 2026 polling accuracy investigation, see [Methods & Sources](methods.html), [Steps 3–4 methodology](analysis/STEPS_3_4_RERUN_NOV1_2.md), and [Step 5 sensitivity report](analysis/STEP5_VALIDATION_AND_SENSITIVITY_REPORT.md).** This file documents the earlier national generic-ballot pipeline and should not be mistaken for the current race-level analysis.
+
 
 This repository is an early *polling explorer*, not a model of who wins an
 election. No seat counts or winning probabilities are estimated here.
