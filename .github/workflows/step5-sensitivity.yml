@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'analysis/run_sensitivity.py'
+      - 'analysis/create_manual_verification_queue.py'
       - 'analysis/calculate_polling_accuracy_sensitivity.py'
       - '.github/workflows/step5-sensitivity.yml'
   workflow_dispatch:
@@ -30,6 +31,8 @@ jobs:
         run: python analysis/audit_results_refresh.py
       - name: Run 21 30 45-day polling sensitivity analyses
         run: python analysis/run_sensitivity.py
+      - name: Build ten-race source verification queue
+        run: python analysis/create_manual_verification_queue.py
       - name: Validate scenarios and missing-data constraints
         run: |
           python - <<'PY'
@@ -50,7 +53,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/results.json analysis/2026_results_refresh_audit.json analysis/2026_sensitivity_summary.csv analysis/2026_sensitivity_summary.json analysis/sensitivity/
+          git add data/results.json analysis/2026_results_refresh_audit.json analysis/2026_sensitivity_summary.csv analysis/2026_sensitivity_summary.json analysis/sensitivity/ analysis/2026_manual_10_race_verification_queue.csv
           if ! git diff --cached --quiet; then
             git commit -m 'analysis: updated returns and polling sensitivity comparisons'
             git push
