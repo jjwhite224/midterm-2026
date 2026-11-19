@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'analysis/run_sensitivity.py'
+      - 'analysis/2026_verified_new_race_polls.csv'
       - 'analysis/create_manual_verification_queue.py'
       - 'analysis/calculate_polling_accuracy_sensitivity.py'
       - '.github/workflows/step5-sensitivity.yml'
