@@ -42,6 +42,15 @@ for(const width of [1440,768,375]){
     await firstPoll.click();
     assert.ok(await page.locator('#detail-poll-inspector').isVisible());
     assert.ok((await page.locator('#detail-poll-inspector').textContent()).includes('FIELDWORK END'));
+    assert.ok((await page.locator('#detail-permalink').getAttribute('href')).includes('race='));
+    assert.equal(await page.locator('.detail-poll-navigation button').count(),2);
+    const navButtons=page.locator('.detail-poll-navigation button');
+    if(await navButtons.nth(0).isEnabled()){
+      const previousPoll=await page.locator('#detail-poll-inspector h4').textContent();
+      await navButtons.nth(0).click();
+      assert.ok((await page.locator('#detail-poll-inspector h4').textContent()).length>0);
+      assert.ok((await page.locator('#detail-poll-list [aria-pressed="true"]').count())===1);
+    }
     await page.locator('#detail-all-polls').click();
     assert.equal(await page.locator('#detail-all-polls').getAttribute('aria-pressed'),'true');
     await page.locator('#detail-next').click();
