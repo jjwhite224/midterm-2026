@@ -82,8 +82,12 @@ jobs:
       - name: Stage site files only
         run: |
           mkdir -p _site
-          cp index.html elections.html _site/
+          cp index.html elections.html accuracy.html _site/
           cp -r assets src data _site/
+          mkdir -p _site/analysis
+          cp analysis/2026_sensitivity_summary.json _site/analysis/
+          cp analysis/STEP5_VALIDATION_AND_SENSITIVITY_REPORT.md analysis/2026_manual_10_race_verification_queue.csv _site/analysis/
+          cp -r analysis/sensitivity _site/analysis/
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
