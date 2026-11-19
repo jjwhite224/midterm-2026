@@ -21,7 +21,7 @@
 9. Mobile-responsive and keyboard-accessible controls with labels, data text fallbacks and clear error/empty states.
 
 ## Source and statistical safeguards
-- The reported +6.33-point mean signed error across 22 baseline qualifying races is provisional and **not** representative of all 470 congressional races.
+- The reported +6.21-point mean signed error across 24 baseline qualifying races is provisional and **not** representative of all 470 congressional races.
 - One-pollster figures are exploratory, labeled separately.
 - Races without qualifying polls are not assigned zero error.
 - The original polling and election snapshots are kept in Git history; data source IDs are retained.
@@ -52,4 +52,4 @@
 - Agent skill instructions: `.agents/skills/ui-ux/SKILL.md`, `.agents/skills/data-visualization/SKILL.md`
 
 ## Suggested 90-second classroom demo
-Open accuracy.html. Identify the two pre-election questions: authentic data vs accurate measurement. Show the 30-day headline evidence summary (22 races), click the exploratory tier (49 races), switch to include partisan polls, and explain how the eligible-race count and mean error change. Search Michigan Senate, inspect the survey links, open Methods & Sources, and close by distinguishing a reproducible descriptive finding from an industry-wide causal conclusion.
+Open accuracy.html. Identify the two pre-election questions: authentic data vs accurate measurement. Show the 30-day headline evidence summary (24 races), click the exploratory tier (52 races), switch to include partisan polls, and explain how the eligible-race count and mean error change. Search Michigan Senate, inspect the survey links, open Methods & Sources, and close by distinguishing a reproducible descriptive finding from an industry-wide causal conclusion.
