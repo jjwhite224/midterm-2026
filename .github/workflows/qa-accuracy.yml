@@ -1,0 +1,60 @@
+name: QA polling accuracy UI and published data
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'accuracy.html'
+      - 'src/accuracy.js'
+      - 'assets/accuracy.css'
+      - '.github/workflows/qa-accuracy.yml'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check browser JavaScript and existing tests
+        run: |
+          node --check src/accuracy.js
+          node --test tests/*.test.mjs
+          python -m unittest discover -s tests -p 'test_*.py'
+      - name: Check evidence provenance and website contract
+        run: |
+          python - <<'PY'
+          import csv,json,re
+          from pathlib import Path
+          h=Path('accuracy.html').read_text()
+          js=Path('src/accuracy.js').read_text()
+          css=Path('assets/accuracy.css').read_text()
+          assert '<main id="main">' in h
+          assert 'aria-label' in h and 'aria-labelledby' in h
+          assert '<label for="scenario">' in h and '<label for="tier">' in h
+          assert 'id="accuracy-rows"' in h and 'id="race-sources"' in h
+          assert 'hidden' in h and '#main' in h
+          assert '.accuracy-page' in css and '@media(max-width:610px)' in css
+          assert 'escape' not in js or 'esc' in js
+          summary=json.loads(Path('analysis/2026_sensitivity_summary.json').read_text())
+          assert len(summary)==5
+          for s in summary:
+              base=Path('analysis/sensitivity')/s['scenario']
+              for file in ['2026_polling_errors_provisional_v2.csv','2026_poll_selection_audit_v2.csv','2026_polling_accuracy_summary_v2.json']:
+                  assert (base/file).exists(),(base,file)
+              rows=list(csv.DictReader((base/'2026_polling_errors_provisional_v2.csv').open()))
+              assert len(rows)==470 and len(set(r['race_id'] for r in rows))==470
+              valid={'provisional_comparison','single_pollster_comparison','no_eligible_polls','result_not_comparable'}
+              assert all(r['status'] in valid for r in rows)
+              for r in rows:
+                  has_error=r['signed_error_pp'] not in ('',None)
+                  assert has_error == (r['status'] in ('provisional_comparison','single_pollster_comparison'))
+          print('Front-end structural checks and five scenario CSV audits passed')
+          PY
