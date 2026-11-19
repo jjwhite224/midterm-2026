@@ -1,5 +1,8 @@
 # Step 5 — Late poll verification, sensitivity checks and refreshed returns
 
+> **Historical November 19 baseline:** This report predates the verified UNH House additions and is preserved to show the earlier analysis. The current 24-race baseline and five-scenario totals are in `analysis/2026_sensitivity_summary.csv`; see `analysis/STEP6_HOUSE_POLL_COVERAGE_EXPANSION.md` for the new sources and detailed changes.
+
+
 Date: 2026-11-19 America/New_York. **Research status: provisional; not a national industry accuracy estimate.**
 
 ## Work completed
