@@ -352,9 +352,51 @@ function renderPollInspector(row,entry){
   const foot=document.createElement('p');foot.className='detail-note';foot.textContent='A poll question is not necessarily an independent survey. The source may use different fieldwork dates, weighting or candidate-choice conventions.';host.append(foot);
   if(safeSrc(entry.source_url)){const link=appendText('a','Open original polling source ↗',host,'detail-original-link');link.href=entry.source_url;link.target='_blank';link.rel='noopener noreferrer';}
 }
+function renderPollTimeline(row){
+  const host=$('detail-poll-timeline');host.replaceChildren();
+  const source=raceSurveyRecords(row).filter(p=>p.reason==='candidate'&&num(p.margin)!==null&&/^2026-\d\d-\d\d$/.test(p.end_date||''));
+  if(!source.length){appendText('p','No qualifying dated survey margins to plot.',host,'detail-note');return;}
+  const result=num(row.result_d_minus_r_2party_pp);
+  const dates=source.map(p=>Date.parse(p.end_date+'T00:00:00Z'));
+  const minDate=Math.min(...dates),maxDate=Math.max(...dates);
+  const day=86400000,from=minDate-1*day,to=maxDate+1*day;
+  const maxAbs=Math.max(10,...source.map(p=>Math.abs(Number(p.margin))),Math.abs(result||0));
+  const bound=Math.ceil(maxAbs/10)*10;
+  const W=760,H=258,left=66,right=30,top=24,bottom=53,pw=W-left-right,ph=H-top-bottom;
+  const x=date=>left+(date-from)/(to-from)*pw;
+  const y=value=>top+(bound-value)/(2*bound)*ph;
+  const ns='http://www.w3.org/2000/svg';
+  const svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.setAttribute('role','img');svg.setAttribute('aria-label',source.length+' included poll questions plotted by fieldwork end date and Democratic-minus-Republican margin');
+  const node=(tag,attrs,content)=>{const el=document.createElementNS(ns,tag);for(const [k,v]of Object.entries(attrs))el.setAttribute(k,String(v));if(content!=null)el.textContent=content;svg.append(el);return el;};
+  for(const value of [-bound,0,bound]){
+    const yy=y(value);
+    node('line',{x1:left,x2:W-right,y1:yy,y2:yy,stroke:value===0?'#6e858e':'#dae5e1','stroke-width':value===0?1.5:1,'stroke-dasharray':value===0?'4 5':'2 5'});
+    node('text',{x:left-10,y:yy+4,'text-anchor':'end',fill:'#526a74','font-size':12},(value>0?'+':'')+value);
+  }
+  if(result!==null){
+    const yy=y(result);
+    node('line',{x1:left,x2:W-right,y1:yy,y2:yy,stroke:'#c97d52','stroke-width':2,'stroke-dasharray':'8 5'});
+    node('text',{x:W-right,y:Math.max(12,yy-7),'text-anchor':'end',fill:'#a5633c','font-size':12,'font-weight':700},'RESULT '+signedText(result));
+  }
+  const distinct=[...new Set([minDate,Math.round((minDate+maxDate)/2/day)*day,maxDate])];
+  for(const timestamp of distinct){const xx=x(timestamp);node('text',{x:xx,y:H-18,'text-anchor':'middle','font-size':12,fill:'#526a74'},new Date(timestamp).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'}));}
+  for(const p of source){
+    const xx=x(Date.parse(p.end_date+'T00:00:00Z')),yy=y(Number(p.margin));
+    const circle=node('circle',{cx:xx,cy:yy,r:p.record_id===activePollId?10:8,fill:p.record_id===activePollId?'#165b7c':'#347e9c',stroke:'#fff','stroke-width':3,tabindex:0,role:'button','aria-label':'Inspect '+p.pollster+' poll ending '+p.end_date+' margin '+signedText(p.margin)});
+    circle.style.cursor='pointer';
+    const title=document.createElementNS(ns,'title');title.textContent=p.pollster+' | '+p.end_date+' | '+signedText(p.margin);circle.append(title);
+    const action=()=>{activePollId=p.record_id;renderPollList(row);};
+    circle.addEventListener('click',action);
+    circle.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();action();}});
+  }
+  host.append(svg);
+  appendText('p','Select a dot or use the poll list below. Blue dots = qualifying survey margins; orange dashed line = provisional reported result. Dates are fieldwork end dates.',host,'accuracy-caption');
+}
 function renderPollList(row){
   const root=$('detail-poll-list');root.replaceChildren();
   const entries=raceSurveyList(row);
+  renderPollTimeline(row);
   setText('detail-poll-count',entries.filter(x=>x.reason==='candidate').length+' used / '+raceSurveyRecords(row).length+' archived questions');
   for(const id of ['detail-only-used','detail-all-polls']){
     const on=(id==='detail-all-polls')===detailShowAll;
