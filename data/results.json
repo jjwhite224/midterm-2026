@@ -8,10 +8,10 @@
   },
   "license": "Reuse permitted with attribution under civicAPI FAQ",
   "license_url": "https://civicapi.org/faq",
-  "collected_at": "2026-11-19T15:48:34.140742+00:00",
+  "collected_at": "2026-11-19T15:52:50.150091+00:00",
   "source_updated_at": {
-    "house": "2026-11-19T15:48:12.435Z",
-    "senate": "2026-11-19T15:48:26.415Z"
+    "house": "2026-11-19T15:52:33.940Z",
+    "senate": "2026-11-19T15:52:34.903Z"
   },
   "races": [
     {
@@ -27,7 +27,7 @@
           "party": "Republican",
           "votes": 136337,
           "percent": 47.6,
-          "source_called": false
+          "source_called": true
         },
         {
           "name": "Bill Hill",

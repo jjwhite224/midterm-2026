@@ -15,7 +15,7 @@
     "exploratory_mean_absolute_error_pp": 5.508680186299992,
     "exploratory_positive_error_races": 38,
     "exploratory_negative_error_races": 7,
-    "result_collection_utc": "2026-11-19T15:48:34.140742+00:00"
+    "result_collection_utc": "2026-11-19T15:52:50.150091+00:00"
   },
   {
     "scenario": "window30",
@@ -33,7 +33,7 @@
     "exploratory_mean_absolute_error_pp": 5.929871978277275,
     "exploratory_positive_error_races": 42,
     "exploratory_negative_error_races": 10,
-    "result_collection_utc": "2026-11-19T15:48:34.140742+00:00"
+    "result_collection_utc": "2026-11-19T15:52:50.150091+00:00"
   },
   {
     "scenario": "window45",
@@ -51,7 +51,7 @@
     "exploratory_mean_absolute_error_pp": 6.482541612339711,
     "exploratory_positive_error_races": 50,
     "exploratory_negative_error_races": 7,
-    "result_collection_utc": "2026-11-19T15:48:34.140742+00:00"
+    "result_collection_utc": "2026-11-19T15:52:50.150091+00:00"
   },
   {
     "scenario": "window30_partisan",
@@ -69,7 +69,7 @@
     "exploratory_mean_absolute_error_pp": 5.52432545493418,
     "exploratory_positive_error_races": 60,
     "exploratory_negative_error_races": 16,
-    "result_collection_utc": "2026-11-19T15:48:34.140742+00:00"
+    "result_collection_utc": "2026-11-19T15:52:50.150091+00:00"
   },
   {
     "scenario": "window30_without_researchco",
@@ -87,6 +87,6 @@
     "exploratory_mean_absolute_error_pp": 5.984442415183023,
     "exploratory_positive_error_races": 42,
     "exploratory_negative_error_races": 10,
-    "result_collection_utc": "2026-11-19T15:48:34.140742+00:00"
+    "result_collection_utc": "2026-11-19T15:52:50.150091+00:00"
   }
 ]

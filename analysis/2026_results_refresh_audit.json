@@ -1,13 +1,13 @@
 {
-  "previous_collection": "2026-11-19T15:47:27.921574+00:00",
-  "current_collection": "2026-11-19T15:48:34.140742+00:00",
+  "previous_collection": "2026-11-19T15:48:34.140742+00:00",
+  "current_collection": "2026-11-19T15:52:50.150091+00:00",
   "previous_source_updated": {
-    "house": "2026-11-19T15:47:09.617Z",
-    "senate": "2026-11-19T15:47:23.264Z"
-  },
-  "current_source_updated": {
     "house": "2026-11-19T15:48:12.435Z",
     "senate": "2026-11-19T15:48:26.415Z"
+  },
+  "current_source_updated": {
+    "house": "2026-11-19T15:52:33.940Z",
+    "senate": "2026-11-19T15:52:34.903Z"
   },
   "previous": {
     "races": 470,
@@ -18,8 +18,8 @@
   },
   "current": {
     "races": 470,
-    "called_races": 465,
-    "uncalled_races": 5,
+    "called_races": 466,
+    "uncalled_races": 4,
     "reporting_under_95_percent": 280,
     "reported_candidate_votes": 195769266
   },
