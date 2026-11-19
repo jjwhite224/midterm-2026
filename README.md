@@ -1,11 +1,23 @@
-# MIDTERM / 2026 — Reading the Polls
+# MIDTERM / 2026 — Can We Still Trust the Polls?
+
+## Live pages
+
+- [Investigative polling accuracy story](https://jjwhite224.github.io/midterm-2026/accuracy.html)
+- [Methods, source register, limits and AI disclosure](https://jjwhite224.github.io/midterm-2026/methods.html)
+- [National polling and race histories](https://jjwhite224.github.io/midterm-2026/)
+- [Election map](https://jjwhite224.github.io/midterm-2026/elections.html)
+
+### Key finding and its limit
+The baseline 30-day nonpartisan selection yields **22 comparable races with at least two independent polling organizations**. All 22 showed Democratic-direction signed error using the November 19 provisional returns, with a race-equal-weight mean of about **+6.33 percentage points**. When single-pollster races are included, 49 races are comparable and 41 have positive Democratic-direction error. These are **nonrandom descriptive subsets**, not estimates for all 470 races. See `analysis/STEP5_VALIDATION_AND_SENSITIVITY_REPORT.md`.
+
+### Verification and status
+The main site is deployed and automated code/data tests run on changes. The browser workflow checks desktop/tablet/mobile filtering and source interactions. This is not an independently certified election result or final peer-reviewed polling analysis; manual source reconciliation, late House original release review and state certification follow-up remain open.
+
 
 An open-source, interactive polling-literacy project for **Stephen Zweibel's
 Fall 2026 AI-Assisted Programming class at the CUNY Graduate Center**.
 
-**Project stage:** working static starter. Includes pollster search, population
-and date filters, editable recency weighting, SVG visualization, full poll table,
-unit tests, data validation, and a GitHub Pages deployment workflow.
+**Project stage:** published interactive research release (November 19, 2026). The site includes a five-scenario polling-error investigation, a 470-race explorer, national generic-ballot polling, reported election returns, a separate election map, a standalone methods page, source links, and automated browser/data QA. **Returns are unofficial and research-source verification remains ongoing.**
 
 > **Data coverage:** `data/polls.json` contains 311 national generic-ballot
 > records: 307 VoteHub records and four reviewed supplemental surveys.
