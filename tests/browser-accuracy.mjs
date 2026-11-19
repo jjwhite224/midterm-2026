@@ -31,6 +31,40 @@ for(const width of [1440,768,375]){
     await page.locator('.sensitivity-choose').first().click();
     await page.waitForFunction(()=>document.querySelector('#scenario')?.value==='window21');
     assert.ok(await page.locator('#sensitivity-chart .sensitivity-line').count()===5);
+    await page.locator('#scenario').selectOption('window30');
+    await page.locator('#evidence').selectOption('all');
+    await page.locator('.race-tile').first().click();
+    assert.equal(await page.locator('#race-detail-dialog').isVisible(),true);
+    assert.ok((await page.locator('#detail-title').textContent()).length>4);
+    assert.ok(await page.locator('#detail-poll-list .detail-poll-row').count()>0);
+    const firstRace=await page.locator('#detail-title').textContent();
+    const firstPoll=page.locator('.detail-poll-row').first();
+    await firstPoll.click();
+    assert.ok(await page.locator('#detail-poll-inspector').isVisible());
+    assert.ok((await page.locator('#detail-poll-inspector').textContent()).includes('FIELDWORK END'));
+    await page.locator('#detail-all-polls').click();
+    assert.equal(await page.locator('#detail-all-polls').getAttribute('aria-pressed'),'true');
+    await page.locator('#detail-next').click();
+    assert.notEqual(await page.locator('#detail-title').textContent(),firstRace);
+    assert.match(page.url(),/race=/);
+    await page.keyboard.press('Escape');
+    assert.equal(await page.locator('#race-detail-dialog').isVisible(),false);
+    assert.ok(!new URL(page.url()).searchParams.has('race'));
+    await page.locator('[data-race-preset="largest"]').click();
+    assert.equal(await page.locator('[data-race-preset="largest"]').getAttribute('aria-pressed'),'true');
+    await page.locator('[data-race-preset="all"]').click();
+    assert.equal(await page.locator('#race-card-count').textContent(),'470 matching races');
+    await page.locator('#search-race').fill('New Hampshire');
+    assert.ok((await page.locator('#race-card-count').textContent()).includes('matching races'));
+    await page.locator('#search-race').fill('');
+    await page.locator('[data-race-preset="polled"]').click();
+  }
+  if(width<1000){
+    await page.locator('.race-tile').first().click();
+    assert.equal(await page.locator('#race-detail-dialog').isVisible(),true);
+    const overflowDialog=await page.evaluate(()=>document.querySelector('#race-detail-dialog').scrollWidth-document.querySelector('#race-detail-dialog').clientWidth);
+    assert.ok(overflowDialog<=3,'dialog overflow '+overflowDialog+'px');
+    await page.locator('#detail-close').click();
   }
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
   assert.ok(overflow<=3,`horizontal body overflow ${overflow}px at ${width}px`);
