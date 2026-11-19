@@ -86,6 +86,7 @@ jobs:
           cp -r assets src data _site/
           mkdir -p _site/analysis
           cp analysis/2026_sensitivity_summary.json _site/analysis/
+          cp analysis/2026_verified_new_race_polls.csv analysis/STEP6_HOUSE_POLL_COVERAGE_EXPANSION.md _site/analysis/
           cp analysis/STEP5_VALIDATION_AND_SENSITIVITY_REPORT.md analysis/2026_manual_10_race_verification_queue.csv _site/analysis/
           cp -r analysis/sensitivity _site/analysis/
       - name: Upload static site
