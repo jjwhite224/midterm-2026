@@ -1,0 +1,57 @@
+name: Step 5 - Refresh returns and test polling methodology
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'analysis/run_sensitivity.py'
+      - 'analysis/calculate_polling_accuracy_sensitivity.py'
+      - '.github/workflows/step5-sensitivity.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sensitivity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test source ingestion and analysis
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          node --test tests/*.test.mjs
+      - name: Refresh attributed unofficial election returns
+        run: python scripts/fetch_results.py
+      - name: Audit changed vote counts
+        run: python analysis/audit_results_refresh.py
+      - name: Run 21 30 45-day polling sensitivity analyses
+        run: python analysis/run_sensitivity.py
+      - name: Validate scenarios and missing-data constraints
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          root=Path('analysis')
+          summary=json.loads((root/'2026_sensitivity_summary.json').read_text())
+          assert len(summary)==5
+          for scenario in summary:
+              assert 0<=scenario['multi_pollster_races']<=scenario['exploratory_races']<=470
+              assert scenario['multi_positive_error_races']+scenario['multi_negative_error_races']<=scenario['multi_pollster_races']
+              rows=list(csv.DictReader((root/'sensitivity'/scenario['scenario']/'2026_polling_errors_provisional_v2.csv').open()))
+              assert len(rows)==470 and len({r['race_id'] for r in rows})==470
+              assert all((r['signed_error_pp']!='') == (r['status'] in ('provisional_comparison','single_pollster_comparison')) for r in rows)
+          print('Five scenarios, 470 unique race rows each, and error status validation passed')
+          PY
+      - name: Commit audit and analysis files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/results.json analysis/2026_results_refresh_audit.json analysis/2026_sensitivity_summary.csv analysis/2026_sensitivity_summary.json analysis/sensitivity/
+          if ! git diff --cached --quiet; then
+            git commit -m 'analysis: updated returns and polling sensitivity comparisons'
+            git push
+          fi
